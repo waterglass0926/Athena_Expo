@@ -21,5 +21,11 @@ export default IMAGES = {
     FLAG007: require('@/assets/images/athena/flags/flag106.png'),
     FLAG008: require('@/assets/images/athena/flags/flag107.png'),
     FLAG009: require('@/assets/images/athena/flags/flag108.png'),
+  },
+  CHATGPT: {
+    V1: {
+      LOGO: require('@/assets/images/chatgpt/version1.0/logo.png'),
+      AVATAR: require('@/assets/images/chatgpt/version1.0/avatar.jpg'),
+    }
   }
 };

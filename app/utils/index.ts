@@ -1,3 +1,8 @@
+import { initializeApp } from 'firebase/app';
+import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { validate } from 'validate.js';
+
 export class Tokens {
   static clientId = 'waGiFOvU969D2xl60c_vOvEKTcbPiA0BXcgiC_PeDKk';
   static unsplashToken = 'nllcFdEQkChHOLqrK9iw4AxrC8Hv-N7L8_ada60RgsU';
@@ -27,7 +32,7 @@ export const isShort = (data: string, length: number) => {
 
 export const isColor = () => {
   const randomColor = Math.floor(Math.random() * 0xffffff).toString(16);
-  return "#" + randomColor.padStart(6, '0');
+  return '#' + randomColor.padStart(6, '0');
 };
 
 export const isOpacity = (hex, alpha = 1) => {
@@ -83,6 +88,27 @@ export const toURL = ({ url, id, query }: URLParams) => {
   return newURL;
 };
 
+export const getFirebaseAuth = () => {
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: 'AIzaSyDDtZx8y6xowiyw0R-xwhRZ6lt9vcRdURA',
+    authDomain: 'athena-1127.firebaseapp.com',
+    projectId: 'athena-1127',
+    storageBucket: 'athena-1127.appspot.com',
+    messagingSenderId: '120668541539',
+    appId: '1:120668541539:web:ba8a779e88b85f88691e56'
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  // Initialize Firebase Auth with AsyncStorage persistence
+  const auth = initializeAuth(app);
+
+  return auth;
+};
+
 export default {
   isEmpty,
   isEmail,
@@ -91,4 +117,5 @@ export default {
   isOpacity,
   isLog,
   toURL,
+  getFirebaseAuth,
 };

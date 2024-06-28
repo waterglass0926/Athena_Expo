@@ -26,6 +26,10 @@ module.exports = function (api) {
           },
         },
       ],
+      ['module:react-native-dotenv', {
+        moduleName: '@env',
+        path: '.env',
+      }],
       '@babel/plugin-proposal-export-namespace-from',
       'react-native-reanimated/plugin',
     ],

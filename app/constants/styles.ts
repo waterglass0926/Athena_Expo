@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import FONTS from './fonts';
+import COLORS from './colors';
 
 export const SIZE = {
   S01: 1,
@@ -98,4 +99,22 @@ export default STYLES = StyleSheet.create({
     fontSize: SIZE.S10,
     fontWeight: '400'
   },
+
+  CHATGPT: {
+    V1: {
+      largeTitle: {
+        fontFamily: COLORS.DEFAULT.BLACK,
+        fontSize: SIZE.S48,
+        lineHeight: SIZE.S64,
+      },
+      h1: { fontFamily: FONTS.CHATGPT.POPPINS.BOLD, fontSize: SIZE.S32, lineHeight: SIZE.S36 },
+      h2: { fontFamily: FONTS.CHATGPT.POPPINS.BOLD, fontSize: SIZE.S24, lineHeight: SIZE.S32 },
+      h3: { fontFamily: FONTS.CHATGPT.POPPINS.BOLD, fontSize: SIZE.S20, lineHeight: SIZE.S24 },
+      h4: { fontFamily: FONTS.CHATGPT.POPPINS.BOLD, fontSize: SIZE.S18, lineHeight: SIZE.S20 },
+      body1: { fontFamily: FONTS.CHATGPT.POPPINS.REGULAR, fontSize: SIZE.S32, lineHeight: SIZE.S36 },
+      body2: { fontFamily: FONTS.CHATGPT.POPPINS.REGULAR, fontSize: SIZE.S20, lineHeight: SIZE.S32 },
+      body3: { fontFamily: FONTS.CHATGPT.POPPINS.REGULAR, fontSize: SIZE.S16, lineHeight: SIZE.S24 },
+      body4: { fontFamily: FONTS.CHATGPT.POPPINS.REGULAR, fontSize: SIZE.S14, lineHeight: SIZE.S20 },
+    }
+  }
 });
