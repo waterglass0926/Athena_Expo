@@ -14,7 +14,7 @@ export default DATA = {
     { key: 10, title: 'StarBooks', description: 'Best Books & Novels, Publishers Search Platform', image: Images.ATHENA.SPLASH110, navigation: 'BooksStack' },
     { key: 11, title: 'Schedule', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH111, navigation: 'ScheduleStack' },
     { key: 12, title: 'ChatGpt', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH101, navigation: 'ChatGpt' },
-    { key: 13, title: 'Schedule', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH111, navigation: 'ScheduleStack' },
+    { key: 13, title: 'ChatGpt2.0', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH111, navigation: 'ChatGptV2' },
     { key: 14, title: 'Schedule', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH111, navigation: 'ScheduleStack' },
     { key: 15, title: 'Schedule', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH111, navigation: 'ScheduleStack' }
   ],

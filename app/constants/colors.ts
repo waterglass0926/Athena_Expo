@@ -11,6 +11,26 @@ export default COLORS = {
     ORANGE: 'orange',
     MAGENTA: 'magenta',
   },
+  CHATGPT: {
+    V2: {
+      PRIMARY: '#20AB6E',
+      LIME: '#D7FFD4',
+      PINK: '#F655FF',
+      BROWN: '#29271D',
+      SKY: '#E5EDFF',
+      TEAL: '#0E4D45',
+      YELLOW: '#FCBB80',
+      ORANGE: '#EF580B',
+      BLUE: '#0000FA',
+      GREEN: '#172E15',
+      LIGHT: '#FFFCFF',
+      GREY: '#242026',
+      GRAY: '#B8B3BA',
+      INPUT: '#EEE9F0',
+      SELECTED: '#F7F2F9',
+      DARK: '#2F2D32',
+    }
+  },
   THEME: [
     {
       INDEX: 1,

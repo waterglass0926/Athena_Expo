@@ -1,12 +1,14 @@
 import 'react-native-reanimated';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import * as SecureStore from 'expo-secure-store';
 
 import React, { FC, useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import { ClerkProvider, useAuth } from '@clerk/clerk-expo';
 
-import { LogBox, StatusBar } from 'react-native';
+import { LogBox, StatusBar, ActivityIndicator, TouchableOpacity } from 'react-native';
 import Toast from 'react-native-toast-message';
 
 import AppContainer from '@/routes';
@@ -21,6 +23,25 @@ LogBox.ignoreAllLogs(true);
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
+
+const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
+// Cache the Clerk JWT
+const tokenCache = {
+  async getToken(key: string) {
+    try {
+      return SecureStore.getItemAsync(key);
+    } catch (err) {
+      return null;
+    };
+  },
+  async saveToken(key: string, value: string) {
+    try {
+      return SecureStore.setItemAsync(key, value);
+    } catch (err) {
+      return;
+    };
+  },
+};
 
 export default App = () => {
   const [loaded] = useFonts({
@@ -38,16 +59,18 @@ export default App = () => {
 
   if (!loaded) {
     return null;
-  }
+  };
 
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <StatusBar barStyle='light-content' hidden />
-        <AppContainer />
-        <Components.Loading />
-        <Toast />
-      </PersistGate>
-    </Provider>
+    <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY!} tokenCache={tokenCache}>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <StatusBar barStyle='light-content' hidden />
+          <AppContainer />
+          <Components.Loading />
+          <Toast />
+        </PersistGate>
+      </Provider>
+    </ClerkProvider>
   );
 };

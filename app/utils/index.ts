@@ -2,6 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { validate } from 'validate.js';
+import { MMKV } from 'react-native-mmkv';
 
 export class Tokens {
   static clientId = 'waGiFOvU969D2xl60c_vOvEKTcbPiA0BXcgiC_PeDKk';
@@ -88,6 +89,7 @@ export const toURL = ({ url, id, query }: URLParams) => {
   return newURL;
 };
 
+// ChatGpt version 1.0
 export const getFirebaseAuth = () => {
 
   // Your web app's Firebase configuration
@@ -108,6 +110,19 @@ export const getFirebaseAuth = () => {
 
   return auth;
 };
+
+// ChatGpt version 2.0
+export const storage = new MMKV({
+  id: 'gptversion',
+});
+
+export const keyStorage = new MMKV({
+  id: 'openaikey',
+});
+
+export const chatStorage = new MMKV({
+  id: 'chats',
+});
 
 export default {
   isEmpty,

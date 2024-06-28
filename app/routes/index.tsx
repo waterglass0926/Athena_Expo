@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import AthenaStack from './stacks/athena';
 import ChatGptStack from './stacks/chatgpt/version1.0';
+import ChatGptV2Stack from '@/screens/chatgpt/version2.0/_layout';
 
 import { navOptionHandler } from '@/utils';
 
@@ -23,6 +24,11 @@ export default AppContainer = () => {
         <StackApp.Screen
           name='ChatGpt'
           component={ChatGptStack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='ChatGptV2'
+          component={ChatGptV2Stack}
           options={navOptionHandler}
         />
       </StackApp.Navigator>

@@ -26,6 +26,10 @@ export default IMAGES = {
     V1: {
       LOGO: require('@/assets/images/chatgpt/version1.0/logo.png'),
       AVATAR: require('@/assets/images/chatgpt/version1.0/avatar.jpg'),
+    },
+    V2: {
+      LOGO_WHITE: require('@/assets/images/chatgpt/version2.0/logo-white.png'),
+      LOGO_DARK: require('@/assets/images/chatgpt/version2.0/logo-dark.png'),
     }
   }
 };
