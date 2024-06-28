@@ -13,7 +13,6 @@ import Constants from '@/constants';
 import Functtions, { navOptionHandler } from '@/utils';
 import { ThemeType } from '@/types/athena';
 
-
 interface StateType {
   athena: {
     load: boolean;

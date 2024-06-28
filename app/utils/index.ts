@@ -1,7 +1,11 @@
+import { Alert } from 'react-native';
+
 import { initializeApp } from 'firebase/app';
 import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { validate } from 'validate.js';
+
+import Constants from '@/constants';
 
 export class Tokens {
   static clientId = 'waGiFOvU969D2xl60c_vOvEKTcbPiA0BXcgiC_PeDKk';
@@ -107,6 +111,48 @@ export const getFirebaseAuth = () => {
   const auth = initializeAuth(app);
 
   return auth;
+};
+
+// Uber Eats
+export const getAllCartFoods = (items) => {
+  let allFoods = [];
+  const foodsData = items.map(x => x.foods);
+  foodsData.map(food => {
+    food.map(x => {
+      allFoods = [...allFoods, x]
+    })
+  });
+  return allFoods;
+};
+
+export const getTotalCartItemPrice = (items) => {
+  let allFoods = [];
+  const foodsData = items.map(x => x.foods);
+  foodsData.map(food => {
+    food.map(x => {
+      allFoods = [...allFoods, x]
+    })
+  });
+  return allFoods.reduce((total, item) => total + item.price, 0).toFixed(1);
+};
+
+export const fetchPublishableKey = async () => {
+  try {
+    const response = await fetch(
+      `${Constants.URLS.UBEREATS.BASEURL}/stripe-key`
+    );
+
+    const { publishableKey } = await response.json();
+
+    return publishableKey;
+  } catch (e) {
+    console.warn('Unable to fetch publishable key. Is your server running?');
+    Alert.alert(
+      'Error',
+      'Unable to fetch publishable key. Is your server running?'
+    );
+    return null;
+  };
 };
 
 export default {
