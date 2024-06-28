@@ -52,7 +52,7 @@ export const CartItems = () => {
             <Text style={tailwind`absolute self-center text-white w-3/4 text-center font-bold text-xl`} numberOfLines={1}>{item.resName}</Text>
           </View>
           {item?.foods?.map((food) => (
-            <View style={tailwind`mb-3 flex-row justify-between items-center pb-3 border-b border-gray-100`} key={food.id} >
+            <View style={[tailwind`mb-3 flex-row justify-between items-center pb-3 border-b border-gray-100`, { height: 80 }]} key={food.id} >
               <View style={tailwind`flex-1 pr-3 flex-row items-center`}>
                 {match(food.id, item.resName) ? (
                   <BouncyCheckbox style={{ width: 40 }} fillColor={Constants.COLORS.UBEREATS.black} isChecked={true} onPress={() => handleRemove(food.id, item.resName, item.resImage)} />
