@@ -17,6 +17,7 @@ import {
 } from 'react-native';
 
 import '@/utils/i18n';
+import { YELP_API_KEY } from '@env';
 import { restaurants } from '@/assets/data/ubereats/restaurants';
 import Components from '@/components/ubereats/others';
 import Constants from '@/constants';
@@ -33,7 +34,7 @@ export const Home = () => {
 
     const apiOptions = {
       headers: {
-        Authorization: `Bearer ${process.env.YELP_API_KEY}`,
+        Authorization: `Bearer ${YELP_API_KEY}`,
       },
     };
     setLoading(true)

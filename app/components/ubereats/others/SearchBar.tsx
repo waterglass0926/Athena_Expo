@@ -28,7 +28,7 @@ export const SearchBar = ({ setCity, city }) => {
         returnKeyType={'search'}
         onFail={error => console.error(error)}
         query={{
-          key: process.env.GOOGLE_MAP_APIKEY,
+          key: process.env.GOOGLE_MAP_API_KEY,
           language: 'en',
         }}
         styles={{

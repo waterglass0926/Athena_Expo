@@ -67,7 +67,7 @@ export const Details = ({ route, navigation }) => {
           </View>
           <View style={tailwind`mt-3`}>
             <Text style={[tailwind`text-gray-800 font-bold border-b w-1/3 mb-2 pb-1`, { borderBottomColor: Constants.COLORS.UBEREATS.primary, fontSize: 17 }]}>Categories</Text>
-            {categories.map((title, index) => (
+            {categories.map(({ title }, index) => (
               <Text key={index} style={tailwind`text-xs text-gray-700`}><Text style={{ color: Constants.COLORS.UBEREATS.primary }}>•</Text> {title}</Text>
             ))}
           </View>
