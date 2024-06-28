@@ -1,8 +1,4 @@
 import { Alert } from 'react-native';
-
-import { initializeApp } from 'firebase/app';
-import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { validate } from 'validate.js';
 
 import Constants from '@/constants';
@@ -92,27 +88,6 @@ export const toURL = ({ url, id, query }: URLParams) => {
   return newURL;
 };
 
-export const getFirebaseAuth = () => {
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: 'AIzaSyDDtZx8y6xowiyw0R-xwhRZ6lt9vcRdURA',
-    authDomain: 'athena-1127.firebaseapp.com',
-    projectId: 'athena-1127',
-    storageBucket: 'athena-1127.appspot.com',
-    messagingSenderId: '120668541539',
-    appId: '1:120668541539:web:ba8a779e88b85f88691e56'
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-
-  // Initialize Firebase Auth with AsyncStorage persistence
-  const auth = initializeAuth(app);
-
-  return auth;
-};
-
 // Uber Eats
 export const getAllCartFoods = (items) => {
   let allFoods = [];
@@ -163,5 +138,4 @@ export default {
   isOpacity,
   isLog,
   toURL,
-  getFirebaseAuth,
 };

@@ -20,7 +20,8 @@ import {
 import '@/utils/i18n';
 import Components from '@/components/chatgpt/version1.0';
 import Constants from '@/constants';
-import Functions, { getFirebaseAuth } from '@/utils';
+import Functions from '@/utils';
+import { auth } from '@/utils/firebase';
 import { setLoad } from '@/stores/athena';
 import { ThemeType } from '@/types/athena';
 
@@ -72,7 +73,6 @@ export const SignUp: FC<PropsType> = ({ navigation }) => {
   };
 
   const authHandler = async () => {
-    const auth = getFirebaseAuth();
     setLoading(true);
     try {
       const result = await createUserWithEmailAndPassword(
