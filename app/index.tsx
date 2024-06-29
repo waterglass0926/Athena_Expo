@@ -12,6 +12,9 @@ import Toast from 'react-native-toast-message';
 import AppContainer from '@/routes';
 import Components from '@/components';
 import store, { persistor } from '@/stores';
+import { HistoryProvider } from '@/contexts/translator/HistoryContext';
+import { CardSequenceProvider } from '@/contexts/translator/CardSequenceContext';
+import { TranslateProvider } from '@/contexts/translator/TranslateContext';
 
 LogBox.ignoreLogs([
   'Warning: ...',
@@ -44,7 +47,13 @@ export default App = () => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <StatusBar barStyle='light-content' hidden />
-        <AppContainer />
+        <HistoryProvider>
+          <CardSequenceProvider>
+            <TranslateProvider>
+              <AppContainer />
+            </TranslateProvider>
+          </CardSequenceProvider>
+        </HistoryProvider>
         <Components.Loading />
         <Toast />
       </PersistGate>

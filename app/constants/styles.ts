@@ -116,5 +116,15 @@ export default STYLES = StyleSheet.create({
       body3: { fontFamily: FONTS.CHATGPT.POPPINS.REGULAR, fontSize: SIZE.S16, lineHeight: SIZE.S24 },
       body4: { fontFamily: FONTS.CHATGPT.POPPINS.REGULAR, fontSize: SIZE.S14, lineHeight: SIZE.S20 },
     }
-  }
+  },
+
+  TRANSLATOR: {
+    SHADOW: {
+      shadowColor: 'black',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.23,
+      shadowRadius: 2.62,
+      elevation: 4,
+    }
+  },
 });
