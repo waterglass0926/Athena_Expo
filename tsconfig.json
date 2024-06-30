@@ -8,64 +8,64 @@
       ],
       // This needs to be mirrored in babel.config.js
       "@/app/*": [
-        "app/*"
+        "./app/*"
       ],
       "@/assets/*": [
-        "app/assets/*"
+        "./app/assets/*"
       ],
       "@/components": [
-        "app/components/index.ts"
+        "./app/components/index.ts"
       ],
       "@/components/*": [
-        "app/components/*"
+        "./app/components/*"
       ],
       "@/constants": [
-        "app/constants/index.ts"
+        "./app/constants/index.ts"
       ],
       "@/constants/*": [
-        "app/constants/*"
+        "./app/constants/*"
       ],
       "@/contexts/*": [
-        "app/contexts/*"
+        "./app/contexts/*"
       ],
       "@/hooks/*": [
-        "app/hooks/*"
+        "./app/hooks/*"
       ],
       "@/routes": [
-        "app/routes/index.tsx"
+        "./app/routes/index.tsx"
       ],
       "@/routes/*": [
-        "app/routes/*"
+        "./app/routes/*"
       ],
       "@/screens": [
-        "app/screens/index.tsx"
+        "./app/screens/index.tsx"
       ],
       "@/screens/*": [
-        "app/screens/*"
+        "./app/screens/*"
       ],
       "@/services/*": [
-        "app/services/*"
+        "./app/services/*"
       ],
       "@/apis/*": [
-        "app/services/apis/*"
+        "./app/services/apis/*"
       ],
       "@/stores": [
-        "app/stores/index.tsx"
+        "./app/stores/index.tsx"
       ],
       "@/stores/*": [
-        "app/stores/*"
+        "./app/stores/*"
       ],
       "@/styles/*": [
-        "app/styles/*"
+        "./app/styles/*"
       ],
       "@/types/*": [
-        "app/types/*"
+        "./app/types/*"
       ],
       "@/utils": [
-        "app/utils/index.ts"
+        "./app/utils/index.ts"
       ],
       "@/utils/*": [
-        "app/utils/*"
+        "./app/utils/*"
       ],
     }
   },
