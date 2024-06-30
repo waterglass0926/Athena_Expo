@@ -11,7 +11,7 @@ const path = require('path');
 
 const root = process.cwd();
 const oldDirPath = path.join(root, 'app');
-const newDirPath = path.join(root, 'app-example');
+const newDirPath = path.join(root, 'src');
 const newAppDirPath = path.join(root, 'app');
 
 const indexContent = `import { Text, View } from "react-native";
@@ -46,7 +46,7 @@ fs.rename(oldDirPath, newDirPath, (error) => {
   if (error) {
     return console.error(`Error renaming directory: ${error}`);
   }
-  console.log('/app moved to /app-example.');
+  console.log('/app moved to /src.');
 
   fs.mkdir(newAppDirPath, { recursive: true }, (error) => {
     if (error) {
@@ -61,12 +61,12 @@ fs.rename(oldDirPath, newDirPath, (error) => {
       }
       console.log('app/index.tsx created.');
 
-      const layoutPath = path.join(newAppDirPath, '_layout.tsx');
+      const layoutPath = path.join(newAppDirPath, 'index.tsx');
       fs.writeFile(layoutPath, layoutContent, (error) => {
         if (error) {
-          return console.error(`Error creating _layout.tsx: ${error}`);
+          return console.error(`Error creating index.tsx: ${error}`);
         }
-        console.log('app/_layout.tsx created.');
+        console.log('app/index.tsx created.');
       });
     });
   });
