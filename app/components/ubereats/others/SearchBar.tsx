@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 
 import '@/utils/i18n';
+import { GOOGLE_MAP_API_KEY } from '@env';
 import Constants from '@/constants';
 import Functions from '@/utils';
 
@@ -28,7 +29,7 @@ export const SearchBar = ({ setCity, city }) => {
         returnKeyType={'search'}
         onFail={error => console.error(error)}
         query={{
-          key: process.env.GOOGLE_MAP_API_KEY,
+          key: GOOGLE_MAP_API_KEY,
           language: 'en',
         }}
         styles={{
