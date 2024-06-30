@@ -26,8 +26,8 @@ export default App = () => {
   const [loaded] = useFonts({
     SpaceMono: require('@/assets/fonts/athena/SpaceMono-Regular.ttf'),
     Urbanist: require('@/assets/fonts/athena/Urbanist-Regular.ttf'),
-    PoppinsRegular: require('@/assets/fonts/chatgpt/version1.0/Poppins-Regular.ttf'),
-    PoppinsBold: require('@/assets/fonts/chatgpt/version1.0/Poppins-Bold.ttf'),
+    PoppinsRegular: require('@/assets/fonts/chatgpt/v1/Poppins-Regular.ttf'),
+    PoppinsBold: require('@/assets/fonts/chatgpt/v1/Poppins-Bold.ttf'),
   });
 
   useEffect(() => {

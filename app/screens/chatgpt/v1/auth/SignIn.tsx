@@ -5,8 +5,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 
 import { Icon } from 'react-native-elements';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { ref, child, set, getDatabase } from 'firebase/database';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import {
   StyleSheet,
@@ -18,7 +17,7 @@ import {
 } from 'react-native';
 
 import '@/utils/i18n';
-import Components from '@/components/chatgpt/version1.0';
+import Components from '@/components/chatgpt/v1';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { auth } from '@/utils/firebase';
@@ -36,13 +35,12 @@ interface StateType {
   };
 };
 
-export const SignUp: FC<PropsType> = ({ navigation }) => {
+export const SignIn: FC<PropsType> = ({ navigation }) => {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
   const { load, theme } = useSelector((state: StateType) => state.athena);
 
   const [loading, setLoading] = useState(false);
-  const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [errorEmail, setErrorEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -56,46 +54,25 @@ export const SignUp: FC<PropsType> = ({ navigation }) => {
     }
   }, [error]);
 
-
-  const createUser = async (fullname, email, userId) => {
-    const userData = {
-      fullName: fullname,
-      email,
-      userId,
-      signUpDate: new Date().toISOString(),
-    };
-
-    const dbRef = ref(getDatabase());
-    const childRef = child(dbRef, `users/${userId}`);
-    await set(childRef, userData);
-
-    return userData;
-  };
-
-  const authHandler = async () => {
+  const loginHandler = async () => {
     setLoading(true);
     try {
-      const result = await createUserWithEmailAndPassword(
+      const result = await signInWithEmailAndPassword(
         auth,
         email,
         password
       );
 
-      const { uid } = result.user;
-
-      const userData = await createUser(
-        fullname,
-        email,
-        uid
-      );
-
-      if (userData) navigation.navigate('ChatGptSignIn');
+      if (result) navigation.navigate('ChatGptBottomTab');
     } catch (error) {
       const errorCode = error.code;
-      let message = 'Something went wrong !';
+      let message = 'Something went wrong';
 
-      if (errorCode === 'auth/email-already-in-use') {
-        message = 'This email is already in use';
+      if (
+        errorCode === 'auth/wrong-password' ||
+        errorCode === 'auth/user-not-found'
+      ) {
+        message = 'Wrong email or password';
       };
 
       setError(message);
@@ -131,17 +108,8 @@ export const SignUp: FC<PropsType> = ({ navigation }) => {
               color: theme.FORECOLOR,
             }}
           >
-            Welcome Back!
+            Login to your account
           </Text>
-
-          <Components.Input
-            id='fullname'
-            placeholder='Enter your fullname'
-            placeholderTextColor={theme.TERTIARY}
-            value={fullname}
-            errorText={''}
-            onChangeText={(value) => setFullname(value)}
-          />
 
           <Components.Input
             id='email'
@@ -162,10 +130,10 @@ export const SignUp: FC<PropsType> = ({ navigation }) => {
           />
 
           <Components.Button
-            title='SignUp'
+            title='SignIn'
             filled
             isLoading={loading}
-            onPress={authHandler}
+            onPress={loginHandler}
             style={{
               width: wp('100%') - 44,
               marginBottom: Constants.SIZE.S08,

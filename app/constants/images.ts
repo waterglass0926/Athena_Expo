@@ -24,8 +24,8 @@ export default IMAGES = {
   },
   CHATGPT: {
     V1: {
-      LOGO: require('@/assets/images/chatgpt/version1.0/logo.png'),
-      AVATAR: require('@/assets/images/chatgpt/version1.0/avatar.jpg'),
+      LOGO: require('@/assets/images/chatgpt/v1/logo.png'),
+      AVATAR: require('@/assets/images/chatgpt/v1/avatar.jpg'),
     }
   }
 };

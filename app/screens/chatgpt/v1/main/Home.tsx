@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 import '@/utils/i18n';
-import Components from '@/components/chatgpt/version1.0';
+import Components from '@/components/chatgpt/v1';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { ThemeType } from '@/types/athena';

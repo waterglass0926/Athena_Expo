@@ -7,8 +7,8 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { Icon } from 'react-native-elements';
 
 import '@/utils/i18n';
-import ChatGptHomeStack from '@/routes/stacks/chatgpt/version1.0/home';
-import Screens from '@/screens/chatgpt/version1.0';
+import ChatGptHomeStack from '@/routes/stacks/chatgpt/v1/home';
+import Screens from '@/screens/chatgpt/v1';
 import Constants from '@/constants';
 import Functtions, { navOptionHandler } from '@/utils';
 import { ThemeType } from '@/types/athena';
