@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import type { TextProps, GestureResponderEvent } from 'react-native';
 
 export namespace ExpoRouter {
-  type StaticRoutes = `/` | `/_sitemap` | `/assets/data/ubereats/categories` | `/assets/data/ubereats/foods` | `/assets/data/ubereats/meals` | `/assets/data/ubereats/restaurants` | `/components` | `/components/__tests__/ThemedText-test` | `/components/athena` | `/components/athena/Collapsible` | `/components/athena/ExternalLink` | `/components/athena/HelloWave` | `/components/athena/Loading` | `/components/athena/ParallaxScrollView` | `/components/athena/TabBarIcon` | `/components/athena/ThemedText` | `/components/athena/ThemedView` | `/components/chatgpt/version1.0` | `/components/chatgpt/version1.0/Button` | `/components/chatgpt/version1.0/Input` | `/components/chatgpt/version1.0/Page` | `/components/tiktok` | `/components/tiktok/Feed` | `/components/translator` | `/components/translator/ButtonBase` | `/components/translator/ButtonBorderLess` | `/components/translator/InputBase` | `/components/translator/TypoGraphy` | `/components/ubereats/forms` | `/components/ubereats/forms/AppErrorMessage` | `/components/ubereats/forms/AppForm` | `/components/ubereats/forms/AppFormFeilds` | `/components/ubereats/forms/AppSubmitButton` | `/components/ubereats/forms/ImageInput` | `/components/ubereats/others` | `/components/ubereats/others/About` | `/components/ubereats/others/AppButton` | `/components/ubereats/others/AppHead` | `/components/ubereats/others/CartItems` | `/components/ubereats/others/Categories` | `/components/ubereats/others/CheckoutModal` | `/components/ubereats/others/HeaderTabs` | `/components/ubereats/others/MenuItems` | `/components/ubereats/others/OtherSignin` | `/components/ubereats/others/PaymentButton` | `/components/ubereats/others/PaymentScreen` | `/components/ubereats/others/RestaurantItem` | `/components/ubereats/others/RestaurantMap` | `/components/ubereats/others/Screen` | `/components/ubereats/others/SearchBar` | `/components/ubereats/others/TabCartButton` | `/components/ubereats/others/ViewCart` | `/constants` | `/constants/colors` | `/constants/data` | `/constants/fonts` | `/constants/icons` | `/constants/images` | `/constants/styles` | `/constants/svgs` | `/constants/urls` | `/contexts/translator/CardSequenceContext` | `/contexts/translator/HistoryContext` | `/contexts/translator/TranslateContext` | `/hooks/translator/useKeyboard` | `/hooks/translator/useNavigation` | `/hooks/translator/useRoute` | `/routes` | `/routes/drawers/athena` | `/routes/drawers/translator/home` | `/routes/stacks/athena` | `/routes/stacks/chatgpt/version1.0` | `/routes/stacks/chatgpt/version1.0/auth` | `/routes/stacks/chatgpt/version1.0/home` | `/routes/stacks/tiktok` | `/routes/stacks/tiktok/discover` | `/routes/stacks/tiktok/home` | `/routes/stacks/tiktok/inbox` | `/routes/stacks/tiktok/profile` | `/routes/stacks/translator` | `/routes/stacks/translator/home` | `/routes/stacks/ubereats` | `/routes/stacks/ubereats/auth` | `/routes/stacks/ubereats/home` | `/routes/tabs/athena` | `/routes/tabs/chatgpt/version1.0/bottom` | `/routes/tabs/tiktok/bottom` | `/routes/tabs/ubereats/bottom` | `/screens/athena` | `/screens/athena/Language` | `/screens/athena/Slides` | `/screens/athena/Theme` | `/screens/chatgpt/version1.0` | `/screens/chatgpt/version1.0/auth/SignIn` | `/screens/chatgpt/version1.0/auth/SignUp` | `/screens/chatgpt/version1.0/auth/Welcome` | `/screens/chatgpt/version1.0/main/Chat` | `/screens/chatgpt/version1.0/main/Home` | `/screens/chatgpt/version1.0/main/Profile` | `/screens/chatgpt/version1.0/main/Saved` | `/screens/tiktok` | `/screens/tiktok/discover` | `/screens/tiktok/home` | `/screens/tiktok/home/feed` | `/screens/tiktok/inbox` | `/screens/tiktok/profile` | `/screens/tiktok/splash` | `/screens/translator` | `/screens/translator/card-sequence` | `/screens/translator/card-sequence/Header` | `/screens/translator/card-sequence/TranslatorCard` | `/screens/translator/credit` | `/screens/translator/full` | `/screens/translator/history` | `/screens/translator/history/Header` | `/screens/translator/history/HistoryCard` | `/screens/translator/home` | `/screens/translator/home/DrawerContent` | `/screens/translator/home/Header` | `/screens/translator/home/Input` | `/screens/translator/home/LanguageSelector` | `/screens/translator/home/RecentCard` | `/screens/translator/home/TranslatedCard` | `/screens/translator/oss` | `/screens/translator/oss/Card` | `/screens/translator/oss/Header` | `/screens/ubereats` | `/screens/ubereats/auth/SignIn` | `/screens/ubereats/auth/SignUp` | `/screens/ubereats/auth/Welcome` | `/screens/ubereats/main/Account` | `/screens/ubereats/main/Browser` | `/screens/ubereats/main/Cart` | `/screens/ubereats/main/Checkout` | `/screens/ubereats/main/Details` | `/screens/ubereats/main/Grocery` | `/screens/ubereats/main/Home` | `/screens/ubereats/main/Success` | `/services/apis/athena/auth` | `/stores` | `/stores/athena` | `/stores/ubereats/auth` | `/stores/ubereats/basket` | `/styles/tiktok` | `/styles/tiktok/discover` | `/styles/tiktok/feed` | `/styles/tiktok/home` | `/styles/tiktok/inbox` | `/styles/tiktok/profile` | `/types/athena` | `/types/translator` | `/types/translator/declarations.d` | `/utils` | `/utils/firebase` | `/utils/http` | `/utils/i18n` | `/utils/translate`;
+  type StaticRoutes = `/` | `/_sitemap` | `/assets/data/ubereats/categories` | `/assets/data/ubereats/foods` | `/assets/data/ubereats/meals` | `/assets/data/ubereats/restaurants` | `/components` | `/components/__tests__/ThemedText-test` | `/components/athena` | `/components/athena/Collapsible` | `/components/athena/ExternalLink` | `/components/athena/HelloWave` | `/components/athena/Loading` | `/components/athena/ParallaxScrollView` | `/components/athena/TabBarIcon` | `/components/athena/ThemedText` | `/components/athena/ThemedView` | `/components/chatgpt/v1` | `/components/chatgpt/v1/Button` | `/components/chatgpt/v1/Input` | `/components/chatgpt/v1/Page` | `/components/tiktok` | `/components/tiktok/Feed` | `/components/translator` | `/components/translator/ButtonBase` | `/components/translator/ButtonBorderLess` | `/components/translator/InputBase` | `/components/translator/TypoGraphy` | `/components/ubereats/forms` | `/components/ubereats/forms/AppErrorMessage` | `/components/ubereats/forms/AppForm` | `/components/ubereats/forms/AppFormFeilds` | `/components/ubereats/forms/AppSubmitButton` | `/components/ubereats/forms/ImageInput` | `/components/ubereats/others` | `/components/ubereats/others/About` | `/components/ubereats/others/AppButton` | `/components/ubereats/others/AppHead` | `/components/ubereats/others/CartItems` | `/components/ubereats/others/Categories` | `/components/ubereats/others/CheckoutModal` | `/components/ubereats/others/HeaderTabs` | `/components/ubereats/others/MenuItems` | `/components/ubereats/others/OtherSignin` | `/components/ubereats/others/PaymentButton` | `/components/ubereats/others/PaymentScreen` | `/components/ubereats/others/RestaurantItem` | `/components/ubereats/others/RestaurantMap` | `/components/ubereats/others/Screen` | `/components/ubereats/others/SearchBar` | `/components/ubereats/others/TabCartButton` | `/components/ubereats/others/ViewCart` | `/constants` | `/constants/colors` | `/constants/data` | `/constants/fonts` | `/constants/icons` | `/constants/images` | `/constants/styles` | `/constants/svgs` | `/constants/urls` | `/contexts/translator/CardSequenceContext` | `/contexts/translator/HistoryContext` | `/contexts/translator/TranslateContext` | `/hooks/translator/useKeyboard` | `/hooks/translator/useNavigation` | `/hooks/translator/useRoute` | `/routes` | `/routes/drawers/athena` | `/routes/drawers/translator/home` | `/routes/stacks/athena` | `/routes/stacks/chatgpt/v1` | `/routes/stacks/chatgpt/v1/auth` | `/routes/stacks/chatgpt/v1/home` | `/routes/stacks/tiktok` | `/routes/stacks/tiktok/discover` | `/routes/stacks/tiktok/home` | `/routes/stacks/tiktok/inbox` | `/routes/stacks/tiktok/profile` | `/routes/stacks/translator` | `/routes/stacks/translator/home` | `/routes/stacks/ubereats` | `/routes/stacks/ubereats/auth` | `/routes/stacks/ubereats/home` | `/routes/tabs/athena` | `/routes/tabs/chatgpt/v1/bottom` | `/routes/tabs/tiktok/bottom` | `/routes/tabs/ubereats/bottom` | `/screens/athena` | `/screens/athena/Language` | `/screens/athena/Slides` | `/screens/athena/Theme` | `/screens/chatgpt/v1` | `/screens/chatgpt/v1/auth/SignIn` | `/screens/chatgpt/v1/auth/SignUp` | `/screens/chatgpt/v1/auth/Welcome` | `/screens/chatgpt/v1/main/Chat` | `/screens/chatgpt/v1/main/Home` | `/screens/chatgpt/v1/main/Profile` | `/screens/chatgpt/v1/main/Saved` | `/screens/tiktok` | `/screens/tiktok/discover` | `/screens/tiktok/home` | `/screens/tiktok/home/feed` | `/screens/tiktok/inbox` | `/screens/tiktok/profile` | `/screens/tiktok/splash` | `/screens/translator` | `/screens/translator/card-sequence` | `/screens/translator/card-sequence/Header` | `/screens/translator/card-sequence/TranslatorCard` | `/screens/translator/credit` | `/screens/translator/full` | `/screens/translator/history` | `/screens/translator/history/Header` | `/screens/translator/history/HistoryCard` | `/screens/translator/home` | `/screens/translator/home/DrawerContent` | `/screens/translator/home/Header` | `/screens/translator/home/Input` | `/screens/translator/home/LanguageSelector` | `/screens/translator/home/RecentCard` | `/screens/translator/home/TranslatedCard` | `/screens/translator/oss` | `/screens/translator/oss/Card` | `/screens/translator/oss/Header` | `/screens/translator/splash` | `/screens/ubereats` | `/screens/ubereats/auth/SignIn` | `/screens/ubereats/auth/SignUp` | `/screens/ubereats/auth/Welcome` | `/screens/ubereats/main/Account` | `/screens/ubereats/main/Browser` | `/screens/ubereats/main/Cart` | `/screens/ubereats/main/Checkout` | `/screens/ubereats/main/Details` | `/screens/ubereats/main/Grocery` | `/screens/ubereats/main/Home` | `/screens/ubereats/main/Success` | `/services/apis/athena/auth` | `/stores` | `/stores/athena` | `/stores/ubereats/auth` | `/stores/ubereats/basket` | `/styles/tiktok` | `/styles/tiktok/discover` | `/styles/tiktok/feed` | `/styles/tiktok/home` | `/styles/tiktok/inbox` | `/styles/tiktok/profile` | `/types/athena` | `/types/translator` | `/types/translator/declarations.d` | `/utils` | `/utils/firebase` | `/utils/http` | `/utils/i18n` | `/utils/translate`;
   type DynamicRoutes<T extends string> = never;
   type DynamicRouteTemplate = never;
 
@@ -38,14 +38,14 @@ export namespace ExpoRouter {
   type SingleRoutePart<S extends string> = S extends `${string}/${string}`
     ? never
     : S extends `${string}${SearchOrHash}`
-    ? never
-    : S extends ''
-    ? never
-    : S extends `(${string})`
-    ? never
-    : S extends `[${string}]`
-    ? never
-    : S;
+      ? never
+      : S extends ''
+        ? never
+        : S extends `(${string})`
+          ? never
+          : S extends `[${string}]`
+            ? never
+            : S;
 
   /**
    * Return only the CatchAll router part. If the string has search parameters or a hash return never
@@ -53,12 +53,12 @@ export namespace ExpoRouter {
   type CatchAllRoutePart<S extends string> = S extends `${string}${SearchOrHash}`
     ? never
     : S extends ''
-    ? never
-    : S extends `${string}(${string})${string}`
-    ? never
-    : S extends `${string}[${string}]${string}`
-    ? never
-    : S;
+      ? never
+      : S extends `${string}(${string})${string}`
+        ? never
+        : S extends `${string}[${string}]${string}`
+          ? never
+          : S;
 
   /**
    * Return the name of a route parameter
@@ -87,11 +87,11 @@ export namespace ExpoRouter {
    */
   type RouteSegments<Path> = Path extends `${infer PartA}/${infer PartB}`
     ? PartA extends '' | '.'
-    ? [...RouteSegments<PartB>]
-    : [PartA, ...RouteSegments<PartB>]
+      ? [...RouteSegments<PartB>]
+      : [PartA, ...RouteSegments<PartB>]
     : Path extends ''
-    ? []
-    : [Path];
+      ? []
+      : [Path];
 
   type AllUngroupedRoutes<Path> = Path extends `(${infer PartA})/${infer PartB}`
     ? `(${PartA})/${AllUngroupedRoutes<PartB>}` | AllUngroupedRoutes<PartB>
@@ -108,14 +108,14 @@ export namespace ExpoRouter {
    */
   export type InputRouteParams<Path> = {
     [Key in ParameterNames<Path> as Key extends `...${infer Name}`
-    ? Name
-    : Key]: Key extends `...${string}` ? (string | number)[] : string | number;
+      ? Name
+      : Key]: Key extends `...${string}` ? (string | number)[] : string | number;
   } & UnknownInputParams;
 
   type OutputRouteParams<Path> = {
     [Key in ParameterNames<Path> as Key extends `...${infer Name}`
-    ? Name
-    : Key]: Key extends `...${string}` ? string[] : string;
+      ? Name
+      : Key]: Key extends `...${string}` ? string[] : string;
   } & UnknownOutputParams;
 
   /**
@@ -124,8 +124,8 @@ export namespace ExpoRouter {
   export type SearchParams<T extends AllRoutes = never> = T extends DynamicRouteTemplate
     ? OutputRouteParams<T>
     : T extends StaticRoutes
-    ? never
-    : UnknownOutputParams;
+      ? never
+      : UnknownOutputParams;
 
   /*********
    * Href  *
@@ -140,8 +140,8 @@ export namespace ExpoRouter {
     | StringRouteToType<AllUngroupedRoutes<StaticRoutes> | RelativePathString | ExternalPathString>
     | DynamicRouteTemplateToString<DynamicRouteTemplate>
     | DynamicRouteObject<
-      StaticRoutes | RelativePathString | ExternalPathString | DynamicRouteTemplate
-    >;
+        StaticRoutes | RelativePathString | ExternalPathString | DynamicRouteTemplate
+      >;
 
   type StringRouteToType<T extends string> =
     | T
@@ -151,14 +151,14 @@ export namespace ExpoRouter {
   type DynamicRouteTemplateToString<Path> = Path extends `${infer PartA}/${infer PartB}`
     ? `${PartA extends `[${string}]` ? string : PartA}/${DynamicRouteTemplateToString<PartB>}`
     : Path extends `[${string}]`
-    ? string
-    : Path;
+      ? string
+      : Path;
 
   type DynamicRouteObject<T> = T extends DynamicRouteTemplate
     ? {
-      pathname: T;
-      params: InputRouteParams<T>;
-    }
+        pathname: T;
+        params: InputRouteParams<T>;
+      }
     : never;
 
   type IsStaticRoute<T> =

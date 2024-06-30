@@ -1,4 +1,7 @@
 import React, { useCallback, useContext, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 import { Icon } from 'react-native-elements';
 // import Clipboard from '@react-native-community/clipboard';
 import { Menu, MenuItem } from 'react-native-material-menu';
@@ -12,14 +15,25 @@ import Constants from '@/constants';
 import Functions from '@/utils';
 import { TranslateContext } from '@/contexts/translator/TranslateContext';
 import { useNavigation } from '@/hooks/translator/useNavigation';
+import { ThemeType } from '@/types/athena';
 
 interface PropsType {
   translatorType: TranslatorType;
-}
+};
+
+interface StateType {
+  athena: {
+    load: boolean;
+    theme: ThemeType;
+  };
+};
 
 export const TranslatedCard: React.FC<PropsType> = ({
   translatorType,
 }) => {
+  const dispatch = useDispatch();
+  const { load, theme } = useSelector((state: StateType) => state.athena);
+
   const { navigate } = useNavigation();
   const { reverseTranslate, fromLanguage, toLanguage, text } =
     useContext(TranslateContext);
@@ -32,7 +46,7 @@ export const TranslatedCard: React.FC<PropsType> = ({
   }, [result]);
 
   return (
-    <View style={[styles.container, { backgroundColor: Constants.COLORS.DEFAULT[translatorType.toUpperCase()] }]}>
+    <View style={[styles.container, { backgroundColor: Constants.COLORS.TRANLSATOR[translatorType.toUpperCase()] }]}>
       <Translator
         type={translatorType}
         value={text}
@@ -40,7 +54,7 @@ export const TranslatedCard: React.FC<PropsType> = ({
         from={
           languageCodeConverter('google', translatorType, fromLanguage) || 'en'
         }
-        to={languageCodeConverter('google', translatorType, toLanguage) || 'ko'}
+        to={languageCodeConverter('google', translatorType, toLanguage) || 'en'}
       />
       <Components.TypoGraphy style={styles.title}>
         {translatorType.toUpperCase()}
@@ -59,6 +73,7 @@ export const TranslatedCard: React.FC<PropsType> = ({
         </Components.ButtonBorderLess>
         <Menu
           visible={moreVisible}
+          style={{ backgroundColor: theme.BACKCOLOR }}
           anchor={
             <Components.ButtonBorderLess
               onPress={() => setMoreVisible(true)}
@@ -68,6 +83,7 @@ export const TranslatedCard: React.FC<PropsType> = ({
           }
           onRequestClose={() => setMoreVisible(false)}>
           <MenuItem
+            textStyle={{ color: theme.FORECOLOR }}
             onPress={() => {
               setMoreVisible(false);
               setTimeout(() => {
@@ -77,16 +93,18 @@ export const TranslatedCard: React.FC<PropsType> = ({
             Share
           </MenuItem>
           <MenuItem
+            textStyle={{ color: theme.FORECOLOR }}
             onPress={() => {
               setMoreVisible(false);
               navigate('Full', {
-                color: Constants.COLORS.DEFAULT[translatorType.toUpperCase()],
+                color: Constants.COLORS.TRANLSATOR[translatorType.toUpperCase()],
                 content: result,
               });
             }}>
             Full Screen
           </MenuItem>
           <MenuItem
+            textStyle={{ color: theme.FORECOLOR }}
             onPress={() => {
               setMoreVisible(false);
               reverseTranslate(result);

@@ -1,20 +1,43 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 import { Icon } from 'react-native-elements';
 
+import { StyleSheet, Text, View } from 'react-native';
+
 import Components from '@/components/translator';
-import Constants, { STATUSBAR_HEIGHT } from '@/constants';
+import Constants from '@/constants';
 import Functions from '@/utils';
 import { useNavigation } from '@/hooks/translator/useNavigation';
+import { ThemeType } from '@/types/athena';
+
+interface StateType {
+  athena: {
+    load: boolean;
+    theme: ThemeType;
+  };
+};
 
 export const DrawerContent = () => {
+  const dispatch = useDispatch();
   const { navigate } = useNavigation();
+  const { load, theme } = useSelector((state: StateType) => state.athena);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.iconContainer}>
-          <Icon type='material' name='translate' color={Constants.COLORS.DEFAULT.RED} size={40} />
+    <View style={{
+      ...styles.container,
+      backgroundColor: theme.BACKCOLOR
+    }}>
+      <View style={{
+        ...styles.header,
+        backgroundColor: theme.PRIMARY
+      }}>
+        <View style={{
+          ...styles.iconContainer,
+          backgroundColor: theme.BACKCOLOR
+        }}>
+          <Icon type='material' name='translate' color={theme.PRIMARY} size={40} />
         </View>
       </View>
       <Components.ButtonBase
@@ -22,7 +45,7 @@ export const DrawerContent = () => {
         style={styles.tabContainer}>
         <Icon type='material'
           name='edit'
-          color={Constants.COLORS.DEFAULT.RED}
+          color={theme.PRIMARY}
           size={16}
           style={{ marginRight: 16 }}
         />
@@ -33,7 +56,7 @@ export const DrawerContent = () => {
         style={styles.tabContainer}>
         <Icon type='material'
           name='library-books'
-          color={Constants.COLORS.DEFAULT.RED}
+          color={theme.PRIMARY}
           size={16}
           style={{ marginRight: 16 }}
         />
@@ -44,7 +67,7 @@ export const DrawerContent = () => {
         style={styles.tabContainer}>
         <Icon type='material'
           name='subtitles'
-          color={Constants.COLORS.DEFAULT.RED}
+          color={theme.PRIMARY}
           size={16}
           style={{ marginRight: 16 }}
         />
@@ -57,16 +80,13 @@ export const DrawerContent = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Constants.COLORS.DEFAULT.WHITE,
   },
   header: {
     justifyContent: 'center',
     marginBottom: 8,
-    paddingTop: STATUSBAR_HEIGHT,
     paddingHorizontal: 24,
     width: '100%',
-    height: 120 + STATUSBAR_HEIGHT,
-    backgroundColor: Constants.COLORS.DEFAULT.RED,
+    height: 120,
   },
   iconContainer: {
     justifyContent: 'center',
@@ -74,7 +94,6 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 40,
-    backgroundColor: Constants.COLORS.DEFAULT.WHITE,
   },
   tabContainer: {
     flexDirection: 'row',

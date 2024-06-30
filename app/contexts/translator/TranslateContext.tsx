@@ -50,7 +50,7 @@ export const TranslateProvider: React.FC = ({ children }) => {
   const scrollViewRef = useRef<ScrollView>(null);
   const [text, setText] = useState('');
   const [fromLanguage, setFromLanguage] =
-    useState<LanguageCode<'google'>>('ko');
+    useState<LanguageCode<'google'>>('en');
   const [toLanguage, setToLanguage] = useState<LanguageCode<'google'>>('en');
   const [addHistoryTimer, setAddHistoryTimer] = useState<NodeJS.Timeout>();
 
@@ -102,11 +102,35 @@ export const TranslateProvider: React.FC = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    try {
-      Tts.setDefaultLanguage(ttsLanguage(toLanguage));
-    } catch (error) {
-      Tts.setDefaultLanguage('en-IE');
-    }
+    const initializeTts = async () => {
+      try {
+        console.log('Initializing TTS...');
+
+        if (!Tts) {
+          console.error('Tts is not initialized');
+          return;
+        }
+
+        const availableVoices = await Tts.voices();
+        console.log('Available voices:', availableVoices);
+
+        const languageCode = ttsLanguage(toLanguage);
+        console.log(`Setting default language to: ${languageCode}`);
+
+        await Tts.setDefaultLanguage(languageCode);
+        console.log(`Successfully set default language to: ${languageCode}`);
+      } catch (error) {
+        console.error('Error setting default language for Tts:', error);
+        try {
+          await Tts.setDefaultLanguage('en-IE');
+          console.log('Fallback language set to en-IE');
+        } catch (fallbackError) {
+          console.error('Error setting fallback language to en-IE:', fallbackError);
+        }
+      }
+    };
+
+    initializeTts();
   }, [toLanguage]);
 
   useEffect(() => {

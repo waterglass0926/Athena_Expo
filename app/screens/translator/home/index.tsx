@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -9,23 +11,38 @@ import { HomeInput } from './Input';
 import { LanguageSelector } from './LanguageSelector';
 import { RecentCard } from './RecentCard';
 import { TranslatedCard } from './TranslatedCard';
+import Constants from '@/constants';
 import { TranslateContext } from '@/contexts/translator/TranslateContext';
 import { HistoryContext } from '@/contexts/translator/HistoryContext';
 import { CardSequenceContext } from '@/contexts/translator/CardSequenceContext';
+import { ThemeType } from '@/types/athena';
+
+interface StateType {
+  athena: {
+    load: boolean;
+    theme: ThemeType;
+  };
+};
 
 export const Home = () => {
+  const dispatch = useDispatch();
+  const { load, theme } = useSelector((state: StateType) => state.athena);
+
   const { scrollViewRef } = useContext(TranslateContext);
   const { historys } = useContext(HistoryContext);
   const { cardSequence } = useContext(CardSequenceContext);
   const { bottom } = useSafeAreaInsets();
 
   return (
-    <View style={styles.container}>
+    <View style={{
+      ...styles.container,
+      backgroundColor: theme.BACKCOLOR
+    }}>
       <HomeHeader />
       <LanguageSelector />
       <ScrollView
         ref={scrollViewRef}
-        style={{ paddingHorizontal: 16 }}
+        style={{ paddingHorizontal: 16, backgroundColor: theme.BACKCOLOR }}
         overScrollMode='never'
         showsVerticalScrollIndicator={false}>
         <HomeInput />
@@ -45,5 +62,6 @@ export const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: Constants.SIZE.S48
   },
 });

@@ -26,6 +26,11 @@ export default COLORS = {
     activeTintColor: '#000',
     inActiveTintColor: '#AEAEAE'
   },
+  TRANLSATOR: {
+    PAPAGO: '#34A855',
+    KAKAO: '#FABC05',
+    GOOGLE: '#1A73E8',
+  },
   THEME: [
     {
       INDEX: 1,

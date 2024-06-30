@@ -1,4 +1,6 @@
 import React, { useContext, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 
@@ -8,8 +10,19 @@ import Components from '@/components/translator';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { TranslateContext } from '@/contexts/translator/TranslateContext';
+import { ThemeType } from '@/types/athena';
+
+interface StateType {
+  athena: {
+    load: boolean;
+    theme: ThemeType;
+  };
+};
 
 export const HomeInput = () => {
+  const dispatch = useDispatch();
+  const { load, theme } = useSelector((state: StateType) => state.athena);
+
   const inputRef = useRef<TextInput>(null);
 
   const { text, onChangeText, clear, applyClipboard } =
@@ -25,15 +38,18 @@ export const HomeInput = () => {
         multiline
         value={text}
         onChangeText={onChangeText}
-        style={styles.input}
+        style={{
+          ...styles.input,
+          color: theme.FORECOLOR
+        }}
       />
       <Components.ButtonBorderLess
         onPress={text ? clear : applyClipboard}
         style={styles.claerBtn}>
         {text ? (
-          <Icon type='material-community' name='close-circle-outline' color='#bbb' size={16} />
+          <Icon type='material-community' name='close-circle-outline' color={theme.PRIMARY} size={Constants.SIZE.S24} />
         ) : (
-          <Icon type='material-community' name='clipboard-arrow-up-outline' color='#bbb' size={16} />
+          <Icon type='material-community' name='clipboard-arrow-up-outline' color={theme.PRIMARY} size={Constants.SIZE.S24} />
         )}
       </Components.ButtonBorderLess>
     </Pressable>

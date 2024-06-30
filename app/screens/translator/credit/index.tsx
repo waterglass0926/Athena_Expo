@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 // import DeviceInfo from 'react-native-device-info';
@@ -7,57 +9,88 @@ import InAppReview from 'react-native-in-app-review';
 import { View, Text, Linking, ToastAndroid, StyleSheet } from 'react-native';
 
 import Components from '@/components/translator';
-import Constants, { STATUSBAR_HEIGHT } from '@/constants';
+import Constants from '@/constants';
 import Functions from '@/utils';
 import { useNavigation } from '@/hooks/translator/useNavigation';
+import { ThemeType } from '@/types/athena';
+
+interface StateType {
+  athena: {
+    load: boolean;
+    theme: ThemeType;
+  };
+};
 
 export const Credit = () => {
   const { goBack, navigate } = useNavigation();
+  const dispatch = useDispatch();
+  const { load, theme } = useSelector((state: StateType) => state.athena);
 
   return (
-    <View style={styles.container}>
+    <View style={{
+      ...styles.container,
+      backgroundColor: theme.BACKCOLOR
+    }}>
+      <Components.ButtonBase onPress={() => goBack()} style={styles.buttonItem}>
+        <View style={styles.viewIcon}>
+          <Icon type='material' name='keyboard-backspace' size={20} color={theme.FORECOLOR} />
+        </View>
+        <Text style={{
+          ...styles.textItem,
+          color: theme.FORECOLOR
+        }}>Back</Text>
+      </Components.ButtonBase>
       <Components.ButtonBase
         onPress={() => Linking.openURL('mailto:starmastar1126@gmail.com')}
-        style={[styles.itemContainer, { marginTop: 16 }]}>
-        <View style={styles.iconContainer}>
-          <Icon type='material' name='email' size={20} color='white' />
+        style={styles.buttonItem}>
+        <View style={styles.viewIcon}>
+          <Icon type='material' name='email' size={20} color={theme.FORECOLOR} />
         </View>
-        <Text style={styles.text}>coderhyun476@gmail.com</Text>
+        <Text style={{
+          ...styles.textItem,
+          color: theme.FORECOLOR
+        }}>coderhyun476@gmail.com</Text>
       </Components.ButtonBase>
       <Components.ButtonBase
         onPress={() => Linking.openURL('https://www.github.com/starmastar1126')}
-        style={styles.itemContainer}>
-        <View style={styles.iconContainer}>
-          <Icon type='material' name='account-circle' size={20} color='white' />
+        style={styles.buttonItem}>
+        <View style={styles.viewIcon}>
+          <Icon type='material' name='account-circle' size={20} color={theme.FORECOLOR} />
         </View>
-        <Text style={styles.text}>github.com/starmastar1126</Text>
+        <Text style={{
+          ...styles.textItem,
+          color: theme.FORECOLOR
+        }}>github.com/starmastar1126</Text>
       </Components.ButtonBase>
-      <Components.ButtonBase onPress={() => navigate('Oss')} style={styles.itemContainer}>
-        <View style={styles.iconContainer}>
-          <Icon type='material' name='cloud' size={18} color='white' />
+      <Components.ButtonBase onPress={() => navigate('Oss')} style={styles.buttonItem}>
+        <View style={styles.viewIcon}>
+          <Icon type='material' name='cloud' size={18} color={theme.FORECOLOR} />
         </View>
-        <Text style={styles.text}>open source librarys</Text>
+        <Text style={{
+          ...styles.textItem,
+          color: theme.FORECOLOR
+        }}>open source librarys</Text>
       </Components.ButtonBase>
       <Components.ButtonBase
         onPress={() => InAppReview.RequestInAppReview()}
-        style={styles.itemContainer}>
-        <View style={styles.iconContainer}>
-          <Icon type='material' name='star' size={20} color='white' />
+        style={styles.buttonItem}>
+        <View style={styles.viewIcon}>
+          <Icon type='material' name='star' size={20} color={theme.FORECOLOR} />
         </View>
-        <Text style={styles.text}>rate us</Text>
+        <Text style={{
+          ...styles.textItem,
+          color: theme.FORECOLOR
+        }}>rate us</Text>
       </Components.ButtonBase>
-      <Components.ButtonBase style={styles.itemContainer}>
-        <View style={styles.iconContainer}>
-          <Icon type='material' name='info' size={20} color='white' />
+      {/* <Components.ButtonBase style={styles.buttonItem}>
+        <View style={styles.viewIcon}>
+          <Icon type='material' name='info' size={20} color={theme.FORECOLOR} />
         </View>
-        {/* <Text style={styles.text}>{DeviceInfo.getVersion()}</Text> */}
-      </Components.ButtonBase>
-      <Components.ButtonBase onPress={() => goBack()} style={styles.itemContainer}>
-        <View style={styles.iconContainer}>
-          <Icon type='material' name='keyboard-backspace' size={20} color='white' />
-        </View>
-        <Text style={styles.text}>Back</Text>
-      </Components.ButtonBase>
+        <Text style={{
+        ...styles.textItem,
+        color: theme.FORECOLOR
+        }}>{DeviceInfo.getVersion()}</Text>
+      </Components.ButtonBase> */}
     </View>
   );
 };
@@ -65,21 +98,19 @@ export const Credit = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: STATUSBAR_HEIGHT,
-    backgroundColor: Constants.COLORS.DEFAULT.RED,
+    paddingTop: Constants.SIZE.S48
   },
-  itemContainer: {
+  buttonItem: {
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
     height: 56,
   },
-  iconContainer: {
+  viewIcon: {
     alignItems: 'center',
     width: 56,
   },
-  text: {
+  textItem: {
     fontSize: 16,
-    color: Constants.COLORS.DEFAULT.WHITE,
   },
 });

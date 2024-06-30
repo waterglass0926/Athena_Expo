@@ -1,4 +1,5 @@
 
+import { Splash } from './splash';
 import { Home } from './home';
 import { DrawerContent } from './home/DrawerContent';
 
@@ -9,8 +10,9 @@ import { History } from './history';
 import { Oss } from './oss';
 
 export default {
-  DrawerContent,
+  Splash,
   Home,
+  DrawerContent,
   CardSequence,
   Credit,
   Full,

@@ -12,7 +12,7 @@ export default TranslatorHomeDrawer = () => {
   return (
     <TranslatorDrawerHome.Navigator
       initialRouteName='Home'
-      drawerContent={Screens.HomeDrawerContent}
+      drawerContent={Screens.DrawerContent}
       screenOptions={{
         drawerPosition: 'left',
         drawerType: 'front',

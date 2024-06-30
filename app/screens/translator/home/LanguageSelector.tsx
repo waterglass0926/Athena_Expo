@@ -1,4 +1,7 @@
 import React, { useContext, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 import { Icon } from 'react-native-elements';
 import { Menu, MenuItem } from 'react-native-material-menu';
 import { LanguageCode } from 'react-native-translator';
@@ -16,8 +19,19 @@ import Constants, { LANGUAGES_CODES } from '@/constants';
 import Functions from '@/utils';
 import { t } from '@/utils/translate';
 import { TranslateContext } from '@/contexts/translator/TranslateContext';
+import { ThemeType } from '@/types/athena';
+
+interface StateType {
+  athena: {
+    load: boolean;
+    theme: ThemeType;
+  };
+};
 
 export const LanguageSelector = () => {
+  const dispatch = useDispatch();
+  const { load, theme } = useSelector((state: StateType) => state.athena);
+
   const {
     toLanguage,
     fromLanguage,
@@ -30,7 +44,10 @@ export const LanguageSelector = () => {
   const [toMenuVisible, setToMenuVisible] = useState(false);
 
   return (
-    <View style={styles.container}>
+    <View style={{
+      ...styles.container,
+      backgroundColor: theme.BACKCOLOR
+    }}>
       <Pressable
         onPress={() => setFromMenuVisible(true)}
         style={styles.languageButton}>
@@ -40,13 +57,13 @@ export const LanguageSelector = () => {
           onSelect={updateFromLanguage}>
           <View style={styles.languageContainer}>
             <Components.TypoGraphy>{t(fromLanguage)}</Components.TypoGraphy>
-            <Icon type='material' size={24} color={Constants.COLORS.DEFAULT.RED} name='arrow-drop-down' />
+            <Icon type='material' size={24} color={theme.PRIMARY} name='arrow-drop-down' />
           </View>
         </LanguageSelectMenu>
       </Pressable>
 
       <Components.ButtonBorderLess onPress={reverseLanguage} style={styles.reverseButton}>
-        <Icon type='material' size={24} color={Constants.COLORS.DEFAULT.RED} name='compare-arrows' />
+        <Icon type='material' size={24} color={theme.PRIMARY} name='compare-arrows' />
       </Components.ButtonBorderLess>
 
       <Pressable
@@ -58,7 +75,7 @@ export const LanguageSelector = () => {
           onSelect={updateToLanguage}>
           <View style={styles.languageContainer}>
             <Components.TypoGraphy>{t(toLanguage)}</Components.TypoGraphy>
-            <Icon type='material' size={24} color={Constants.COLORS.DEFAULT.RED} name='arrow-drop-down' />
+            <Icon type='material' size={24} color={theme.PRIMARY} name='arrow-drop-down' />
           </View>
         </LanguageSelectMenu>
       </Pressable>
@@ -78,11 +95,16 @@ const LanguageSelectMenu: React.FC<LanguageSelectMenu> = ({
   onSelect,
   children,
 }) => {
+  const dispatch = useDispatch();
+  // const { i18n, t } = useTranslation();
+  const { load, theme } = useSelector((state: StateType) => state.athena);
+
   return (
-    <Menu visible={visible} anchor={children} onRequestClose={onRequestClose}>
+    <Menu style={{ backgroundColor: theme.BACKCOLOR }} visible={visible} anchor={children} onRequestClose={onRequestClose}>
       {LANGUAGES_CODES.map(language => (
         <MenuItem
           key={language}
+          textStyle={{ color: theme.FORECOLOR }}
           onPress={() => {
             onSelect(language);
             onRequestClose();
@@ -99,7 +121,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: 48,
-    backgroundColor: Constants.COLORS.DEFAULT.WHITE,
     ...Constants.STYLES.TRANSLATOR.SHADOW,
   },
   languageButton: {

@@ -6,7 +6,7 @@ import { OssCard } from './Card';
 
 import oss from '@/assets/data/translator/oss.json';
 import Components from '@/components/translator';
-import Constants, { STATUSBAR_HEIGHT } from '@/constants';
+import Constants from '@/constants';
 import Functions from '@/utils';
 
 const DATA = Object.keys(oss).map(key => ({
@@ -31,7 +31,6 @@ export const Oss = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: STATUSBAR_HEIGHT,
     backgroundColor: Constants.COLORS.DEFAULT.RED,
   },
 });

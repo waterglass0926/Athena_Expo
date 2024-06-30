@@ -1,21 +1,37 @@
 import React, { useContext } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import Components from '@/components/translator';
-import Constants, { WIDTH } from '@/constants';
+import Constants from '@/constants';
 import Functions from '@/utils';
 import { TranslateContext } from '@/contexts/translator/TranslateContext';
 import { History } from '@/types/translator';
+import { ThemeType } from '@/types/athena';
+
+interface StateType {
+  athena: {
+    load: boolean;
+    theme: ThemeType;
+  };
+};
 
 export const RecentCard: React.FC<History> = props => {
+  const dispatch = useDispatch();
+  const { load, theme } = useSelector((state: StateType) => state.athena);
+
   const { applyHistory } = useContext(TranslateContext);
   const { text } = props;
 
   return (
-    <View style={styles.container}>
+    <View style={{
+      ...styles.container,
+      backgroundColor: Constants.COLORS.DEFAULT.GRAY
+    }}>
       <Components.TypoGraphy style={styles.title}>Recent Search</Components.TypoGraphy>
       <Components.TypoGraphy style={styles.text}>{text}</Components.TypoGraphy>
       <View style={styles.footer}>
@@ -34,7 +50,6 @@ const styles = StyleSheet.create({
     width: '100%',
     minHeight: 160,
     borderRadius: 16,
-    backgroundColor: Constants.COLORS.DEFAULT.RED,
     ...Constants.STYLES.TRANSLATOR.SHADOW,
   },
   title: {

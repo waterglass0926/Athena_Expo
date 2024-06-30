@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 import { RenderItemParams } from 'react-native-draggable-flatlist';
@@ -9,11 +11,21 @@ import Components from '@/components/translator';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { TranslatorType } from '@/types/translator';
+import { ThemeType } from '@/types/athena';
+
+interface StateType {
+  athena: {
+    load: boolean;
+    theme: ThemeType;
+  };
+};
 
 export const TranslatorCard: React.FC<
   RenderItemParams<TranslatorType>
 > = props => {
   const { item, drag, isActive } = props;
+  const dispatch = useDispatch();
+  const { load, theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <Components.ButtonBase
@@ -21,9 +33,9 @@ export const TranslatorCard: React.FC<
         styles.container,
         { backgroundColor: isActive ? '#ffffff88' : 'transparent' },
       ]}>
-      <Components.TypoGraphy style={styles.text}>{item.toUpperCase()}</Components.TypoGraphy>
-      <Pressable style={styles.iconContainer} onPressIn={drag}>
-        <Icon type='material' name='drag-handle' size={20} color={Constants.COLORS.DEFAULT.WHITE} />
+      <Components.TypoGraphy style={styles.textItem}>{item.toUpperCase()}</Components.TypoGraphy>
+      <Pressable style={styles.buttonIcon} onPressIn={drag}>
+        <Icon type='material' name='drag-handle' size={20} color={theme.FORECOLOR} />
       </Pressable>
     </Components.ButtonBase>
   );
@@ -38,11 +50,10 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 56,
   },
-  text: {
+  textItem: {
     fontSize: 16,
-    color: Constants.COLORS.DEFAULT.WHITE,
   },
-  iconContainer: {
+  buttonIcon: {
     justifyContent: 'center',
     alignItems: 'center',
     width: 56,
