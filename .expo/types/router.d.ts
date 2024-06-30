@@ -38,14 +38,14 @@ export namespace ExpoRouter {
   type SingleRoutePart<S extends string> = S extends `${string}/${string}`
     ? never
     : S extends `${string}${SearchOrHash}`
-      ? never
-      : S extends ''
-        ? never
-        : S extends `(${string})`
-          ? never
-          : S extends `[${string}]`
-            ? never
-            : S;
+    ? never
+    : S extends ''
+    ? never
+    : S extends `(${string})`
+    ? never
+    : S extends `[${string}]`
+    ? never
+    : S;
 
   /**
    * Return only the CatchAll router part. If the string has search parameters or a hash return never
@@ -53,12 +53,12 @@ export namespace ExpoRouter {
   type CatchAllRoutePart<S extends string> = S extends `${string}${SearchOrHash}`
     ? never
     : S extends ''
-      ? never
-      : S extends `${string}(${string})${string}`
-        ? never
-        : S extends `${string}[${string}]${string}`
-          ? never
-          : S;
+    ? never
+    : S extends `${string}(${string})${string}`
+    ? never
+    : S extends `${string}[${string}]${string}`
+    ? never
+    : S;
 
   /**
    * Return the name of a route parameter
@@ -87,11 +87,11 @@ export namespace ExpoRouter {
    */
   type RouteSegments<Path> = Path extends `${infer PartA}/${infer PartB}`
     ? PartA extends '' | '.'
-      ? [...RouteSegments<PartB>]
-      : [PartA, ...RouteSegments<PartB>]
+    ? [...RouteSegments<PartB>]
+    : [PartA, ...RouteSegments<PartB>]
     : Path extends ''
-      ? []
-      : [Path];
+    ? []
+    : [Path];
 
   type AllUngroupedRoutes<Path> = Path extends `(${infer PartA})/${infer PartB}`
     ? `(${PartA})/${AllUngroupedRoutes<PartB>}` | AllUngroupedRoutes<PartB>
@@ -108,14 +108,14 @@ export namespace ExpoRouter {
    */
   export type InputRouteParams<Path> = {
     [Key in ParameterNames<Path> as Key extends `...${infer Name}`
-      ? Name
-      : Key]: Key extends `...${string}` ? (string | number)[] : string | number;
+    ? Name
+    : Key]: Key extends `...${string}` ? (string | number)[] : string | number;
   } & UnknownInputParams;
 
   type OutputRouteParams<Path> = {
     [Key in ParameterNames<Path> as Key extends `...${infer Name}`
-      ? Name
-      : Key]: Key extends `...${string}` ? string[] : string;
+    ? Name
+    : Key]: Key extends `...${string}` ? string[] : string;
   } & UnknownOutputParams;
 
   /**
@@ -124,8 +124,8 @@ export namespace ExpoRouter {
   export type SearchParams<T extends AllRoutes = never> = T extends DynamicRouteTemplate
     ? OutputRouteParams<T>
     : T extends StaticRoutes
-      ? never
-      : UnknownOutputParams;
+    ? never
+    : UnknownOutputParams;
 
   /*********
    * Href  *
@@ -140,8 +140,8 @@ export namespace ExpoRouter {
     | StringRouteToType<AllUngroupedRoutes<StaticRoutes> | RelativePathString | ExternalPathString>
     | DynamicRouteTemplateToString<DynamicRouteTemplate>
     | DynamicRouteObject<
-        StaticRoutes | RelativePathString | ExternalPathString | DynamicRouteTemplate
-      >;
+      StaticRoutes | RelativePathString | ExternalPathString | DynamicRouteTemplate
+    >;
 
   type StringRouteToType<T extends string> =
     | T
@@ -151,14 +151,14 @@ export namespace ExpoRouter {
   type DynamicRouteTemplateToString<Path> = Path extends `${infer PartA}/${infer PartB}`
     ? `${PartA extends `[${string}]` ? string : PartA}/${DynamicRouteTemplateToString<PartB>}`
     : Path extends `[${string}]`
-      ? string
-      : Path;
+    ? string
+    : Path;
 
   type DynamicRouteObject<T> = T extends DynamicRouteTemplate
     ? {
-        pathname: T;
-        params: InputRouteParams<T>;
-      }
+      pathname: T;
+      params: InputRouteParams<T>;
+    }
     : never;
 
   type IsStaticRoute<T> =

@@ -18,7 +18,7 @@ import {
 
 import '@/utils/i18n';
 import { CHAT_GPT_API_KEY } from '@env';
-import Components from '@/components/chatgpt/version1.0';
+import Components from '@/components/chatgpt/v1';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { ThemeType } from '@/types/athena';

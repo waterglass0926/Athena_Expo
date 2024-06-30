@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import AthenaStack from './stacks/athena';
-import ChatGptStack from './stacks/chatgpt/version1.0';
+import ChatGptStack from './stacks/chatgpt/v1';
 import UberEatsStack from './stacks/ubereats';
 import TikTokStack from './stacks/tiktok';
 import TranslatorStack from './stacks/translator';

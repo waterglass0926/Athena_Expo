@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Screens from '@/screens/chatgpt/version1.0';
+import Screens from '@/screens/chatgpt/v1';
 import { navOptionHandler } from '@/utils';
 
 const StackChatGptAuth = createStackNavigator();

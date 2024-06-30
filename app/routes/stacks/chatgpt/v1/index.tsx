@@ -2,8 +2,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import ChatGptAuthStack from './auth';
-import ChatGptBottomTab from '@/routes/tabs/chatgpt/version1.0/bottom';
-import Screens from '@/screens/chatgpt/version1.0';
+import ChatGptBottomTab from '@/routes/tabs/chatgpt/v1/bottom';
+import Screens from '@/screens/chatgpt/v1';
 import { navOptionHandler } from '@/utils';
 
 const StackChatGpt = createStackNavigator();
