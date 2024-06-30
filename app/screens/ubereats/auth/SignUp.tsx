@@ -42,17 +42,18 @@ const ValidationSchema = yup.object().shape({
 export const SignUp = ({ navigation }) => {
 
   const onSignUp = ({ name, email, password }) => {
+    navigation.navigate('UberEatsBottomTab');
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        result.user
-          .updateProfile({ displayName: name })
-          .then(() => {
-            // User account created & signed in!
-          })
-          .catch((err) => {
-            Alert.alert('Error', err.message);
-          });
+        // result.user
+        //   .updateProfile({ displayName: name })
+        //   .then(() => {
+        //     // User account created & signed in!
+        //   })
+        //   .catch((err) => {
+        //     Alert.alert('Error', err.message);
+        //   });
       })
       .catch((error) => {
         if (error.code === 'auth/email-already-in-use') {

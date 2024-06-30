@@ -10,7 +10,7 @@ const StackUberEats = createStackNavigator();
 export default UberEatsStack = () => {
   return (
     <StackUberEats.Navigator
-      initialRouteName='UberEatsBottomTab'
+      initialRouteName='UberEatsWelcome'
       screenOptions={{ gestureEnabled: false }}
     >
       <StackUberEats.Screen

@@ -37,8 +37,12 @@ const validationSchema = yup.object().shape({
 export const SignIn = ({ navigation }) => {
 
   const onSignIn = ({ email, password }) => {
+    navigation.navigate('UberEatsBottomTab');
     auth
       .signInWithEmailAndPassword(email, password)
+      .then((result) => {
+
+      })
       .catch((error) => {
         if (error.code === 'auth/invalid-password') {
           Alert.alert('Error', 'Invalid password!')
