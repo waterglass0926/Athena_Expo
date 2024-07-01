@@ -9,7 +9,7 @@ export default DATA = {
     { key: 5, title: 'TikTok', description: 'Short Video Sharing & Social Media Platform', image: Images.ATHENA.SPLASH105, navigation: 'TikTok' },
     { key: 6, title: 'Shopee', description: 'The Best Selling, Fashion & eCommerce Platform', image: Images.ATHENA.SPLASH106, navigation: 'ShopeeStack' },
     { key: 7, title: 'Pinterest', description: 'Images & Photos Sharing, Social Media Platform', image: Images.ATHENA.SPLASH107, navigation: 'PinterestStack' },
-    { key: 8, title: 'YouTube', description: 'The Online Videos Sharing, Social Media Platform', image: Images.ATHENA.SPLASH108, navigation: 'YoutubeStack' },
+    { key: 8, title: 'YouTube', description: 'The Online Videos Sharing, Social Media Platform', image: Images.ATHENA.SPLASH108, navigation: 'YouTubeV1' },
     { key: 9, title: 'StarNews', description: 'World\'s News & Topic Stories Search Platform', image: Images.ATHENA.SPLASH109, navigation: 'NewsStack' },
     { key: 10, title: 'StarBooks', description: 'Best Books & Novels, Publishers Search Platform', image: Images.ATHENA.SPLASH110, navigation: 'BooksStack' },
     { key: 11, title: 'Schedule', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH111, navigation: 'ScheduleStack' },

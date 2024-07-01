@@ -8,6 +8,7 @@ import UberEatsStack from './stacks/ubereats';
 import TikTokStack from './stacks/tiktok';
 import TranslatorStack from './stacks/translator';
 import TinderV1Stack from './stacks/tinder/v1';
+import YouTubeV1Stack from './stacks/youtube/v1';
 
 import { navOptionHandler } from '@/utils';
 
@@ -47,6 +48,11 @@ export default AppContainer = () => {
         <StackApp.Screen
           name='TinderV1'
           component={TinderV1Stack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='YouTubeV1'
+          component={YouTubeV1Stack}
           options={navOptionHandler}
         />
       </StackApp.Navigator>
