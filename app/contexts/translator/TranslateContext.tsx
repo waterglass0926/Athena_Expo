@@ -11,7 +11,7 @@ import React, {
 // import Clipboard from '@react-native-community/clipboard';
 import InAppReview from 'react-native-in-app-review';
 import { LanguageCode } from 'react-native-translator';
-import Tts from 'react-native-tts';
+import * as Speech from 'expo-speech';
 
 import { ScrollView } from 'react-native';
 
@@ -100,38 +100,6 @@ export const TranslateProvider: React.FC = ({ children }) => {
     // const content = await Clipboard.getString();
     setText(content);
   }, []);
-
-  useEffect(() => {
-    const initializeTts = async () => {
-      try {
-        console.log('Initializing TTS...');
-
-        if (!Tts) {
-          console.error('Tts is not initialized');
-          return;
-        }
-
-        const availableVoices = await Tts.voices();
-        console.log('Available voices:', availableVoices);
-
-        const languageCode = ttsLanguage(toLanguage);
-        console.log(`Setting default language to: ${languageCode}`);
-
-        await Tts.setDefaultLanguage(languageCode);
-        console.log(`Successfully set default language to: ${languageCode}`);
-      } catch (error) {
-        console.error('Error setting default language for Tts:', error);
-        try {
-          await Tts.setDefaultLanguage('en-IE');
-          console.log('Fallback language set to en-IE');
-        } catch (fallbackError) {
-          console.error('Error setting fallback language to en-IE:', fallbackError);
-        }
-      }
-    };
-
-    initializeTts();
-  }, [toLanguage]);
 
   useEffect(() => {
     if (addHistoryTimer) clearTimeout(addHistoryTimer);

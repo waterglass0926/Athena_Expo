@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Screens from '@/screens/tinder/v1';
+import Screens from '@/screens/youtube/v1';
 import { navOptionHandler } from '@/utils';
 
 const StackYouTubeV1 = createStackNavigator();

@@ -5,7 +5,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { Icon } from 'react-native-elements';
 // import Clipboard from '@react-native-community/clipboard';
 import { Menu, MenuItem } from 'react-native-material-menu';
-import Tts from 'react-native-tts';
+import * as Speech from 'expo-speech';
 import Translator, { languageCodeConverter, TranslatorType } from 'react-native-translator';
 
 import { Share, StyleSheet, Text, View } from 'react-native';
@@ -13,6 +13,7 @@ import { Share, StyleSheet, Text, View } from 'react-native';
 import Components from '@/components/translator';
 import Constants from '@/constants';
 import Functions from '@/utils';
+import { ttsLanguage } from '@/utils/translate';
 import { TranslateContext } from '@/contexts/translator/TranslateContext';
 import { useNavigation } from '@/hooks/translator/useNavigation';
 import { ThemeType } from '@/types/athena';
@@ -41,9 +42,10 @@ export const TranslatedCard: React.FC<PropsType> = ({
   const [result, setResult] = useState('');
 
   const onTTS = useCallback(async () => {
-    await Tts.stop();
-    Tts.speak(result);
-  }, [result]);
+    // const languageCode = ttsLanguage(toLanguage);
+    const languageCode = languageCodeConverter('google', translatorType, toLanguage) || 'en-US';
+    Speech.speak(result, { language: languageCode });
+  }, [result, toLanguage, translatorType]);
 
   return (
     <View style={[styles.container, { backgroundColor: Constants.COLORS.TRANLSATOR[translatorType.toUpperCase()] }]}>
