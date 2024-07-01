@@ -16,7 +16,7 @@ export default DATA = {
     { key: 12, title: 'ChatGpt', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH101, navigation: 'ChatGpt' },
     { key: 13, title: 'UberEats', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH102, navigation: 'UberEats' },
     { key: 14, title: 'Translator', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH111, navigation: 'Translator' },
-    { key: 15, title: 'Schedule', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH111, navigation: 'ScheduleStack' }
+    { key: 15, title: 'Tinder', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH111, navigation: 'TinderV1' }
   ],
   LANGUAGES: [
     { key: 1, country: 'United States', language: 'English', code: 'en', flag: Images.ATHENA.FLAG001 },

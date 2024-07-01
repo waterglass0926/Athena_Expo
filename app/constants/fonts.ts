@@ -29,5 +29,10 @@ export default FONTS = {
       thin: require('@/assets/fonts/chatgpt/v1/Poppins-Thin.ttf'),
       thinItalic: require('@/assets/fonts/chatgpt/v1/Poppins-ThinItalic.ttf'),
     }
+  },
+  TINDER: {
+    V1: {
+      REGULAR: 'TinderV1'
+    }
   }
 };

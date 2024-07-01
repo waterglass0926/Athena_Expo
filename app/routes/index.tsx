@@ -7,6 +7,7 @@ import ChatGptStack from './stacks/chatgpt/v1';
 import UberEatsStack from './stacks/ubereats';
 import TikTokStack from './stacks/tiktok';
 import TranslatorStack from './stacks/translator';
+import TinderV1Stack from './stacks/tinder/v1';
 
 import { navOptionHandler } from '@/utils';
 
@@ -41,6 +42,11 @@ export default AppContainer = () => {
         <StackApp.Screen
           name='Translator'
           component={TranslatorStack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='TinderV1'
+          component={TinderV1Stack}
           options={navOptionHandler}
         />
       </StackApp.Navigator>

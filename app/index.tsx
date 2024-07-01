@@ -31,6 +31,7 @@ export default App = () => {
     Urbanist: require('@/assets/fonts/athena/Urbanist-Regular.ttf'),
     PoppinsRegular: require('@/assets/fonts/chatgpt/v1/Poppins-Regular.ttf'),
     PoppinsBold: require('@/assets/fonts/chatgpt/v1/Poppins-Bold.ttf'),
+    TinderV1: require('@/assets/fonts/tinder/v1/Tinder-Regular.ttf'),
   });
 
   useEffect(() => {
