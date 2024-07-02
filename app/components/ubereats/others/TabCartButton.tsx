@@ -5,7 +5,7 @@ import { Icon } from 'react-native-elements';
 import {
   StyleSheet,
   View,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -33,5 +33,5 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     borderColor: Constants.COLORS.UBEREATS.light,
     backgroundColor: Constants.COLORS.UBEREATS.white,
-  }
+  },
 });

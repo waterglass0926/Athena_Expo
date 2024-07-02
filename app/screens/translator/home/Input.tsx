@@ -1,6 +1,5 @@
 import React, { useContext, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 
@@ -21,7 +20,7 @@ interface StateType {
 
 export const HomeInput = () => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const inputRef = useRef<TextInput>(null);
 
@@ -40,7 +39,7 @@ export const HomeInput = () => {
         onChangeText={onChangeText}
         style={{
           ...styles.input,
-          color: theme.FORECOLOR
+          color: theme.FORECOLOR,
         }}
       />
       <Components.ButtonBorderLess

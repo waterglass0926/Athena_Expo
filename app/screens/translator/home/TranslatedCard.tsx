@@ -1,6 +1,5 @@
 import React, { useCallback, useContext, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 // import Clipboard from '@react-native-community/clipboard';
@@ -8,12 +7,11 @@ import { Menu, MenuItem } from 'react-native-material-menu';
 import * as Speech from 'expo-speech';
 import Translator, { languageCodeConverter, TranslatorType } from 'react-native-translator';
 
-import { Share, StyleSheet, Text, View } from 'react-native';
+import { Share, StyleSheet, View } from 'react-native';
 
 import Components from '@/components/translator';
 import Constants from '@/constants';
 import Functions from '@/utils';
-import { ttsLanguage } from '@/utils/translate';
 import { TranslateContext } from '@/contexts/translator/TranslateContext';
 import { useNavigation } from '@/hooks/translator/useNavigation';
 import { ThemeType } from '@/types/athena';
@@ -33,7 +31,7 @@ export const TranslatedCard: React.FC<PropsType> = ({
   translatorType,
 }) => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const { navigate } = useNavigation();
   const { reverseTranslate, fromLanguage, toLanguage, text } =

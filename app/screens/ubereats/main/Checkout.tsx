@@ -1,10 +1,8 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { useNavigation } from '@react-navigation/core';
-import { Icon } from 'react-native-elements';
 import tailwind from 'tailwind-react-native-classnames';
 import { useStripe } from '@stripe/stripe-react-native';
 
@@ -140,14 +138,14 @@ export const Checkout = () => {
       .add({
         items: allCartItems,
         email: user?.email,
-        timestamp
+        timestamp,
       })
       .then(() => {
         setTimeout(() => {
           setLoadingOrder(false);
           dispatch(updateBasket([]));
           navigation.navigate('UberEatsSuccess');
-        }, 1500)
+        }, 1500);
       })
       .catch(e => {
         setLoadingOrder(false);
@@ -166,7 +164,7 @@ export const Checkout = () => {
       ) : (
         <>
           <Components.PaymentScreen>
-            <Components.AppHead title={`Checkout`} />
+            <Components.AppHead title={'Checkout'} />
             <View style={tailwind`mt-5`}>
               <Components.PaymentButton
                 variant='primary'

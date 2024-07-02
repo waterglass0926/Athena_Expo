@@ -3,18 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import { Icon } from 'react-native-elements';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { ref, child, set, getDatabase } from 'firebase/database';
 
 import {
-  StyleSheet,
   View,
   Text,
   Image,
   Alert,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -22,7 +20,6 @@ import Components from '@/components/chatgpt/v1';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { auth } from '@/utils/firebase';
-import { setLoad } from '@/stores/athena';
 import { ThemeType } from '@/types/athena';
 
 type PropsType = {
@@ -39,7 +36,7 @@ interface StateType {
 export const SignUp: FC<PropsType> = ({ navigation }) => {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const [loading, setLoading] = useState(false);
   const [fullname, setFullname] = useState('');
@@ -55,7 +52,6 @@ export const SignUp: FC<PropsType> = ({ navigation }) => {
       Alert.alert('An error occurred', error);
     }
   }, [error]);
-
 
   const createUser = async (fullname, email, userId) => {
     const userData = {
@@ -78,7 +74,7 @@ export const SignUp: FC<PropsType> = ({ navigation }) => {
       const result = await createUserWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
       );
 
       const { uid } = result.user;
@@ -86,7 +82,7 @@ export const SignUp: FC<PropsType> = ({ navigation }) => {
       const userData = await createUser(
         fullname,
         email,
-        uid
+        uid,
       );
 
       if (userData) navigation.navigate('ChatGptSignIn');
@@ -177,7 +173,3 @@ export const SignUp: FC<PropsType> = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-
-});

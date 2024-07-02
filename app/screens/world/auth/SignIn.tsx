@@ -1,0 +1,152 @@
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+
+import {
+  StyleSheet,
+  StatusBar,
+  ScrollView,
+  View,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
+
+import '@/utils/i18n';
+import Components from '@/components/world';
+import Constants from '@/constants';
+import Functions from '@/utils';
+import { signIn } from '@/stores/world/auth';
+
+export const SignIn = (props) => {
+  const dispatch = useDispatch();
+  const { i18n, t } = useTranslation();
+  const { theme } = useSelector(state => state.athena);
+
+  const [email, setEmail] = useState('');
+  const [errorEmail, setErrorEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorPassword, setErrorPassword] = useState('');
+  const [passwordEye, setPasswordEye] = useState(true);
+
+  const onEmail = (value) => {
+    setEmail(value);
+    setErrorEmail('');
+  };
+
+  const onPassword = (value) => {
+    setPassword(value);
+    setErrorPassword('');
+  };
+
+  const onSignIn = () => {
+    let statusEmail;
+    let statusPassword;
+
+    if (Functions.isEmpty(email)) {
+      statusEmail = false;
+      setErrorEmail('Required field');
+    } else if (!Functions.isEmail(email)) {
+      statusEmail = false;
+      setErrorEmail('Invalid Email');
+    } else {
+      statusEmail = true;
+      setErrorEmail('');
+    }
+
+    if (Functions.isEmpty(password)) {
+      statusPassword = false;
+      setErrorPassword('Required field');
+    } else if (password?.length < 8) {
+      statusPassword = false;
+      setErrorPassword('Enter more 8 characters');
+    } else {
+      statusPassword = true;
+      setErrorPassword('');
+    }
+
+    if (statusEmail && statusPassword) {
+      dispatch(signIn({
+        type: 'World',
+        email,
+        password,
+      }));
+    };
+  };
+
+  return (
+    <View style={[styles.container, { backgroundColor: theme.BACKCOLOR }]}>
+      <StatusBar hidden />
+      <Components.Header
+        left
+        right
+        title='SIGN IN'
+        onTitle={() => props.navigation.popToTop()}
+      />
+      <ScrollView contentContainerStyle={styles.content}>
+        <Components.Input
+          label='Email *'
+          error={errorEmail}
+          marginTop={25}
+          leftIconType='material-community'
+          leftIconName='email'
+          autoCapitalize='none'
+          keyboardType='email-address'
+          value={email}
+          onChangeText={(value) => onEmail(value)}
+        />
+        <Components.Input
+          label='Password *'
+          error={errorPassword}
+          leftIconType='material'
+          leftIconName='password'
+          rightIconType='material-community'
+          rightIconName={passwordEye ? 'eye' : 'eye-off'}
+          secureTextEntry={passwordEye}
+          value={password}
+          onChangeText={(value) => onPassword(value)}
+          onRight={() => setPasswordEye(!passwordEye)}
+        />
+
+        <Components.Button
+          title={t('SIGN IN')}
+          marginTop={15}
+          height={35}
+          fontSize={15}
+          borderRadius={5}
+          foreColor={Constants.COLORS.DEFAULT.WHITE}
+          onPress={() => onSignIn()}
+        />
+
+        <View style={styles.viewBottom}>
+          <Text style={{ fontSize: 15, fontWeight: '500', color: theme.FORECOLOR }}>Don't have account? </Text>
+          <TouchableOpacity onPress={() => props.navigation.replace('WorldSignUp')}>
+            <Text style={{ fontSize: 15, fontWeight: '700', color: theme.PRIMARY }}>Create a new account</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.viewBottom}>
+          <TouchableOpacity disabled onPress={() => props.navigation.navigate('WorldForgot')}>
+            <Text style={{ fontSize: 15, fontWeight: '700', color: theme.PRIMARY }}>Forgot Password?</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  content: {
+    alignItems: 'center',
+    padding: 15,
+  },
+  viewBottom: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 15,
+    width: '100%',
+  },
+});

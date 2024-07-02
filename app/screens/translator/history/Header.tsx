@@ -1,10 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Components from '@/components/translator';
 import Constants from '@/constants';
@@ -22,20 +21,19 @@ interface StateType {
 export const HistoryHeader = () => {
   const { goBack } = useNavigation();
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
-
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <View style={{
       ...styles.container,
-      backgroundColor: theme.PRIMARY
+      backgroundColor: theme.PRIMARY,
     }}>
       <Components.ButtonBorderLess style={styles.icon} onPress={goBack}>
         <Icon type='material' size={24} color={Constants.COLORS.DEFAULT.WHITE} name='arrow-back' />
       </Components.ButtonBorderLess>
       <Components.TypoGraphy style={{
         ...styles.title,
-        color: Constants.COLORS.DEFAULT.WHITE
+        color: Constants.COLORS.DEFAULT.WHITE,
       }}>Translation History</Components.TypoGraphy>
     </View>
   );

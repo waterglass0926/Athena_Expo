@@ -1,7 +1,6 @@
-import React, { FC, useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import {
   StyleSheet,
@@ -24,14 +23,14 @@ interface StateType {
 
 export const Input = (props) => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <View style={styles.viewWrapper}>
       <View
         style={[styles.viewInput, {
           backgroundColor: theme.BACKCOLOR,
-          borderColor: theme.FORECOLOR
+          borderColor: theme.FORECOLOR,
         }]}
       >
         <TextInput
@@ -40,7 +39,7 @@ export const Input = (props) => {
           onChangeText={props.onChangeText}
           style={{
             ...styles.textInput,
-            color: theme.FORECOLOR
+            color: theme.FORECOLOR,
           }}
           placeholder={props.placeholder}
           placeholderTextColor={props.placeholderTextColor}

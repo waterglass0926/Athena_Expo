@@ -5,7 +5,7 @@ import Screens from '@/screens/athena';
 import { navOptionHandler } from '@/utils';
 
 const StackAthena = createStackNavigator();
-export default AthenaStack = () => {
+export const AthenaStack = () => {
   return (
     <StackAthena.Navigator
       initialRouteName='Theme'

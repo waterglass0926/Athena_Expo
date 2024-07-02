@@ -4,7 +4,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 
 import { AutoSizeText, ResizeTextMode } from 'react-native-auto-size-text';
 
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 
 import Components from '@/components/translator';
 import Constants from '@/constants';
@@ -26,9 +26,9 @@ interface StateType {
 };
 
 export const Full = () => {
-  const dispatch = useDispatch();
   const { goBack } = useNavigation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const dispatch = useDispatch();
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const {
     params: { color, content },
@@ -57,5 +57,5 @@ const styles = StyleSheet.create({
     width: hp('100%') - 160,
     height: wp('100%') - 80,
     transform: [{ rotate: '90deg' }],
-  }
+  },
 });

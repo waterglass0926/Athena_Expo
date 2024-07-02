@@ -46,7 +46,7 @@ export const ImageInput = ({ imageUri, onChangeImage }) => {
     if (!imageUri) selectImage();
     else Alert.alert('Delete', 'Are you sure you want to delete this image?', [
       { text: 'yes', onPress: () => onChangeImage(null) },
-      { text: 'no' }
+      { text: 'no' },
     ]);
   };
 
@@ -59,8 +59,8 @@ export const ImageInput = ({ imageUri, onChangeImage }) => {
           )}
       </View>
     </TouchableWithoutFeedback>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -74,6 +74,6 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: '100%'
-  }
+    height: '100%',
+  },
 });

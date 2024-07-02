@@ -1,14 +1,10 @@
-import React, { FC, useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import { Icon } from 'react-native-elements';
 import tailwind from 'tailwind-react-native-classnames';
 
 import {
-  StyleSheet,
-  ScrollView,
   View,
   Text,
   Image,
@@ -32,5 +28,3 @@ export const Grocery = () => {
     </Components.Screen>
   );
 };
-
-const styles = StyleSheet.create({});

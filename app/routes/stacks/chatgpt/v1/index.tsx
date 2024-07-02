@@ -1,13 +1,13 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import ChatGptAuthStack from './auth';
-import ChatGptBottomTab from '@/routes/tabs/chatgpt/v1/bottom';
+import { ChatGptAuthStack } from './auth';
+import { ChatGptBottomTab } from '@/routes/tabs/chatgpt/v1/bottom';
 import Screens from '@/screens/chatgpt/v1';
 import { navOptionHandler } from '@/utils';
 
 const StackChatGpt = createStackNavigator();
-export default ChatGptStack = () => {
+export const ChatGptStack = () => {
   return (
     <StackChatGpt.Navigator
       initialRouteName='ChatGptWelcome'

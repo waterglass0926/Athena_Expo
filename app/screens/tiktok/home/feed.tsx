@@ -1,7 +1,5 @@
 import React, { FC, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 import { Video } from 'expo-av';
@@ -9,13 +7,9 @@ import Lottie from 'lottie-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import {
-  Platform,
-  SafeAreaView,
-  StyleSheet,
-  StatusBar,
   Image,
   Animated,
-  Easing
+  Easing,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -51,7 +45,7 @@ interface Item {
 
 export const Feed: FC<PropsType> = ({ navigation, play, item }) => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const spinValue = new Animated.Value(0);
 

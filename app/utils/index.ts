@@ -1,5 +1,4 @@
 import { Alert } from 'react-native';
-import { validate } from 'validate.js';
 
 import Constants from '@/constants';
 
@@ -15,8 +14,8 @@ export const navOptionHandler = () => ({
 });
 
 export const isEmpty = (data: string | object | any[]) => {
-  return !data || data == undefined || data == null ||
-    (typeof data === 'string' && data == '') ||
+  return !data || data === undefined || data === null ||
+    (typeof data === 'string' && data === '') ||
     (Array.isArray(data) && data.length === 0);
 };
 
@@ -49,15 +48,15 @@ export const isOpacity = (hex, alpha = 1) => {
 
 export const isLog = (type: number, message: string) => {
   if (type === 1) {
-    console.log(`\x1b[32mSuccess: `, `\x1b[37m${message}`);
+    console.log('\x1b[32mSuccess: ', `\x1b[37m${message}`);
   } else if (type === 2) {
-    console.log(`\x1b[31mError: `, `\x1b[37m${message}`);
+    console.log('\x1b[31mError: ', `\x1b[37m${message}`);
   } else if (type === 3) {
-    console.log(`\x1b[33mInfo: `, `\x1b[37m${message}`);
+    console.log('\x1b[33mInfo: ', `\x1b[37m${message}`);
   } else if (type === 4) {
-    console.log(`\x1b[35mAthena: `, `\x1b[37m${message}`);
+    console.log('\x1b[35mAthena: ', `\x1b[37m${message}`);
   } else if (type === 5) {
-    console.log(`\x1b[36mQueen: `, `\x1b[37m${message}`);
+    console.log('\x1b[36mQueen: ', `\x1b[37m${message}`);
   }
 };
 
@@ -94,8 +93,8 @@ export const getAllCartFoods = (items) => {
   const foodsData = items.map(x => x.foods);
   foodsData.map(food => {
     food.map(x => {
-      allFoods = [...allFoods, x]
-    })
+      allFoods = [...allFoods, x];
+    });
   });
   return allFoods;
 };
@@ -105,8 +104,8 @@ export const getTotalCartItemPrice = (items) => {
   const foodsData = items.map(x => x.foods);
   foodsData.map(food => {
     food.map(x => {
-      allFoods = [...allFoods, x]
-    })
+      allFoods = [...allFoods, x];
+    });
   });
   return allFoods.reduce((total, item) => total + item.price, 0).toFixed(1);
 };
@@ -114,17 +113,17 @@ export const getTotalCartItemPrice = (items) => {
 export const fetchPublishableKey = async () => {
   try {
     const response = await fetch(
-      `${Constants.URLS.UBEREATS.BASEURL}/stripe-key`
+      `${Constants.URLS.UBEREATS.BASEURL}/stripe-key`,
     );
 
     const { publishableKey } = await response.json();
 
     return publishableKey;
-  } catch (e) {
+  } catch (error) {
     console.warn('Unable to fetch publishable key. Is your server running?');
     Alert.alert(
       'Error',
-      'Unable to fetch publishable key. Is your server running?'
+      'Unable to fetch publishable key. Is your server running?',
     );
     return null;
   };

@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
   text: {
     color: Constants.COLORS.UBEREATS.white,
     fontSize: 18,
-    fontWeight: '700'
-  }
+    fontWeight: '700',
+  },
 });

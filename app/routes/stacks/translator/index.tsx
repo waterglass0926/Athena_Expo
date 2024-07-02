@@ -1,12 +1,12 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import TranslatorHomeStack from './home';
+import { TranslatorHomeStack } from './home';
 import Screens from '@/screens/translator';
 import { navOptionHandler } from '@/utils';
 
 const StackTranslator = createStackNavigator();
-export default TranslatorStack = () => {
+export const TranslatorStack = () => {
   return (
     <StackTranslator.Navigator
       initialRouteName='TranslatorSplash'

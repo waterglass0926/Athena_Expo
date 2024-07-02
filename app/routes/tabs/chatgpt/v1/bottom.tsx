@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 
-import '@/utils/i18n';
-import ChatGptHomeStack from '@/routes/stacks/chatgpt/v1/home';
+import { ChatGptHomeStack } from '@/routes/stacks/chatgpt/v1/home';
 import Screens from '@/screens/chatgpt/v1';
 import Constants from '@/constants';
-import Functtions, { navOptionHandler } from '@/utils';
+import Functtions from '@/utils';
 import { ThemeType } from '@/types/athena';
 
 interface StateType {
@@ -21,10 +18,8 @@ interface StateType {
 };
 
 const TabChatGptBottom = createBottomTabNavigator();
-export default ChatGptBottomTab = () => {
-  const dispatch = useDispatch();
-  const { i18n, t } = useTranslation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+export const ChatGptBottomTab = () => {
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <TabChatGptBottom.Navigator
@@ -34,7 +29,7 @@ export default ChatGptBottomTab = () => {
           backgroundColor: theme.FORECOLOR,
         },
         tabBarActiveTintColor: theme.PRIMARY,
-        tabBarInactiveTintColor: theme.BACKCOLOR
+        tabBarInactiveTintColor: theme.BACKCOLOR,
       })}
     >
       <TabChatGptBottom.Screen

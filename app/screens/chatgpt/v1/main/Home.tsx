@@ -1,7 +1,6 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -10,7 +9,7 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -33,7 +32,7 @@ interface StateType {
 export const Home: FC<PropsType> = ({ navigation }) => {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <SafeAreaView
@@ -91,7 +90,7 @@ export const Home: FC<PropsType> = ({ navigation }) => {
         <TouchableOpacity
           style={{
             ...styles.buttonChat,
-            backgroundColor: theme.PRIMARY
+            backgroundColor: theme.PRIMARY,
           }}
           onPress={() => navigation.navigate('ChatGptChat')}
         >

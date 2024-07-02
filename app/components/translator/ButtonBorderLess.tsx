@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Pressable, PressableProps, } from 'react-native';
+import { Pressable, PressableProps } from 'react-native';
 
 export const ButtonBorderLess: React.FC<PressableProps> = props => {
   const [radius, setRadius] = useState<number>();
@@ -16,5 +16,3 @@ export const ButtonBorderLess: React.FC<PressableProps> = props => {
     />
   );
 };
-
-const styles = StyleSheet.create({});

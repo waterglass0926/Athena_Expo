@@ -1,15 +1,12 @@
-import React, { FC, useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import { Icon } from 'react-native-elements';
 import tailwind from 'tailwind-react-native-classnames';
 import { useNavigation } from '@react-navigation/native';
 
 import {
   StyleSheet,
-  ScrollView,
   View,
   Text,
   Image,
@@ -41,7 +38,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: Constants.COLORS.UBEREATS.white
+    backgroundColor: Constants.COLORS.UBEREATS.white,
   },
   content: {
     justifyContent: 'center',
@@ -56,10 +53,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width: 280,
     textAlign: 'center',
-    color: Constants.COLORS.UBEREATS.gray
+    color: Constants.COLORS.UBEREATS.gray,
   },
   buttons: {
     marginTop: 20,
     width: '70%',
-  }
+  },
 });

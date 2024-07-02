@@ -4,11 +4,13 @@ import { persistReducer, persistStore } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import athenaSlice from './athena';
+import worldAuthSlice from './world/auth';
 import uberEatsAuthSlice from './ubereats/auth';
 import uberEatsBasketSlice from './ubereats/basket';
 
 export const rootReducer = combineReducers({
   athena: athenaSlice.reducer,
+  worldAuth: worldAuthSlice.reducer,
   uberEatsAuth: uberEatsAuthSlice.reducer,
   uberEatsBasket: uberEatsBasketSlice.reducer,
 });
@@ -17,7 +19,7 @@ const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
   timeout: 1000,
-  whitelist: [''],
+  whitelist: ['worldAuth'],
   blacklist: ['athena'],
 };
 

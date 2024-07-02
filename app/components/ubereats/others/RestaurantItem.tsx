@@ -48,7 +48,7 @@ export const RestaurantItem = ({ restaurantData }) => {
 
   const handlePress = (item) => {
     navigation.navigate('UberEatsDetails', {
-      item: { ...item }
+      item: { ...item },
     });
   };
 

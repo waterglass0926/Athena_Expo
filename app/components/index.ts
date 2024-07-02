@@ -5,5 +5,5 @@ import { ThemedView } from './athena/ThemedView';
 export default {
   Loading,
   ThemedText,
-  ThemedView
+  ThemedView,
 };

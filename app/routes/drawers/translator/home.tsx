@@ -8,7 +8,7 @@ export type DrawerParamList = {
 };
 
 const TranslatorDrawerHome = createDrawerNavigator<DrawerParamList>();
-export default TranslatorHomeDrawer = () => {
+export const TranslatorHomeDrawer = () => {
   return (
     <TranslatorDrawerHome.Navigator
       initialRouteName='Home'

@@ -9,13 +9,9 @@ import Lottie from 'lottie-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import {
-  Platform,
-  SafeAreaView,
-  StyleSheet,
-  StatusBar,
   Image,
   Animated,
-  Easing
+  Easing,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -50,7 +46,7 @@ interface Item {
 
 export const Feed: FC<PropsType> = ({ navigation, play, item }) => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const spinValue = new Animated.Value(0);
 

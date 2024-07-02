@@ -1,19 +1,13 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import { Icon } from 'react-native-elements';
 import tailwind from 'tailwind-react-native-classnames';
 
 import {
-  StyleSheet,
   ScrollView,
-  View,
-  Text,
-  Image,
   Alert,
-  ActivityIndicator
+  ActivityIndicator,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -37,17 +31,17 @@ export const Home = () => {
         Authorization: `Bearer ${YELP_API_KEY}`,
       },
     };
-    setLoading(true)
+    setLoading(true);
     return fetch(yelpUrl, apiOptions)
       .then((res) => res.json())
       .then((json) => {
-        setLoading(false)
+        setLoading(false);
         if (json.error) return Alert.alert('Sorry', json.error.description);
         setRestaurantData(
           json?.businesses?.filter((business) =>
-            business.transactions.includes(activeTab.toLowerCase())
-          )
-        )
+            business.transactions.includes(activeTab.toLowerCase()),
+          ),
+        );
       });
   };
 
@@ -67,5 +61,3 @@ export const Home = () => {
     </Components.Screen>
   );
 };
-
-const styles = StyleSheet.create({});

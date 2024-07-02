@@ -10,5 +10,5 @@ export default {
   Discover,
   Home,
   Inbox,
-  Profile
+  Profile,
 };

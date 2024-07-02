@@ -25,5 +25,5 @@ export const meals = [
   { title: 'Spring onion and prawn empanadas', image: 'https://www.themealdb.com/images/media/meals/1c5oso1614347493.jpg', id: '5304m0' },
   { title: 'Three Fish Pie', image: 'https://www.themealdb.com/images/media/meals/spswqs1511558697.jpg', id: '528y82' },
   { title: 'Tuna and Egg Briks', image: 'https://www.themealdb.com/images/media/meals/2dsltq1560461468.jpg', id: '529u75' },
-  { title: 'Tuna Nicoise', image: 'https://www.themealdb.com/images/media/meals/yypwwq1511304979.jpg', id: '5285i2' }
-]
+  { title: 'Tuna Nicoise', image: 'https://www.themealdb.com/images/media/meals/yypwwq1511304979.jpg', id: '5285i2' },
+];

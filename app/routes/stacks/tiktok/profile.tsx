@@ -5,7 +5,7 @@ import Screens from '@/screens/tiktok';
 import { navOptionHandler } from '@/utils';
 
 const StackTikTokProfile = createStackNavigator();
-export default TikTokProfileStack = () => {
+export const TikTokProfileStack = () => {
   return (
     <StackTikTokProfile.Navigator
       initialRouteName='TikTokProfile'

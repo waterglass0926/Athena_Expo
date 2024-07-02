@@ -24,9 +24,9 @@ const initialState: StateType = {
     TERTIARY: Constants.COLORS.ACTION[16].TERTIARY,
     QUATERNARY: Constants.COLORS.ACTION[16].QUATERNARY,
     BACKCOLOR: Constants.COLORS.THEME[4].LIGHT,
-    FORECOLOR: Constants.COLORS.THEME[4].NIGHT
+    FORECOLOR: Constants.COLORS.THEME[4].NIGHT,
   },
-  language: Constants.DATA.LANGUAGES[0]
+  language: Constants.DATA.LANGUAGES[0],
 };
 
 // Define your slice

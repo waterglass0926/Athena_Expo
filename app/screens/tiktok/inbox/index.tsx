@@ -1,17 +1,5 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
-import { Icon } from 'react-native-elements';
-
-import {
-  Platform,
-  SafeAreaView,
-  StyleSheet,
-  StatusBar,
-  View,
-} from 'react-native';
 
 import '@/utils/i18n';
 import Components from '@/components/tiktok';
@@ -33,7 +21,7 @@ interface StateType {
 
 export const Inbox: FC<PropsType> = ({ navigation }) => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <Styles.InboxContainer>

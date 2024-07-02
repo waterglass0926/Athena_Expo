@@ -23,5 +23,5 @@ export default {
   Details,
   Grocery,
   Home,
-  Success
-}
+  Success,
+};

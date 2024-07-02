@@ -22,10 +22,17 @@ export default IMAGES = {
     FLAG008: require('@/assets/images/athena/flags/flag107.png'),
     FLAG009: require('@/assets/images/athena/flags/flag108.png'),
   },
+  WORLD: {
+    LOGO: require('@/assets/images/world/logo.png'),
+    W001: require('@/assets/images/world/world001.jpg'),
+    W101: require('@/assets/images/world/world101.jpg'),
+    W102: require('@/assets/images/world/world102.webp'),
+    W103: require('@/assets/images/world/world103.jpg'),
+  },
   CHATGPT: {
     V1: {
       LOGO: require('@/assets/images/chatgpt/v1/logo.png'),
       AVATAR: require('@/assets/images/chatgpt/v1/avatar.jpg'),
-    }
-  }
+    },
+  },
 };

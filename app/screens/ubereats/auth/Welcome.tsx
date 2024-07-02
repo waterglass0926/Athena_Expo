@@ -1,14 +1,9 @@
-import React, { FC, useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
-import { Icon } from 'react-native-elements';
-import tailwind from 'tailwind-react-native-classnames';
 
 import {
   StyleSheet,
-  ScrollView,
   View,
   Text,
   Image,
@@ -52,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     width: '100%',
     resizeMode: 'cover',
-    backgroundColor: Constants.COLORS.UBEREATS.dark
+    backgroundColor: Constants.COLORS.UBEREATS.dark,
   },
   content: {
     paddingHorizontal: 25,

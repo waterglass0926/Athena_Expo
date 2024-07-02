@@ -1,13 +1,13 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import UberEatsAuthStack from './auth';
-import UberEatsBottomTab from '@/routes/tabs/ubereats/bottom';
+import { UberEatsAuthStack } from './auth';
+import { UberEatsBottomTab } from '@/routes/tabs/ubereats/bottom';
 import Screens from '@/screens/ubereats';
 import { navOptionHandler } from '@/utils';
 
 const StackUberEats = createStackNavigator();
-export default UberEatsStack = () => {
+export const UberEatsStack = () => {
   return (
     <StackUberEats.Navigator
       initialRouteName='UberEatsWelcome'

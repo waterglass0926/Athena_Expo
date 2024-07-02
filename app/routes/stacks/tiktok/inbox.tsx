@@ -5,7 +5,7 @@ import Screens from '@/screens/tiktok';
 import { navOptionHandler } from '@/utils';
 
 const StackTikTokInbox = createStackNavigator();
-export default TikTokInboxStack = () => {
+export const TikTokInboxStack = () => {
   return (
     <StackTikTokInbox.Navigator
       initialRouteName='TikTokInbox'

@@ -25,7 +25,7 @@ interface StateType {
 
 export const Button = (props) => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const filledBgColor = props.color || theme.PRIMARY;
   const outlinedBgColor = Constants.COLORS.DEFAULT.WHITE;

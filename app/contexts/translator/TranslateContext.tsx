@@ -11,15 +11,13 @@ import React, {
 // import Clipboard from '@react-native-community/clipboard';
 import InAppReview from 'react-native-in-app-review';
 import { LanguageCode } from 'react-native-translator';
-import * as Speech from 'expo-speech';
 
 import { ScrollView } from 'react-native';
 
 import '@/utils/i18n';
 import { HistoryContext } from './HistoryContext';
-import Constants, { STOREAGE_HISTORYS_ID } from '@/constants';
+import Constants from '@/constants';
 import Functtions from '@/utils';
-import { ttsLanguage } from '@/utils/translate';
 import { History } from '@/types/translator';
 
 export interface TranslatedData {

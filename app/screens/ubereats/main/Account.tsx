@@ -1,7 +1,6 @@
-import React, { FC, useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 import tailwind from 'tailwind-react-native-classnames';
@@ -30,7 +29,7 @@ export const Account = () => {
 
   return (
     <Components.Screen style={tailwind`flex-1 bg-white`}>
-      <Components.AppHead title={`Account`} icon='settings-outline' />
+      <Components.AppHead title={'Account'} icon='settings-outline' />
       <View style={tailwind`justify-center items-center`}>
         <View style={tailwind`rounded-full overflow-hidden w-48 h-48 mt-4`}>
           <Image source={require('@/assets/images/ubereats/avatar.gif')} style={tailwind`w-48 h-48`} />

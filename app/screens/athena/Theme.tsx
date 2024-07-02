@@ -10,7 +10,7 @@ import {
   ScrollView,
   View,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -40,7 +40,7 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
       TERTIARY: action.TERTIARY,
       QUATERNARY: action.QUATERNARY,
       BACKCOLOR: mode === 'LIGHT' ? theme.LIGHT : theme.NIGHT,
-      FORECOLOR: mode === 'NIGHT' ? theme.LIGHT : theme.NIGHT
+      FORECOLOR: mode === 'NIGHT' ? theme.LIGHT : theme.NIGHT,
     }));
   }, [mode, theme, action]);
 
@@ -57,13 +57,13 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
       <View style={{
         ...Constants.STYLES.CONTENT,
         ...Constants.STYLES.ALIGN_ROW_SPACE_BETWEEN,
-        ...styles.viewHeader
+        ...styles.viewHeader,
       }}>
         <TouchableOpacity
           style={{
             ...Constants.STYLES.ALIGN_COL_CENTER,
             width: 30,
-            height: 30
+            height: 30,
           }}
           onPress={onMode}
         >
@@ -76,7 +76,7 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
         </TouchableOpacity>
         <Text style={{
           ...Constants.STYLES.TEXT_HEADER,
-          color: Constants.COLORS.DEFAULT.WHITE
+          color: Constants.COLORS.DEFAULT.WHITE,
         }}>
           {'MODE & THEME'}
         </Text>
@@ -84,7 +84,7 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
           style={{
             ...Constants.STYLES.ALIGN_COL_CENTER,
             width: 30,
-            height: 30
+            height: 30,
           }}
           onPress={onNext}
         >
@@ -109,9 +109,9 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
           ...Constants.STYLES.ALIGN_ROW_SPACE_BETWEEN,
           ...styles.buttonTheme,
           borderColor:
-            value.INDEX == theme.INDEX
+            value.INDEX === theme.INDEX
               ? Constants.COLORS.DEFAULT.BLUE
-              : Constants.COLORS.DEFAULT.WHITE
+              : Constants.COLORS.DEFAULT.WHITE,
         }}
       >
         <View style={{
@@ -126,7 +126,7 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
             name='check'
             size={Constants.SIZE.S24}
             color={
-              (value.INDEX == theme.INDEX && mode === 'LIGHT')
+              (value.INDEX === theme.INDEX && mode === 'LIGHT')
                 ? Constants.COLORS.DEFAULT.BLACK
                 : value.LIGHT
             }
@@ -137,14 +137,14 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
           ...styles.viewTheme,
           borderTopRightRadius: Constants.SIZE.S08,
           borderBottomRightRadius: Constants.SIZE.S08,
-          backgroundColor: value.NIGHT
+          backgroundColor: value.NIGHT,
         }}>
           <Icon
             type='material'
             name='check'
             size={Constants.SIZE.S24}
             color={
-              (value.INDEX == theme.INDEX && mode === 'NIGHT')
+              (value.INDEX === theme.INDEX && mode === 'NIGHT')
                 ? Constants.COLORS.DEFAULT.WHITE
                 : value.NIGHT
             }
@@ -170,7 +170,7 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
               value.INDEX == action.INDEX
                 ? Constants.COLORS.DEFAULT.BLUE
                 : Constants.COLORS.DEFAULT.WHITE,
-            backgroundColor: value.PRIMARY
+            backgroundColor: value.PRIMARY,
           }}
         >
           <Icon
@@ -178,7 +178,7 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
             name='check'
             size={Constants.SIZE.S24}
             color={
-              value.INDEX == action.INDEX
+              value.INDEX === action.INDEX
                 ? Constants.COLORS.DEFAULT.WHITE
                 : value.PRIMARY
             }
@@ -187,13 +187,13 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
         <Text style={{
           ...Constants.STYLES.TEXT_SUBTITLE,
           marginTop: Constants.SIZE.S04,
-          color: action.QUATERNARY
+          color: action.QUATERNARY,
         }}>
           {value.NAME}
         </Text>
         <Text style={{
           ...Constants.STYLES.TEXT_DESCRIPTION,
-          color: action.TERTIARY
+          color: action.TERTIARY,
         }}>
           {value.PRIMARY}
         </Text>
@@ -205,13 +205,13 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
     <View style={{
       ...Constants.STYLES.CONTAINER,
       ...Constants.STYLES.ALIGN_COL_FLEX_START,
-      backgroundColor: action.PRIMARY
+      backgroundColor: action.PRIMARY,
     }}>
       {RenderHeader()}
       <View style={{
         ...Constants.STYLES.CONTAINER,
         ...styles.viewContent,
-        backgroundColor: mode === 'LIGHT' ? theme.LIGHT : theme.NIGHT
+        backgroundColor: mode === 'LIGHT' ? theme.LIGHT : theme.NIGHT,
       }}>
         <ScrollView
           key='scroll00'
@@ -220,26 +220,26 @@ export const Theme: FC<PropsType> = ({ navigation }) => {
         >
           <Text style={{
             ...Constants.STYLES.TEXT_TITLE,
-            color: action.PRIMARY
+            color: action.PRIMARY,
           }}>
             {'Theme'}
           </Text>
           <View style={{
             ...Constants.STYLES.ALIGN_ROW_SPACE_BETWEEN,
             flexWrap: 'wrap',
-            marginBottom: Constants.SIZE.S16
+            marginBottom: Constants.SIZE.S16,
           }}>
             {Constants.COLORS.THEME.map((item) => RenderTheme(item))}
           </View>
           <Text style={{
             ...Constants.STYLES.TEXT_TITLE,
-            color: action.PRIMARY
+            color: action.PRIMARY,
           }}>
             {'Action'}
           </Text>
           <View style={{
             ...Constants.STYLES.ALIGN_ROW_SPACE_AROUND,
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
           }}>
             {Constants.COLORS.ACTION.map((item) => RenderAction(item))}
           </View>
@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
   viewHeader: {
     paddingTop: 50,
     paddingBottom: 30,
-    paddingHorizontal: Constants.SIZE.S16
+    paddingHorizontal: Constants.SIZE.S16,
   },
   viewContent: {
     paddingVertical: Constants.SIZE.S20,

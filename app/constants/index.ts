@@ -1,5 +1,14 @@
-import { Platform, Dimensions } from 'react-native';
+import { Platform } from 'react-native';
 import { LanguageCode } from 'react-native-translator';
+
+import STYLES, { SIZE } from './styles';
+import COLORS from './colors';
+import IAMGES from './images';
+import ICONS from './icons';
+import SVGS from './svgs';
+import FONTS from './fonts';
+import URLS from './urls';
+import DATA from './data';
 
 export const IS_ANDROID = Platform.OS === 'android';
 export const IS_IOS = Platform.OS === 'ios';
@@ -26,15 +35,6 @@ export const LANGUAGES_CODES: LanguageCode<'google'>[] = [
 ];
 export const PLAYSTORE_URL = 'https://play.google.com/store/apps/details?id=com.koreanthinker.translators';
 export const RATE_UNIT = 30;
-
-import STYLES, { SIZE } from './styles';
-import COLORS from './colors';
-import IAMGES from './images';
-import ICONS from './icons';
-import SVGS from './svgs';
-import FONTS from './fonts';
-import URLS from './urls';
-import DATA from './data';
 
 export default {
   STYLES,

@@ -5,10 +5,9 @@ import tailwind from 'tailwind-react-native-classnames';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 import {
-  StyleSheet,
   View,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -48,7 +47,7 @@ export const SearchBar = ({ setCity, city }) => {
             justifyContent: 'center',
             backgroundColor: '#F3F4F6',
             borderRadius: 40,
-          }
+          },
         }}
         enablePoweredByContainer={false}
         renderLeftButton={() => (
@@ -66,5 +65,3 @@ export const SearchBar = ({ setCity, city }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({});

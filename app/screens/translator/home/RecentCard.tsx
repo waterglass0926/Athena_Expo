@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Components from '@/components/translator';
 import Constants from '@/constants';
@@ -22,7 +21,7 @@ interface StateType {
 
 export const RecentCard: React.FC<History> = props => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const { applyHistory } = useContext(TranslateContext);
   const { text } = props;
@@ -30,7 +29,7 @@ export const RecentCard: React.FC<History> = props => {
   return (
     <View style={{
       ...styles.container,
-      backgroundColor: Constants.COLORS.DEFAULT.GRAY
+      backgroundColor: Constants.COLORS.DEFAULT.GRAY,
     }}>
       <Components.TypoGraphy style={styles.title}>Recent Search</Components.TypoGraphy>
       <Components.TypoGraphy style={styles.text}>{text}</Components.TypoGraphy>

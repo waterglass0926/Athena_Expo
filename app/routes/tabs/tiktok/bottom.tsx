@@ -1,28 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import Toast from 'react-native-toast-message';
 import { Icon } from 'react-native-elements';
 
 import {
-  Platform,
-  SafeAreaView,
-  StyleSheet,
   StatusBar,
-  Text
+  Text,
 } from 'react-native';
 
-import '@/utils/i18n';
-// import TikTokHomeStack from '@/routes/stacks/tiktok/home';
-import TikTokDiscoverStack from '@/routes/stacks/tiktok/discover';
-import TikTokInboxStack from '@/routes/stacks/tiktok/inbox';
-import TikTokProfileStack from '@/routes/stacks/tiktok/profile';
+import { TikTokHomeStack } from '@/routes/stacks/tiktok/home';
+import { TikTokDiscoverStack } from '@/routes/stacks/tiktok/discover';
+import { TikTokInboxStack } from '@/routes/stacks/tiktok/inbox';
+import { TikTokProfileStack } from '@/routes/stacks/tiktok/profile';
 import Screens from '@/screens/tiktok';
 import Constants from '@/constants';
-import Functtions, { navOptionHandler } from '@/utils';
-import { ThemeType } from '@types/athena';
+import Functtions from '@/utils';
+import { ThemeType } from '@/types/athena';
 
 interface StateType {
   athena: {
@@ -32,9 +26,8 @@ interface StateType {
 };
 
 const TabTikTokBottom = createBottomTabNavigator();
-export default TikTokBottomTab = () => {
-  const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+export const TikTokBottomTab = () => {
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   StatusBar.setBarStyle('dark-content');
 

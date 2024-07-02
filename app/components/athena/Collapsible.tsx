@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import Icon from 'react-native-elements'
+import Icon from 'react-native-elements';
 
 import {
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import { ThemedText } from './ThemedText';
@@ -27,7 +27,7 @@ interface StateType {
 
 export function Collapsible({ children, title }: PropsWithChildren & { title: string }) {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const [isOpen, setIsOpen] = useState(false);
 

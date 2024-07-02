@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -8,12 +8,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Bubble, GiftedChat } from 'react-native-gifted-chat';
 
 import {
-  StyleSheet,
   View,
-  Text,
   Image,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -37,11 +35,11 @@ interface StateType {
 export const Chat: FC<PropsType> = ({ navigation }) => {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const [inputMessage, setInputMessage] = useState('');
   const [outputMessage, setOutputMessage] = useState(
-    'Results should be shown here.'
+    'Results should be shown here.',
   );
   const [isTyping, setIsTyping] = useState(false);
 
@@ -219,7 +217,7 @@ export const Chat: FC<PropsType> = ({ navigation }) => {
       );
     };
 
-    return <Bubble {...props} />;
+    return (<Bubble {...props} />);
   };
 
   return (
@@ -298,7 +296,7 @@ export const Chat: FC<PropsType> = ({ navigation }) => {
             backgroundColor: theme.BACKCOLOR,
             borderRadius: 12,
             borderColor: theme.FORECOLOR,
-            borderWidth: .2
+            borderWidth: .2,
           }}
         >
           <TextInput
@@ -333,7 +331,3 @@ export const Chat: FC<PropsType> = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-
-});

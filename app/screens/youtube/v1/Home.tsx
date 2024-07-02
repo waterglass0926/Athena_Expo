@@ -1,14 +1,6 @@
 import React, { useLayoutEffect, useState } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
-import {
-  TvIcon,
-  BellAlertIcon,
-  MagnifyingGlassIcon,
-  UserIcon,
-} from 'react-native-heroicons/solid';
-
-import { View, Text, Image, SafeAreaView } from 'react-native';
 
 import Components from '@/components/youtube/v1';
 

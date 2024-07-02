@@ -5,7 +5,7 @@ import Screens from '@/screens/ubereats';
 import { navOptionHandler } from '@/utils';
 
 const StackUberEatsAuth = createStackNavigator();
-export default UberEatsAuthStack = () => {
+export const UberEatsAuthStack = () => {
   return (
     <StackUberEatsAuth.Navigator
       initialRouteName='UberEatsSignUp'

@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { Keyboard, ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import { HomeHeader } from './Header';
 import { HomeInput } from './Input';
 import { LanguageSelector } from './LanguageSelector';
 import { RecentCard } from './RecentCard';
 import { TranslatedCard } from './TranslatedCard';
+
 import Constants from '@/constants';
 import { TranslateContext } from '@/contexts/translator/TranslateContext';
 import { HistoryContext } from '@/contexts/translator/HistoryContext';
@@ -26,7 +26,7 @@ interface StateType {
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const { scrollViewRef } = useContext(TranslateContext);
   const { historys } = useContext(HistoryContext);
@@ -36,7 +36,7 @@ export const Home = () => {
   return (
     <View style={{
       ...styles.container,
-      backgroundColor: theme.BACKCOLOR
+      backgroundColor: theme.BACKCOLOR,
     }}>
       <HomeHeader />
       <LanguageSelector />
@@ -62,6 +62,6 @@ export const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Constants.SIZE.S48
+    paddingTop: Constants.SIZE.S48,
   },
 });

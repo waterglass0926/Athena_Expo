@@ -1,16 +1,11 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
-import { Icon } from 'react-native-elements';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 import {
-  StyleSheet,
   View,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -33,7 +28,7 @@ interface StateType {
 export const Profile: FC<PropsType> = ({ navigation }) => {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <View style={{
@@ -43,12 +38,8 @@ export const Profile: FC<PropsType> = ({ navigation }) => {
       backgroundColor: theme.BACKCOLOR,
     }}>
       <Text style={{
-        color: theme.FORECOLOR
+        color: theme.FORECOLOR,
       }}>Profile</Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-
-});

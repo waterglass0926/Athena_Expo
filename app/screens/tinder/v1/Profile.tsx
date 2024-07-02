@@ -5,7 +5,7 @@ import {
   View,
   Text,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import Demo from '@/assets/data/tinder/v1/demo';
@@ -22,7 +22,7 @@ export const Profile = () => {
     info4,
     location,
     match,
-    name
+    name,
   } = Demo[7];
 
   return (

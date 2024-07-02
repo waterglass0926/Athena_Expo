@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import CardStack, { Card } from 'react-native-card-stack-swiper';
 
@@ -9,6 +9,8 @@ import Components from '@/components/tinder/v1';
 import Styles from '@/styles/tinder/v1';
 
 export const Home = () => {
+  const swiperRef = useRef(null);
+
   return (
     <ImageBackground
       source={require('@/assets/images/tinder/v1/bg.png')}
@@ -24,7 +26,7 @@ export const Home = () => {
           loop={true}
           verticalSwipe={false}
           renderNoMoreCards={() => null}
-          ref={swiper => (this.swiper = swiper)}
+          ref={swiperRef}
         >
           {Demo.map((item, index) => (
             <Card key={index}>
@@ -34,8 +36,8 @@ export const Home = () => {
                 description={item.description}
                 matches={item.match}
                 actions
-                onPressLeft={() => this.swiper.swipeLeft()}
-                onPressRight={() => this.swiper.swipeRight()}
+                onPressLeft={() => swiperRef.current.swipeLeft()}
+                onPressRight={() => swiperRef.current.swipeRight()}
               />
             </Card>
           ))}

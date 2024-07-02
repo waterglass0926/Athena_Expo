@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { View, StyleSheet, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 
 import tailwind from 'tailwind-react-native-classnames';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
@@ -75,5 +75,3 @@ export const CartItems = () => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({});

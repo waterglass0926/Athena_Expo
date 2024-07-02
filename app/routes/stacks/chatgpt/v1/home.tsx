@@ -5,7 +5,7 @@ import Screens from '@/screens/chatgpt/v1';
 import { navOptionHandler } from '@/utils';
 
 const StackChatGptHome = createStackNavigator();
-export default ChatGptHomeStack = () => {
+export const ChatGptHomeStack = () => {
   return (
     <StackChatGptHome.Navigator
       initialRouteName='ChatGptHome'

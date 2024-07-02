@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   title: {
-    marginLeft: 10
-  }
+    marginLeft: 10,
+  },
 });

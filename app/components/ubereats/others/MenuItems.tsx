@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import tailwind from 'tailwind-react-native-classnames';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 import '@/utils/i18n';
 import Constants from '@/constants';
@@ -53,7 +53,7 @@ export const MenuItems = ({ resName, resImage }) => {
       let newResFoodArray = [...oldArrays, {
         foods: [{ ...foodItem }],
         resName,
-        resImage
+        resImage,
       }];
       dispatch(updateBasket(newResFoodArray));
     };
@@ -83,5 +83,3 @@ export const MenuItems = ({ resName, resImage }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({});

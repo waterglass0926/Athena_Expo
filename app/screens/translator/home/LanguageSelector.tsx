@@ -1,16 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 import { Menu, MenuItem } from 'react-native-material-menu';
 import { LanguageCode } from 'react-native-translator';
 
 import {
-  ActivityIndicator,
   Pressable,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
 
@@ -30,7 +27,7 @@ interface StateType {
 
 export const LanguageSelector = () => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const {
     toLanguage,
@@ -46,7 +43,7 @@ export const LanguageSelector = () => {
   return (
     <View style={{
       ...styles.container,
-      backgroundColor: theme.BACKCOLOR
+      backgroundColor: theme.BACKCOLOR,
     }}>
       <Pressable
         onPress={() => setFromMenuVisible(true)}
@@ -97,7 +94,7 @@ const LanguageSelectMenu: React.FC<LanguageSelectMenu> = ({
 }) => {
   const dispatch = useDispatch();
   // const { i18n, t } = useTranslation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <Menu style={{ backgroundColor: theme.BACKCOLOR }} visible={visible} anchor={children} onRequestClose={onRequestClose}>

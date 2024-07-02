@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 
-import TranslatorHomeDrawer, { DrawerParamList } from '@/routes/drawers/translator/home';
+import { TranslatorHomeDrawer, DrawerParamList } from '@/routes/drawers/translator/home';
 import Screens from '@/screens/translator';
 import { FullProps } from '@/screens/translator/full';
 
@@ -17,7 +17,7 @@ export type RootStackParamList = {
 export type NavigationParamList = RootStackParamList & DrawerParamList;
 
 const StackTranslatorHome = createStackNavigator<RootStackParamList>();
-export default TranslatorHomeStack = () => {
+export const TranslatorHomeStack = () => {
   return (
     <StackTranslatorHome.Navigator
       initialRouteName='HomeDrawer'

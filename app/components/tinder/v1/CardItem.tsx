@@ -14,7 +14,7 @@ export const CardItem = ({
   onPressLeft,
   onPressRight,
   status,
-  variant
+  variant,
 }) => {
   // Custom styling
   const fullWidth = Dimensions.get('window').width;
@@ -23,8 +23,8 @@ export const CardItem = ({
       borderRadius: 8,
       width: variant ? fullWidth / 2 - 30 : fullWidth - 80,
       height: variant ? 170 : 350,
-      margin: variant ? 0 : 20
-    }
+      margin: variant ? 0 : 20,
+    },
   ];
 
   const nameStyle = [
@@ -32,8 +32,8 @@ export const CardItem = ({
       paddingTop: variant ? 10 : 15,
       paddingBottom: variant ? 5 : 7,
       color: '#363636',
-      fontSize: variant ? 15 : 30
-    }
+      fontSize: variant ? 15 : 30,
+    },
   ];
 
   return (

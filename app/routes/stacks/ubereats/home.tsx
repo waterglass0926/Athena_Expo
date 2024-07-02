@@ -5,7 +5,7 @@ import Screens from '@/screens/ubereats';
 import { navOptionHandler } from '@/utils';
 
 const StackUberEatsHome = createStackNavigator();
-export default UberEatsHomeStack = () => {
+export const UberEatsHomeStack = () => {
   return (
     <StackUberEatsHome.Navigator
       initialRouteName='UberEatsHome'

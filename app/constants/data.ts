@@ -2,7 +2,7 @@ import Images from './images';
 
 export default DATA = {
   SLIDES: [
-    { key: 1, title: 'StarWorld', description: 'The Best & Various Types, Worldwide Platform', image: Images.ATHENA.SPLASH101, navigation: 'WorldStack' },
+    { key: 1, title: 'StarWorld', description: 'The Best & Various Types, Worldwide Platform', image: Images.ATHENA.SPLASH101, navigation: 'World' },
     { key: 2, title: 'UpJob', description: 'Hire The Best Global Freelancers Platform', image: Images.ATHENA.SPLASH102, navigation: 'UpJobStack' },
     { key: 3, title: 'Fitness', description: 'Workout Tracker, Yoga & Planner Gym Fitness', image: Images.ATHENA.SPLASH103, navigation: 'FitnessStack' },
     { key: 4, title: 'Foodnet', description: 'Restaurant, Food Recipe & Delivery Platform', image: Images.ATHENA.SPLASH104, navigation: 'FoodnetStack' },
@@ -16,7 +16,7 @@ export default DATA = {
     { key: 12, title: 'ChatGpt', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH101, navigation: 'ChatGpt' },
     { key: 13, title: 'UberEats', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH102, navigation: 'UberEats' },
     { key: 14, title: 'Translator', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH111, navigation: 'Translator' },
-    { key: 15, title: 'Tinder', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH111, navigation: 'TinderV1' }
+    { key: 15, title: 'Tinder', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH111, navigation: 'TinderV1' },
   ],
   LANGUAGES: [
     { key: 1, country: 'United States', language: 'English', code: 'en', flag: Images.ATHENA.FLAG001 },
@@ -28,5 +28,5 @@ export default DATA = {
     { key: 7, country: 'Italian', language: 'Italy', code: 'it', flag: Images.ATHENA.FLAG007 },
     { key: 8, country: 'Japanese', language: 'Japan', code: 'ja', flag: Images.ATHENA.FLAG008 },
     { key: 9, country: 'Russia', language: 'Russian', code: 'ru', flag: Images.ATHENA.FLAG009 },
-  ]
+  ],
 };

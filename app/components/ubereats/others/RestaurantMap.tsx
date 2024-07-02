@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 
-import MapView, { Marker } from 'react-native-maps'
+import MapView, { Marker } from 'react-native-maps';
 import tailwind from 'tailwind-react-native-classnames';
 
 import {
   StyleSheet,
   View,
-  Image
+  Image,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -30,7 +30,7 @@ export const RestaurantMap = ({ coordinates, title }) => {
         {coordinates && (
           <Marker
             coordinate={{
-              ...coordinates
+              ...coordinates,
             }}
             identifier='shop'
             anchor={{ x: 0.5, y: 0.5 }}

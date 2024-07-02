@@ -2,18 +2,14 @@ import React, { FC, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
-import { Icon } from 'react-native-elements';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import {
-  StyleSheet,
   View,
   Text,
   Image,
   Alert,
-  TouchableOpacity
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -21,7 +17,6 @@ import Components from '@/components/chatgpt/v1';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { auth } from '@/utils/firebase';
-import { setLoad } from '@/stores/athena';
 import { ThemeType } from '@/types/athena';
 
 type PropsType = {
@@ -36,9 +31,8 @@ interface StateType {
 };
 
 export const SignIn: FC<PropsType> = ({ navigation }) => {
-  const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
@@ -60,7 +54,7 @@ export const SignIn: FC<PropsType> = ({ navigation }) => {
       const result = await signInWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
       );
 
       if (result) navigation.navigate('ChatGptBottomTab');
@@ -145,7 +139,3 @@ export const SignIn: FC<PropsType> = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-
-});

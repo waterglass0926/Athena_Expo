@@ -1,38 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
-import Toast from 'react-native-toast-message';
-import { Icon } from 'react-native-elements';
 
 import {
-  Platform,
-  SafeAreaView,
-  StyleSheet,
-  StatusBar,
-  Text
+  Text,
 } from 'react-native';
 
-import '@/utils/i18n';
 import Screens from '@/screens/tinder/v1';
 import Components from '@/components/tinder/v1';
 import Constants from '@/constants';
-import Functtions, { navOptionHandler } from '@/utils';
+import Functtions from '@/utils';
 import Styles from '@/styles/tinder/v1';
-import { ThemeType } from '@types/athena';
-
-interface StateType {
-  athena: {
-    load: boolean;
-    theme: ThemeType;
-  };
-};
 
 const TabTinderV1Bottom = createBottomTabNavigator();
-export default TinderV1BottomTab = () => {
-  const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+export const TinderV1BottomTab = () => {
 
   return (
     <TabTinderV1Bottom.Navigator
@@ -42,7 +23,7 @@ export default TinderV1BottomTab = () => {
           backgroundColor: Constants.COLORS.DEFAULT.WHITE,
         },
         tabBarActiveTintColor: '#7444C0',
-        tabBarInactiveTintColor: '#363636'
+        tabBarInactiveTintColor: '#363636',
       })}
     >
       <TabTinderV1Bottom.Screen
@@ -57,7 +38,7 @@ export default TinderV1BottomTab = () => {
               <Text style={[Styles.iconMenu, { color: iconFocused }]}>
                 <Components.Icon name='explore' />
               </Text>
-            )
+            );
           },
         }}
       />
@@ -73,7 +54,7 @@ export default TinderV1BottomTab = () => {
               <Text style={[Styles.iconMenu, { color: iconFocused }]}>
                 <Components.Icon name='heart' />
               </Text>
-            )
+            );
           },
         }}
       />
@@ -89,7 +70,7 @@ export default TinderV1BottomTab = () => {
               <Text style={[Styles.iconMenu, { color: iconFocused }]}>
                 <Components.Icon name='chat' />
               </Text>
-            )
+            );
           },
         }}
       />
@@ -105,7 +86,7 @@ export default TinderV1BottomTab = () => {
               <Text style={[Styles.iconMenu, { color: iconFocused }]}>
                 <Components.Icon name='user' />
               </Text>
-            )
+            );
           },
         }}
       />

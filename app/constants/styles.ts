@@ -82,22 +82,22 @@ export default STYLES = StyleSheet.create({
   TEXT_HEADER: {
     fontFamily: FONTS.ATHENA.PRIMARY,
     fontSize: SIZE.S24,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   TEXT_TITLE: {
     fontFamily: FONTS.ATHENA.PRIMARY,
     fontSize: SIZE.S18,
-    fontWeight: '800'
+    fontWeight: '800',
   },
   TEXT_SUBTITLE: {
     fontFamily: FONTS.ATHENA.PRIMARY,
     fontSize: SIZE.S14,
-    fontWeight: '600'
+    fontWeight: '600',
   },
   TEXT_DESCRIPTION: {
     fontFamily: FONTS.ATHENA.PRIMARY,
     fontSize: SIZE.S10,
-    fontWeight: '400'
+    fontWeight: '400',
   },
 
   CHATGPT: {
@@ -115,7 +115,7 @@ export default STYLES = StyleSheet.create({
       body2: { fontFamily: FONTS.CHATGPT.POPPINS.REGULAR, fontSize: SIZE.S20, lineHeight: SIZE.S32 },
       body3: { fontFamily: FONTS.CHATGPT.POPPINS.REGULAR, fontSize: SIZE.S16, lineHeight: SIZE.S24 },
       body4: { fontFamily: FONTS.CHATGPT.POPPINS.REGULAR, fontSize: SIZE.S14, lineHeight: SIZE.S20 },
-    }
+    },
   },
 
   TRANSLATOR: {
@@ -125,6 +125,6 @@ export default STYLES = StyleSheet.create({
       shadowOpacity: 0.23,
       shadowRadius: 2.62,
       elevation: 4,
-    }
+    },
   },
 });

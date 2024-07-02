@@ -1,7 +1,6 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 import tailwind from 'tailwind-react-native-classnames';
@@ -110,13 +109,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 8
+    marginBottom: 8,
   },
   title: {
     fontSize: 23,
     fontWeight: '700',
     color: Constants.COLORS.UBEREATS.title,
-    maxWidth: '80%'
+    maxWidth: '80%',
   },
   price: {
     fontSize: 20,
@@ -137,6 +136,6 @@ const styles = StyleSheet.create({
   },
   infoText: {
     marginLeft: 4,
-    fontSize: 12
+    fontSize: 12,
   },
 });

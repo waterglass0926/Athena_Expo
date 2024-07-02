@@ -30,50 +30,50 @@ export default Styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 10,
     shadowColor: BLACK,
-    shadowOffset: { height: 0, width: 0 }
+    shadowOffset: { height: 0, width: 0 },
   },
   matchesCardItem: {
     marginTop: -35,
     backgroundColor: PRIMARY_COLOR,
     paddingVertical: 7,
     paddingHorizontal: 20,
-    borderRadius: 20
+    borderRadius: 20,
   },
   matchesTextCardItem: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
-    color: WHITE
+    color: WHITE,
   },
   descriptionCardItem: {
     color: GRAY,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   status: {
     paddingBottom: 10,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   statusText: {
     color: GRAY,
-    fontSize: 12
+    fontSize: 12,
   },
   online: {
     width: 6,
     height: 6,
     backgroundColor: ONLINE_STATUS,
     borderRadius: 3,
-    marginRight: 4
+    marginRight: 4,
   },
   offline: {
     width: 6,
     height: 6,
     backgroundColor: OFFLINE_STATUS,
     borderRadius: 3,
-    marginRight: 4
+    marginRight: 4,
   },
   actionsCardItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 30
+    paddingVertical: 30,
   },
   button: {
     width: 60,
@@ -86,7 +86,7 @@ export default Styles = StyleSheet.create({
     shadowOpacity: 0.15,
     shadowRadius: 20,
     shadowColor: DARK_GRAY,
-    shadowOffset: { height: 10, width: 0 }
+    shadowOffset: { height: 10, width: 0 },
   },
   miniButton: {
     width: 40,
@@ -99,25 +99,25 @@ export default Styles = StyleSheet.create({
     shadowOpacity: 0.15,
     shadowRadius: 20,
     shadowColor: DARK_GRAY,
-    shadowOffset: { height: 10, width: 0 }
+    shadowOffset: { height: 10, width: 0 },
   },
   star: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
-    color: STAR_ACTIONS
+    color: STAR_ACTIONS,
   },
   like: {
     fontSize: 25,
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
-    color: LIKE_ACTIONS
+    color: LIKE_ACTIONS,
   },
   dislike: {
     fontSize: 25,
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
-    color: DISLIKE_ACTIONS
+    color: DISLIKE_ACTIONS,
   },
   flash: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
-    color: FLASH_ACTIONS
+    color: FLASH_ACTIONS,
   },
 
   // COMPONENT - CITY
@@ -129,12 +129,12 @@ export default Styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 10,
     shadowColor: BLACK,
-    shadowOffset: { height: 0, width: 0 }
+    shadowOffset: { height: 0, width: 0 },
   },
   cityText: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
     color: DARK_GRAY,
-    fontSize: 13
+    fontSize: 13,
   },
 
   // COMPONENT - FILTERS
@@ -146,12 +146,12 @@ export default Styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 10,
     shadowColor: BLACK,
-    shadowOffset: { height: 0, width: 0 }
+    shadowOffset: { height: 0, width: 0 },
   },
   filtersText: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
     color: DARK_GRAY,
-    fontSize: 13
+    fontSize: 13,
   },
 
   // COMPONENT - MESSAGE
@@ -161,19 +161,19 @@ export default Styles = StyleSheet.create({
     justifyContent: 'flex-start',
     flexDirection: 'row',
     paddingHorizontal: 10,
-    width: DIMENSION_WIDTH - 100
+    width: DIMENSION_WIDTH - 100,
   },
   avatar: {
     borderRadius: 30,
     width: 60,
     height: 60,
     marginRight: 20,
-    marginVertical: 15
+    marginVertical: 15,
   },
   message: {
     color: GRAY,
     fontSize: 12,
-    paddingTop: 5
+    paddingTop: 5,
   },
 
   // COMPONENT - PROFILE ITEM
@@ -187,7 +187,7 @@ export default Styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 10,
     shadowColor: BLACK,
-    shadowOffset: { height: 0, width: 0 }
+    shadowOffset: { height: 0, width: 0 },
   },
   matchesProfileItem: {
     width: 131,
@@ -197,39 +197,39 @@ export default Styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 20,
     textAlign: 'center',
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   matchesTextProfileItem: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
-    color: WHITE
+    color: WHITE,
   },
   name: {
     paddingTop: 25,
     paddingBottom: 5,
     color: DARK_GRAY,
     fontSize: 15,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   descriptionProfileItem: {
     color: GRAY,
     textAlign: 'center',
     paddingBottom: 20,
-    fontSize: 13
+    fontSize: 13,
   },
   info: {
     paddingVertical: 8,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   iconProfile: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
     fontSize: 12,
     color: DARK_GRAY,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
   },
   infoContent: {
     color: GRAY,
-    fontSize: 13
+    fontSize: 13,
   },
 
   // CONTAINER - GENERAL
@@ -237,21 +237,21 @@ export default Styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     width: DIMENSION_WIDTH,
-    height: DIMENSION_HEIGHT
+    height: DIMENSION_HEIGHT,
   },
   top: {
     paddingTop: 50,
     marginHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   title: { paddingBottom: 10, fontSize: 22, color: DARK_GRAY },
   icon: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
     fontSize: 20,
     color: DARK_GRAY,
-    paddingRight: 10
+    paddingRight: 10,
   },
 
   // CONTAINER - HOME
@@ -261,21 +261,21 @@ export default Styles = StyleSheet.create({
   containerMatches: {
     justifyContent: 'space-between',
     flex: 1,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
   },
 
   // CONTAINER - MESSAGES
   containerMessages: {
     justifyContent: 'space-between',
     flex: 1,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
   },
 
   // CONTAINER - PROFILE
   containerProfile: { marginHorizontal: 0 },
   photo: {
     width: DIMENSION_WIDTH,
-    height: 450
+    height: 450,
   },
   topIconLeft: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
@@ -283,25 +283,25 @@ export default Styles = StyleSheet.create({
     color: WHITE,
     paddingLeft: 20,
     marginTop: -20,
-    transform: [{ rotate: '90deg' }]
+    transform: [{ rotate: '90deg' }],
   },
   topIconRight: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
     fontSize: 20,
     color: WHITE,
-    paddingRight: 20
+    paddingRight: 20,
   },
   actionsProfile: {
     justifyContent: 'center',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   iconButton: { fontFamily: Constants.FONTS.TINDER.V1.REGULAR, fontSize: 20, color: WHITE },
   textButton: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
     fontSize: 15,
     color: WHITE,
-    paddingLeft: 5
+    paddingLeft: 5,
   },
   circledButton: {
     width: 50,
@@ -310,7 +310,7 @@ export default Styles = StyleSheet.create({
     backgroundColor: PRIMARY_COLOR,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 10
+    marginRight: 10,
   },
   roundedButton: {
     justifyContent: 'center',
@@ -320,7 +320,7 @@ export default Styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     backgroundColor: SECONDARY_COLOR,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
 
   // MENU
@@ -329,14 +329,14 @@ export default Styles = StyleSheet.create({
     paddingBottom: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1
+    flex: 1,
   },
   tabButtonText: {
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
   },
   iconMenu: {
     fontFamily: Constants.FONTS.TINDER.V1.REGULAR,
     height: 20,
-    paddingBottom: 7
-  }
+    paddingBottom: 7,
+  },
 });

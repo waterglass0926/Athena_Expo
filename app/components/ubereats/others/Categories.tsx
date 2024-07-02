@@ -3,7 +3,6 @@ import React from 'react';
 import tailwind from 'tailwind-react-native-classnames';
 
 import {
-  StyleSheet,
   ScrollView,
   View,
   Text,
@@ -33,5 +32,3 @@ export const Categories = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({});

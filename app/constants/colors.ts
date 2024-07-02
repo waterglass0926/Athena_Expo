@@ -24,7 +24,7 @@ export default COLORS = {
     slate: '#0A2540',
     title: '#0c0c0c',
     activeTintColor: '#000',
-    inActiveTintColor: '#AEAEAE'
+    inActiveTintColor: '#AEAEAE',
   },
   TRANLSATOR: {
     PAPAGO: '#34A855',
@@ -35,33 +35,33 @@ export default COLORS = {
     {
       INDEX: 1,
       NIGHT: '#330000',
-      LIGHT: '#FFEEEE'
+      LIGHT: '#FFEEEE',
     },
     {
       INDEX: 2,
       NIGHT: '#003300',
-      LIGHT: '#EEFFEE'
+      LIGHT: '#EEFFEE',
     },
     {
       INDEX: 3,
       NIGHT: '#000033',
-      LIGHT: '#EEEEFF'
+      LIGHT: '#EEEEFF',
     },
     {
       INDEX: 4,
       NIGHT: '#1D1D1D',
-      LIGHT: '#E4F0F0'
+      LIGHT: '#E4F0F0',
     },
     {
       INDEX: 5,
       NIGHT: '#222222',
-      LIGHT: '#EEEEEE'
+      LIGHT: '#EEEEEE',
     },
     {
       INDEX: 6,
       NIGHT: '#090909',
-      LIGHT: '#FEFEFE'
-    }
+      LIGHT: '#FEFEFE',
+    },
   ],
   ACTION: [
     {
@@ -287,6 +287,6 @@ export default COLORS = {
       SECONDARY: '#FF3B2F50',
       TERTIARY: '#949494',
       QUATERNARY: '#C5C5C5',
-    }
-  ]
+    },
+  ],
 };

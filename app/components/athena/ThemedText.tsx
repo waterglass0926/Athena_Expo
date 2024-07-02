@@ -27,7 +27,7 @@ export function ThemedText({
   ...rest
 }: ThemedTextProps) {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <Text

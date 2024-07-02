@@ -12,12 +12,12 @@ import { ThemeType } from '@/types/athena';
 export const TypoGraphy: React.FC<TextProps> = ({ ...props }) => {
   const dispatch = useDispatch();
   // const { i18n, t } = useTranslation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
   return (
     <Text
       {...props}
       // allowFontScaling={false}
       style={[{ color: theme.FORECOLOR }, props.style]}
     />
-  )
+  );
 };

@@ -2,14 +2,14 @@ import 'react-native-reanimated';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
-import React, { FC, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import { LogBox, StatusBar } from 'react-native';
 import Toast from 'react-native-toast-message';
 
-import AppContainer from '@/routes';
+import { AppContainer } from '@/routes';
 import Components from '@/components';
 import store, { persistor } from '@/stores';
 import { HistoryProvider } from '@/contexts/translator/HistoryContext';

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 import { RenderItemParams } from 'react-native-draggable-flatlist';
@@ -25,7 +24,7 @@ export const TranslatorCard: React.FC<
 > = props => {
   const { item, drag, isActive } = props;
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <Components.ButtonBase

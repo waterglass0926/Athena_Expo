@@ -12,7 +12,7 @@ import {
   ImageBackground,
   View,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -35,7 +35,7 @@ interface StateType {
 export const Slides: FC<PropsType> = ({ navigation }) => {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const renderItem = ({ item, key }: any) => (
     <ImageBackground
@@ -100,7 +100,7 @@ export const Slides: FC<PropsType> = ({ navigation }) => {
 const styles = StyleSheet.create({
   linearGradient: {
     flex: 1,
-    opacity: 0.5
+    opacity: 0.5,
   },
   viewContent: {
     position: 'absolute',
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     marginTop: Constants.SIZE.S24,
     paddingVertical: Constants.SIZE.S08,
     paddingHorizontal: Constants.SIZE.S24,
-    borderRadius: Constants.SIZE.S20
+    borderRadius: Constants.SIZE.S20,
   },
   dotStyle: {
     width: Constants.SIZE.S08,
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   },
   activeDotStyle: {
     width: Constants.SIZE.S16,
-    height: Constants.SIZE.S08
+    height: Constants.SIZE.S08,
   },
   buttonCircle: {
     justifyContent: 'center',

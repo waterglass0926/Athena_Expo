@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
     color: Constants.COLORS.UBEREATS.black,
   },
   icon2: {
-    marginRight: 10
-  }
+    marginRight: 10,
+  },
 });

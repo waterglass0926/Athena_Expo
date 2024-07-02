@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Components from '@/components/translator';
 import Constants from '@/constants';
@@ -25,7 +24,7 @@ interface StateType {
 
 export const HistoryCard: React.FC<History> = props => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
   const { navigate } = useNavigation();
   const { applyHistory } = useContext(TranslateContext);
   const { removeHistory } = useContext(HistoryContext);
@@ -34,7 +33,7 @@ export const HistoryCard: React.FC<History> = props => {
   return (
     <View style={{
       ...styles.container,
-      backgroundColor: theme.PRIMARY
+      backgroundColor: theme.PRIMARY,
     }}>
       <Components.TypoGraphy style={{ ...styles.title, color: Constants.COLORS.DEFAULT.WHITE }}>
         {`To ${t(toLanguage)}`}

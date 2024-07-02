@@ -1,10 +1,9 @@
 import React, { useCallback, useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import DraggableFlatList, { DragEndParams } from 'react-native-draggable-flatlist';
 
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { CardSequenceHeader } from './Header';
 import { TranslatorCard } from './TranslatorCard';
@@ -22,7 +21,7 @@ interface StateType {
 
 export const CardSequence = () => {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const { cardSequence, updateCardSequence } = useContext(CardSequenceContext);
 
@@ -36,7 +35,7 @@ export const CardSequence = () => {
   return (
     <View style={{
       ...styles.container,
-      backgroundColor: theme.BACKCOLOR
+      backgroundColor: theme.BACKCOLOR,
     }}>
       <CardSequenceHeader />
       <DraggableFlatList

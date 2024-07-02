@@ -1,10 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import Components from '@/components/translator';
 import Constants from '@/constants';
@@ -20,9 +19,9 @@ interface StateType {
 };
 
 export const CardSequenceHeader = () => {
-  const dispatch = useDispatch();
   const { goBack } = useNavigation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const dispatch = useDispatch();
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <Components.ButtonBase onPress={goBack} style={styles.container}>
@@ -39,9 +38,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     padding: Constants.SIZE.S16,
-    marginTop: Constants.SIZE.S48
+    marginTop: Constants.SIZE.S48,
   },
   textBack: {
     fontSize: 20,
-  }
+  },
 });

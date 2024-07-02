@@ -33,5 +33,5 @@ export default {
   Screen,
   SearchBar,
   TabCartButton,
-  ViewCart
+  ViewCart,
 };

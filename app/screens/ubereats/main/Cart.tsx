@@ -1,9 +1,7 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import { Icon } from 'react-native-elements';
 import tailwind from 'tailwind-react-native-classnames';
 
 import {
@@ -50,14 +48,14 @@ export const Cart = () => {
 
 const styles = StyleSheet.create({
   left: {
-    marginRight: 20
+    marginRight: 20,
   },
   right: {
-    flex: 1
+    flex: 1,
   },
   total: {
     fontSize: 14,
-    color: Constants.COLORS.UBEREATS.title
+    color: Constants.COLORS.UBEREATS.title,
   },
   totalAmount: {
     fontSize: 23,

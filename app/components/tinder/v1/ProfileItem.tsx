@@ -13,7 +13,7 @@ export const ProfileItem = ({
   info4,
   location,
   matches,
-  name
+  name,
 }) => {
   return (
     <View style={Styles.containerProfileItem}>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { XMarkIcon, FireIcon, ShoppingBagIcon, MusicalNoteIcon, FilmIcon, NewspaperIcon } from 'react-native-heroicons/solid';
 
-import { View, Text, Touchable, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 export const Sidebar = ({ explore, setExplore }) => {
   return (

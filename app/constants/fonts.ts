@@ -28,11 +28,11 @@ export default FONTS = {
       semiBoldItalic: require('@/assets/fonts/chatgpt/v1/Poppins-SemiBoldItalic.ttf'),
       thin: require('@/assets/fonts/chatgpt/v1/Poppins-Thin.ttf'),
       thinItalic: require('@/assets/fonts/chatgpt/v1/Poppins-ThinItalic.ttf'),
-    }
+    },
   },
   TINDER: {
     V1: {
-      REGULAR: 'TinderV1'
-    }
-  }
+      REGULAR: 'TinderV1',
+    },
+  },
 };

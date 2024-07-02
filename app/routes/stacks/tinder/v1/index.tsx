@@ -1,12 +1,12 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import TinderV1BottomTab from '@/routes/tabs/tinder/v1/bottom';
+import { TinderV1BottomTab } from '@/routes/tabs/tinder/v1/bottom';
 import Screens from '@/screens/tinder/v1';
 import { navOptionHandler } from '@/utils';
 
 const StackTinderV1 = createStackNavigator();
-export default TinderV1Stack = () => {
+export const TinderV1Stack = () => {
   return (
     <StackTinderV1.Navigator
       initialRouteName='TinderV1Splash'

@@ -11,7 +11,7 @@ import {
   View,
   Text,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import '@/utils/i18n';
@@ -35,7 +35,7 @@ interface StateType {
 export const Language: FC<PropsType> = ({ navigation }) => {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   const [lang, setLang] = useState(Constants.DATA.LANGUAGES[0]);
 
@@ -55,13 +55,13 @@ export const Language: FC<PropsType> = ({ navigation }) => {
       <View style={{
         ...Constants.STYLES.CONTENT,
         ...Constants.STYLES.ALIGN_ROW_SPACE_BETWEEN,
-        ...styles.viewHeader
+        ...styles.viewHeader,
       }}>
         <TouchableOpacity
           style={{
             ...Constants.STYLES.ALIGN_COL_CENTER,
             width: 30,
-            height: 30
+            height: 30,
           }}
           onPress={onBack}
         >
@@ -74,7 +74,7 @@ export const Language: FC<PropsType> = ({ navigation }) => {
         </TouchableOpacity>
         <Text style={{
           ...Constants.STYLES.TEXT_HEADER,
-          color: Constants.COLORS.DEFAULT.WHITE
+          color: Constants.COLORS.DEFAULT.WHITE,
         }}>
           {t('Language').toUpperCase()}
         </Text>
@@ -82,7 +82,7 @@ export const Language: FC<PropsType> = ({ navigation }) => {
           style={{
             ...Constants.STYLES.ALIGN_COL_CENTER,
             width: 30,
-            height: 30
+            height: 30,
           }}
           onPress={onNext}
         >
@@ -103,7 +103,7 @@ export const Language: FC<PropsType> = ({ navigation }) => {
         key={`language${item.key}`}
         style={{
           ...Constants.STYLES.ALIGN_ROW_SPACE_BETWEEN,
-          marginVertical: Constants.SIZE.S08
+          marginVertical: Constants.SIZE.S08,
         }}
         activeOpacity={0.5}
         onPress={() => onLanguage(item)}
@@ -111,18 +111,18 @@ export const Language: FC<PropsType> = ({ navigation }) => {
         <View style={{
           ...Constants.STYLES.ALIGN_COL_CENTER,
           ...styles.viewFlag,
-          backgroundColor: theme.SECONDARY
+          backgroundColor: theme.SECONDARY,
         }}>
           <Image source={item.flag} style={styles.imageFlag} />
         </View>
         <View style={{
           ...Constants.STYLES.ALIGN_ROW_SPACE_BETWEEN,
           ...styles.viewDetail,
-          backgroundColor: theme.SECONDARY
+          backgroundColor: theme.SECONDARY,
         }}>
           <Text style={{
             ...Constants.STYLES.TEXT_TITLE,
-            color: theme.FORECOLOR
+            color: theme.FORECOLOR,
           }}>
             {`${item.language} (${item.country})`}
           </Text>
@@ -141,13 +141,13 @@ export const Language: FC<PropsType> = ({ navigation }) => {
     <View style={{
       ...Constants.STYLES.CONTAINER,
       ...Constants.STYLES.ALIGN_COL_FLEX_START,
-      backgroundColor: theme.PRIMARY
+      backgroundColor: theme.PRIMARY,
     }}>
       {RenderHeader()}
       <View style={{
         ...Constants.STYLES.CONTAINER,
         ...styles.viewContent,
-        backgroundColor: theme.BACKCOLOR
+        backgroundColor: theme.BACKCOLOR,
       }}>
         <ScrollView
           key='scroll00'
@@ -156,18 +156,18 @@ export const Language: FC<PropsType> = ({ navigation }) => {
         >
           <Text style={{
             ...Constants.STYLES.TEXT_TITLE,
-            color: theme.FORECOLOR
+            color: theme.FORECOLOR,
           }}>
             {t('Select Language')}
           </Text>
           <Text style={{
             ...Constants.STYLES.TEXT_SUBTITLE,
-            color: theme.TERTIARY
+            color: theme.TERTIARY,
           }}>
             {'Please select your preferred language to facilitate communication.'}
           </Text>
           <View style={{
-            marginVertical: Constants.SIZE.S16
+            marginVertical: Constants.SIZE.S16,
           }}>
             {Constants.DATA.LANGUAGES.map((item) => RenderLanguage(item))}
           </View>
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
   viewHeader: {
     paddingTop: 50,
     paddingBottom: 30,
-    paddingHorizontal: Constants.SIZE.S16
+    paddingHorizontal: Constants.SIZE.S16,
   },
   viewContent: {
     paddingVertical: Constants.SIZE.S20,
@@ -196,12 +196,12 @@ const styles = StyleSheet.create({
   imageFlag: {
     width: 30,
     height: 30,
-    borderRadius: Constants.SIZE.S14
+    borderRadius: Constants.SIZE.S14,
   },
   viewDetail: {
     paddingHorizontal: Constants.SIZE.S16,
     width: wp('100%') - 80,
     height: 50,
-    borderRadius: Constants.SIZE.S08
+    borderRadius: Constants.SIZE.S08,
   },
 });

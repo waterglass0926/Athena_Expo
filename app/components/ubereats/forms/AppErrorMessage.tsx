@@ -17,5 +17,5 @@ const styles = StyleSheet.create({
     marginVertical: 2,
     fontSize: 14,
     color: Constants.COLORS.DEFAULT.RED,
-  }
+  },
 });

@@ -1,10 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Components from '@/components/translator';
 import Constants from '@/constants';
@@ -22,20 +21,20 @@ interface StateType {
 export const DrawerContent = () => {
   const dispatch = useDispatch();
   const { navigate } = useNavigation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return (
     <View style={{
       ...styles.container,
-      backgroundColor: theme.BACKCOLOR
+      backgroundColor: theme.BACKCOLOR,
     }}>
       <View style={{
         ...styles.header,
-        backgroundColor: theme.PRIMARY
+        backgroundColor: theme.PRIMARY,
       }}>
         <View style={{
           ...styles.iconContainer,
-          backgroundColor: theme.BACKCOLOR
+          backgroundColor: theme.BACKCOLOR,
         }}>
           <Icon type='material' name='translate' color={theme.PRIMARY} size={40} />
         </View>

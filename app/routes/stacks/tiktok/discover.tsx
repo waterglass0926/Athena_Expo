@@ -5,7 +5,7 @@ import Screens from '@/screens/tiktok';
 import { navOptionHandler } from '@/utils';
 
 const StackTikTokDiscover = createStackNavigator();
-export default TikTokDiscoverStack = () => {
+export const TikTokDiscoverStack = () => {
   return (
     <StackTikTokDiscover.Navigator
       initialRouteName='TikTokDiscover'

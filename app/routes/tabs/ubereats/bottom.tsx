@@ -1,31 +1,17 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useTranslation } from 'react-i18next';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 
-import '@/utils/i18n';
-import UberEatsHomeStack from '@/routes/stacks/ubereats/home';
+import { UberEatsHomeStack } from '@/routes/stacks/ubereats/home';
 import Screens from '@/screens/ubereats';
 import Components from '@/components/ubereats/others';
 import Constants from '@/constants';
-import Functtions, { navOptionHandler } from '@/utils';
-import { ThemeType } from '@/types/athena';
-
-interface StateType {
-  athena: {
-    load: boolean;
-    theme: ThemeType;
-  };
-};
+import Functtions from '@/utils';
 
 const TabUberEatsBottom = createBottomTabNavigator();
-export default UberEatsBottomTab = ({ navigation }) => {
-  const dispatch = useDispatch();
-  const { i18n, t } = useTranslation();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+export const UberEatsBottomTab = ({ navigation }) => {
 
   return (
     <TabUberEatsBottom.Navigator
@@ -39,7 +25,7 @@ export default UberEatsBottomTab = ({ navigation }) => {
           height: 60,
         },
         tabBarActiveTintColor: Constants.COLORS.UBEREATS.activeTintColor,
-        tabBarInactiveTintColor: Constants.COLORS.UBEREATS.inActiveTintColor
+        tabBarInactiveTintColor: Constants.COLORS.UBEREATS.inActiveTintColor,
       })}
     >
       <TabUberEatsBottom.Screen
@@ -78,7 +64,7 @@ export default UberEatsBottomTab = ({ navigation }) => {
         options={{
           headerShown: false,
           tabBarLabel: 'Cart',
-          tabBarButton: () => <Components.TabCartButton onPress={() => navigation.navigate('UberEatsCart')} />
+          tabBarButton: () => <Components.TabCartButton onPress={() => navigation.navigate('UberEatsCart')} />,
         }}
       />
       <TabUberEatsBottom.Screen

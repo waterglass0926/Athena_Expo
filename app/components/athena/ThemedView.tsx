@@ -19,7 +19,7 @@ interface StateType {
 
 export function ThemedView({ style, ...otherProps }) {
   const dispatch = useDispatch();
-  const { load, theme } = useSelector((state: StateType) => state.athena);
+  const { theme } = useSelector((state: StateType) => state.athena);
 
   return <View style={[{ backgroundColor: theme.BACKCOLOR }, style]} {...otherProps} />;
 };

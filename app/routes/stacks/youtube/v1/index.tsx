@@ -5,7 +5,7 @@ import Screens from '@/screens/youtube/v1';
 import { navOptionHandler } from '@/utils';
 
 const StackYouTubeV1 = createStackNavigator();
-export default YouTubeV1Stack = () => {
+export const YouTubeV1Stack = () => {
   return (
     <StackYouTubeV1.Navigator
       initialRouteName='YouTubeV1Splash'

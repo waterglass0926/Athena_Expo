@@ -40,8 +40,8 @@ export const AppFormFeilds = ({ name, password = false, ...otherProps }) => {
       )}
       <AppErrorMessage visible={touched[name]} error={errors[name]} />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -57,11 +57,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   inputError: {
-    borderColor: Constants.COLORS.UBEREATS.denger
+    borderColor: Constants.COLORS.UBEREATS.denger,
   },
   icon: {
     position: 'absolute',
     right: 15,
-    top: 32
-  }
+    top: 32,
+  },
 });

@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity,
   ImageBackground,
-  FlatList
+  FlatList,
 } from 'react-native';
 
 import Demo from '@/assets/data/tinder/v1/demo';

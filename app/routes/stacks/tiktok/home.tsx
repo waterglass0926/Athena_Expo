@@ -5,7 +5,7 @@ import Screens from '@/screens/tiktok';
 import { navOptionHandler } from '@/utils';
 
 const StackTikTokHome = createStackNavigator();
-export default TikTokHomeStack = () => {
+export const TikTokHomeStack = () => {
   return (
     <StackTikTokHome.Navigator
       initialRouteName='TikTokHome'

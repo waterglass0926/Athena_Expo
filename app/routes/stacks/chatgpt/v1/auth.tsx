@@ -5,7 +5,7 @@ import Screens from '@/screens/chatgpt/v1';
 import { navOptionHandler } from '@/utils';
 
 const StackChatGptAuth = createStackNavigator();
-export default ChatGptAuthStack = () => {
+export const ChatGptAuthStack = () => {
   return (
     <StackChatGptAuth.Navigator
       initialRouteName='ChatGptSignUp'

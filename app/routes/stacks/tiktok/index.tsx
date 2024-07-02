@@ -1,13 +1,12 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import TikTokAuthStack from './auth';
-import TikTokBottomTab from '@/routes/tabs/tiktok/bottom';
+import { TikTokBottomTab } from '@/routes/tabs/tiktok/bottom';
 import Screens from '@/screens/tiktok';
 import { navOptionHandler } from '@/utils';
 
 const StackTikTok = createStackNavigator();
-export default TikTokStack = () => {
+export const TikTokStack = () => {
   return (
     <StackTikTok.Navigator
       initialRouteName='TikTokSplash'
