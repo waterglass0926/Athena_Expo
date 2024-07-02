@@ -8,8 +8,10 @@ const header = {
 };
 
 export const createUser = (params) => {
-  console.log(params, header);
-  return Http.post(Constants.URLS.WORLD.USERS, params, header);
+  return Http.post(Constants.URLS.WORLD.USERS, params, {
+    'Content-Type': 'application/json',
+    'Authorization': `${params.token}`,
+  });
 };
 
 export const getUser = (params: any) => {
@@ -17,7 +19,10 @@ export const getUser = (params: any) => {
     url: Constants.URLS.WORLD.USERS,
     id: params.id,
   });
-  return Http.get(url, header);
+  return Http.get(url, {
+    'Content-Type': 'application/json',
+    'Authorization': `${params.token}`,
+  });
 };
 
 export const getUserData = (params) => {

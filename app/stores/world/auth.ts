@@ -18,10 +18,10 @@ export const signUp = createAsyncThunk(
       let result = await createUserWithEmailAndPassword(auth, payload.email, payload.password);
       if (result?.user.uid) {
         let token = await auth.currentUser.getIdToken();
-        console.log(token)
         if (token) Tokens.userToken = token;
         let response: AxiosResponse<ResponseType> = await authApi.createUser({
           id: result?.user.uid,
+          token,
           ...payload,
         });
         if (response.status === 200) {
@@ -61,6 +61,7 @@ export const signIn = createAsyncThunk(
         if (token) Tokens.userToken = token;
         let response: AxiosResponse<ResponseType> = await authApi.getUser({
           id: result?.user.uid,
+          token,
           ...payload,
         });
         if (response.status === 200) {
