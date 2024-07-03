@@ -14,11 +14,25 @@ import {
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { ThemeType } from '@/types/athena';
+import { setTheme } from '@/stores/athena';
 
 export const Header = (props) => {
+  const dispatch = useDispatch();
   const { theme } = useSelector(state => state.athena);
 
-  const onMode = () => { };
+  const onMode = () => {
+    console.log(theme.MODE)
+    dispatch(setTheme({
+      MODE: theme.MODE == 'LIGHT' ? 'NIGHT' : 'LIGHT',
+      NAME: theme.NAME,
+      PRIMARY: theme.PRIMARY,
+      SECONDARY: theme.SECONDARY,
+      TERTIARY: theme.TERTIARY,
+      QUATERNARY: theme.QUATERNARY,
+      BACKCOLOR: theme.MODE === 'LIGHT' ? theme.NIGHT : theme.LIGHT,
+      FORECOLOR: theme.MODE === 'LIGHT' ? theme.LIGHT : theme.NIGHT,
+    }));
+  };
 
   return (
     <View style={[styles.container, { backgroundColor: theme.PRIMARY, shadowColor: theme.PRIMARY }]}>
@@ -47,11 +61,11 @@ export const Header = (props) => {
           </TouchableOpacity>}
         {props.search &&
           <TouchableOpacity style={styles.buttonIcon} onPress={props.onSearch}>
-            <Icon type='material' name='search' size={25} color={theme.SECONDARY} />
+            <Icon type='material' name='search' size={25} color={Constants.COLORS.DEFAULT.WHITE} />
           </TouchableOpacity>}
         {props.mode &&
           <TouchableOpacity style={styles.buttonIcon} onPress={() => onMode()}>
-            <Icon type='font-awesome' name={theme.INDEX === 1 ? 'eercast' : 'ravelry'} size={20} color={theme.SECONDARY} />
+            <Icon type='font-awesome' name={theme.MODE === 'NIGHT' ? 'eercast' : 'ravelry'} size={20} color={Constants.COLORS.DEFAULT.WHITE} />
           </TouchableOpacity>}
         {props.right && <View style={styles.buttonIcon} />}
       </View>

@@ -8,10 +8,7 @@ const header = {
 };
 
 export const createUser = (params) => {
-  return Http.post(Constants.URLS.WORLD.USERS, params, {
-    'Content-Type': 'application/json',
-    'Authorization': `${params.token}`,
-  });
+  return Http.post(Constants.URLS.WORLD.USERS, params, header);
 };
 
 export const getUser = (params: any) => {
@@ -19,10 +16,7 @@ export const getUser = (params: any) => {
     url: Constants.URLS.WORLD.USERS,
     id: params.id,
   });
-  return Http.get(url, {
-    'Content-Type': 'application/json',
-    'Authorization': `${params.token}`,
-  });
+  return Http.get(url, header);
 };
 
 export const getUserData = (params) => {

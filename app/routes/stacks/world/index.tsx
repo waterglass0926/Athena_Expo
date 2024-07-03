@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { WorldAuthStack } from './auth';
-// import { WorldMainDrawer } from '@/routes/drawers/world/main';
+import { WorldMainDrawer } from '@/routes/drawers/world/main';
 import Screens from '@/screens/world';
 import { navOptionHandler } from '@/utils';
 
@@ -23,11 +23,11 @@ export const WorldStack = () => {
         component={WorldAuthStack}
         options={navOptionHandler}
       />
-      {/* <StackWorld.Screen
+      <StackWorld.Screen
         name='WorldMainDrawer'
         component={WorldMainDrawer}
         options={navOptionHandler}
-      /> */}
+      />
     </StackWorld.Navigator>
   );
 };

@@ -2,11 +2,11 @@ import { Alert } from 'react-native';
 
 import Constants from '@/constants';
 
-export class Tokens {
-  static clientId = 'waGiFOvU969D2xl60c_vOvEKTcbPiA0BXcgiC_PeDKk';
-  static unsplashToken = 'nllcFdEQkChHOLqrK9iw4AxrC8Hv-N7L8_ada60RgsU';
-  static bearerToken = 'v2/RjRsQXRUQWpyQ3dndjZESFpUMmZNQWozU2NZdEFTdlQvMzk3NDgwNzM5L2N1c3RvbWVyLzQvZE41T2UwTzJ4UkJ2T1F4WUJZeXQ4UnVUN3lpWW9ncmdKNG9TUlM4QmdlSTZPaWdSQ0x1ajBKS3V0elYzaEhXS25kci1kaHNwLUt2WHhjRWlNSFVXTTFaT3JYZHJvMmpuMW9BUGltUkpDVXRReTQ0WUpqSWxwYXhSNnZranFTbldsdnhoOXdHTVlYR2Y2cXUzRE1FQmJTeWxPeFQ2N3JqdTkxSVBRVGxBaGRtNlZSYzhwSmtyeUZkN0lwU3BJUnN3cjZBdVRGRnVxSENWc2FuOEotcWQyZy9GTU5lTDhOTVFvajQ3T29feVJNWmpB';
-  static userToken = '';
+export const Tokens = {
+  clientId: 'waGiFOvU969D2xl60c_vOvEKTcbPiA0BXcgiC_PeDKk',
+  unsplashToken: 'nllcFdEQkChHOLqrK9iw4AxrC8Hv-N7L8_ada60RgsU',
+  bearerToken: 'v2/RjRsQXRUQWpyQ3dndjZESFpUMmZNQWozU2NZdEFTdlQvMzk3NDgwNzM5L2N1c3RvbWVyLzQvZE41T2UwTzJ4UkJ2T1F4WUJZeXQ4UnVUN3lpWW9ncmdKNG9TUlM4QmdlSTZPaWdSQ0x1ajBKS3V0elYzaEhXS25kci1kaHNwLUt2WHhjRWlNSFVXTTFaT3JYZHJvMmpuMW9BUGltUkpDVXRReTQ0WUpqSWxwYXhSNnZranFTbldsdnhoOXdHTVlYR2Y2cXUzRE1FQmJTeWxPeFQ2N3JqdTkxSVBRVGxBaGRtNlZSYzhwSmtyeUZkN0lwU3BJUnN3cjZBdVRGRnVxSENWc2FuOEotcWQyZy9GTU5lTDhOTVFvajQ3T29feVJNWmpB',
+  userToken: '',
 };
 
 export const navOptionHandler = () => ({

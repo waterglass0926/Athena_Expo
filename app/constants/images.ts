@@ -21,6 +21,7 @@ export default IMAGES = {
     FLAG007: require('@/assets/images/athena/flags/flag106.png'),
     FLAG008: require('@/assets/images/athena/flags/flag107.png'),
     FLAG009: require('@/assets/images/athena/flags/flag108.png'),
+    DEFAULT: 'https://previews.123rf.com/images/apoev/apoev1804/apoev180400017/98627827-default-placeholder-businesswoman-half-length-portrait-photo-avatar-woman-gray-color.jpg',
   },
   WORLD: {
     LOGO: require('@/assets/images/world/logo.png'),

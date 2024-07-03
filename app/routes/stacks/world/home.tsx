@@ -16,7 +16,11 @@ export const WorldHomeStack = () => {
         component={Screens.Home}
         options={navOptionHandler}
       />
-      {/* <StackWorldHome.Screen name='WorldContinents' component={WorldContinents} options={navOptionHandler} /> */}
+      {/* <StackWorldHome.Screen
+        name='WorldContinents'
+        component={WorldContinents}
+        options={navOptionHandler}
+      /> */}
     </StackWorldHome.Navigator>
   );
 };

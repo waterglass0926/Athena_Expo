@@ -15,19 +15,19 @@ export const signUp = createAsyncThunk(
     try {
       thunkAPI.dispatch(setLoad(true));
 
-      let result = await createUserWithEmailAndPassword(auth, payload.email, payload.password);
+      let result = await createUserWithEmailAndPassword(auth, payload.info.email, payload.info.password);
       if (result?.user.uid) {
         let token = await auth.currentUser.getIdToken();
         if (token) Tokens.userToken = token;
         let response: AxiosResponse<ResponseType> = await authApi.createUser({
           id: result?.user.uid,
-          token,
           ...payload,
         });
         if (response.status === 200) {
           const resp: any = response.data;
           return {
-            user: resp[0],
+            token: token,
+            user: resp,
           };
         } else {
           return thunkAPI.rejectWithValue();
@@ -61,13 +61,13 @@ export const signIn = createAsyncThunk(
         if (token) Tokens.userToken = token;
         let response: AxiosResponse<ResponseType> = await authApi.getUser({
           id: result?.user.uid,
-          token,
           ...payload,
         });
         if (response.status === 200) {
           const resp: any = response.data;
           return {
-            user: resp[0],
+            token: token,
+            user: resp,
           };
         } else {
           return thunkAPI.rejectWithValue();
@@ -89,17 +89,38 @@ export const signIn = createAsyncThunk(
   },
 );
 
+export const signOut = createAsyncThunk(
+  'worldAuth/signOut',
+  async (payload, thunkAPI) => {
+    try {
+      thunkAPI.dispatch(setLoad(true));
+      auth.signOut();
+      return {
+        token: null,
+        user: null,
+      };
+    } catch (error) {
+      Functions.isLog(2, error.message);
+      return thunkAPI.rejectWithValue();
+    } finally {
+      thunkAPI.dispatch(setLoad(false));
+    };
+  },
+);
+
 interface ActionType<T> {
   state: any;
   payload: T;
 };
 
 interface StateType {
+  token: string | null;
   user: any;
   data: any;
 };
 
 const initialState: StateType = {
+  token: null,
   user: null,
   data: [],
 };
@@ -109,10 +130,29 @@ export default worldAuthSlice = createSlice({
   name: 'worldAuth',
   initialState,
   reducers: {
+    setToken: (state, action: PayloadAction<any>) => {
+      state.token = action.payload;
+    },
     setUser: (state, action: PayloadAction<any>) => {
       state.user = action.payload;
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(signUp.fulfilled, (state, action) => {
+        state.token = action.payload.token;
+        state.user = action.payload.user;
+      })
+      .addCase(signIn.fulfilled, (state, action) => {
+        state.token = action.payload.token;
+        state.user = action.payload.user;
+      })
+      .addCase(signOut.fulfilled, (state, action) => {
+        state.token = null;
+        state.user = null;
+      })
+      .addDefaultCase((state, action) => { });
+  },
 });
 
-export const { setUser } = worldAuthSlice.actions;
+export const { setToken, setUser } = worldAuthSlice.actions;

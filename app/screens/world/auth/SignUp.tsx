@@ -89,9 +89,9 @@ export const SignUp = (props) => {
     if (Functions.isEmpty(password)) {
       statusPassword = false;
       setErrorPassword('Required field');
-    } else if (password?.length < 8) {
+    } else if (password?.length < 6) {
       statusPassword = false;
-      setErrorPassword('Enter more 8 characters');
+      setErrorPassword('Enter more 6 characters');
     } else {
       statusPassword = true;
       setErrorPassword('');
@@ -111,11 +111,21 @@ export const SignUp = (props) => {
     if (statusFirstname && statusEmail && statusPassword && statusConfirm) {
       dispatch(signUp({
         type: 'World',
-        firstname,
-        lastname,
-        email,
-        password,
-      }));
+        name: {
+          firstname,
+          lastname,
+          username: '',
+        },
+        info: {
+          email,
+          password,
+        },
+        image: {
+          avatar: '',
+        },
+      })).then(() => {
+        props.navigation.navigate('WorldMainDrawer');
+      });
     };
   };
 

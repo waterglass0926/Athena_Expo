@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -22,6 +22,11 @@ export const Start = (props) => {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
   const { theme } = useSelector(state => state.athena);
+  const { token, user } = useSelector(state => state.worldAuth);
+
+  useEffect(() => {
+    if (token) props.navigation.navigate('WorldMainDrawer');
+  }, []);
 
   return (
     <View style={[styles.container, { backgroundColor: theme.BACKCOLOR }]}>
