@@ -7,15 +7,16 @@ import {
   View,
 } from 'react-native';
 
+import Athena from '@/components/athena';
 import Components from '@/components/world';
 import Constants from '@/constants';
 import Functions from '@/utils';
-import { getUserData } from '@/stores/world/auth';
+import { getUserData } from '@/stores/athena/auth';
 
 export const Profile = (props) => {
   const dispatch = useDispatch();
   const { theme } = useSelector(state => state.athena);
-  const { user, data } = useSelector(state => state.worldAuth);
+  const { user, data } = useSelector(state => state.athenaAuth);
 
   useEffect(() => {
     dispatch(getUserData({ id: user.id }));
@@ -25,7 +26,7 @@ export const Profile = (props) => {
     <View style={[styles.container, { backgroundColor: theme.BACKCOLOR }]}>
       <StatusBar hidden />
 
-      <Components.Header
+      <Athena.Header
         menu
         // setting
         mode
@@ -34,11 +35,11 @@ export const Profile = (props) => {
         onMenu={() => props.navigation.openDrawer()}
         onSetting={() => props.navigation.push('WorldSetting')}
       />
-      <Components.UserInfo
+      <Athena.UserInfo
         type='normal'
         user={user}
       />
-      <Components.UserData
+      <Athena.UserData
         data={data}
       />
     </View>

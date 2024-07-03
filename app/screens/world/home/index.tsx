@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 
 import '@/utils/i18n';
+import Athena from '@/components/athena';
 import Components from '@/components/world';
 import Constants from '@/constants';
 import Functions from '@/utils';
@@ -66,7 +67,7 @@ export const Home = (props) => {
     <View style={[styles.container, { backgroundColor: theme.BACKCOLOR }]}>
       <StatusBar hidden />
 
-      <Components.Header
+      <Athena.Header
         menu
         mode
         title='HOME'
@@ -89,7 +90,7 @@ export const Home = (props) => {
           loop={true}
         /> */}
 
-        <Components.Title
+        <Athena.Title
           key='title01'
           title='CONTINENTS'
           seeAll
@@ -109,7 +110,7 @@ export const Home = (props) => {
           style={styles.imageMap}
         />
 
-        <Components.Title
+        <Athena.Title
           key='title02'
           title='COUNTRIES'
           seeAll
@@ -129,7 +130,7 @@ export const Home = (props) => {
           ))}
         </ScrollView>
 
-        <Components.Title
+        <Athena.Title
           key='title03'
           title='CAPITAL CITIES'
           seeAll
@@ -143,12 +144,14 @@ export const Home = (props) => {
           />
         ))}
 
-        {/* <AllTitle
+        {/* 
+        <Athena.Title
           key='title04'
           title='VIDEOS'
           seeAll
+          onPress={() => Toast.show({ type: 'success', text1: 'Go To', text2: 'All Videos' })}
         />
-        <View style={[styles.viewVideos, { borderColor: theme.backColor }]}>
+        <View style={[styles.viewVideos, { borderColor: theme.BACKCOLOR }]}>
           <TouchableOpacity
             activeOpacity={0.9}
             onPress={() => setPaused(!paused)}

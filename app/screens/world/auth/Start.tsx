@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 
 import '@/utils/i18n';
+import Athena from '@/components/athena';
 import Components from '@/components/world';
 import Constants from '@/constants';
 import Functions, { Tokens } from '@/utils';
@@ -23,7 +24,7 @@ export const Start = (props) => {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
   const { theme } = useSelector(state => state.athena);
-  const { user } = useSelector(state => state.worldAuth);
+  const { user } = useSelector(state => state.athenaAuth);
 
   useEffect(() => {
     const onRoute = async () => {
@@ -54,7 +55,7 @@ export const Start = (props) => {
         colors={[theme.SECONDARY, theme.PRIMARY]}
         style={styles.shapeCircle2}
       />
-      <Components.Button
+      <Athena.Button
         title={t('SIGN UP')}
         bottom={100}
         height={35}
@@ -63,7 +64,7 @@ export const Start = (props) => {
         borderRadius={5}
         onPress={() => props.navigation.replace('WorldAuthStack', { screen: 'WorldSignUp' })}
       />
-      <Components.Button
+      <Athena.Button
         title={t('SIGN IN')}
         outline
         bottom={50}

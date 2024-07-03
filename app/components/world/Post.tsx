@@ -14,7 +14,6 @@ import {
   Image
 } from 'react-native';
 
-import Components from '@/components/world';
 import Constants from '@/constants';
 import Functions from '@/utils';
 

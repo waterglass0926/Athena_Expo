@@ -12,10 +12,11 @@ import {
 } from 'react-native';
 
 import '@/utils/i18n';
+import Athena from '@/components/athena';
 import Components from '@/components/world';
 import Constants from '@/constants';
 import Functions from '@/utils';
-import { signUp } from '@/stores/world/auth';
+import { signUp } from '@/stores/athena/auth';
 
 export const SignUp = (props) => {
   const dispatch = useDispatch();
@@ -132,14 +133,14 @@ export const SignUp = (props) => {
   return (
     <View style={[styles.container, { backgroundColor: theme.BACKCOLOR }]}>
       <StatusBar hidden />
-      <Components.Header
+      <Athena.Header
         left
         right
         title='SIGN UP'
         onTitle={() => props.navigation.popToTop()}
       />
       <ScrollView contentContainerStyle={styles.content}>
-        <Components.Input
+        <Athena.Input
           label='First Name *'
           error={errorFirstname}
           marginTop={25}
@@ -148,14 +149,14 @@ export const SignUp = (props) => {
           value={firstname}
           onChangeText={(value) => onFirstname(value)}
         />
-        <Components.Input
+        <Athena.Input
           label='Last Name'
           leftIconType='material-community'
           leftIconName='account'
           value={lastname}
           onChangeText={(value) => onLastname(value)}
         />
-        <Components.Input
+        <Athena.Input
           label='Email *'
           error={errorEmail}
           leftIconType='material-community'
@@ -165,7 +166,7 @@ export const SignUp = (props) => {
           value={email}
           onChangeText={(value) => onEmail(value)}
         />
-        <Components.Input
+        <Athena.Input
           label='Password *'
           error={errorPassword}
           leftIconType='material'
@@ -177,7 +178,7 @@ export const SignUp = (props) => {
           onChangeText={(value) => onPassword(value)}
           onRight={() => setPasswordEye(!passwordEye)}
         />
-        <Components.Input
+        <Athena.Input
           label='Confirm *'
           error={errorConfirm}
           leftIconType='material'
@@ -191,7 +192,7 @@ export const SignUp = (props) => {
           onRight={() => setConfirmEye(!confirmEye)}
         />
 
-        <Components.Button
+        <Athena.Button
           title={t('SIGN UP')}
           marginTop={15}
           height={35}

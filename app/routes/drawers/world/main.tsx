@@ -18,7 +18,7 @@ import {
 import Components from '@/components/athena';
 import Constants from '@/constants';
 import Functions, { navOptionHandler } from '@/utils';
-import { signOut } from '@/stores/world/auth';
+import { signOut } from '@/stores/athena/auth';
 
 import { WorldBottomTab } from '@/routes/tabs/world/bottom';
 
@@ -69,7 +69,7 @@ const DrawerItem = (props) => {
 const DrawerContent = (props) => {
   const dispatch = useDispatch();
   const { theme } = useSelector(state => state.athena);
-  const { user } = useSelector(state => state.worldAuth);
+  const { user } = useSelector(state => state.athenaAuth);
 
   const [active, setActive] = useState('Home');
 

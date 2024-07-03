@@ -1,17 +1,21 @@
 import { Loading } from './Loading';
-import { Collapsible } from './Collapsible';
-import { ExternalLink } from './ExternalLink';
-import { HelloWave } from './HelloWave';
-import { ParallaxScrollView } from './ParallaxScrollView';
-import { ThemedText } from './ThemedText';
-import { ThemedView } from './ThemedView';
+import { Button } from './Button';
+import { Header } from './Header';
+import { Input } from './Input';
+import { Title } from './Title';
+
+import { UserData } from './UserData';
+import { UserInfo } from './UserInfo';
+import { Rating } from './Rating';
 
 export default {
   Loading,
-  Collapsible,
-  ExternalLink,
-  HelloWave,
-  ParallaxScrollView,
-  ThemedText,
-  ThemedView,
+  Button,
+  Header,
+  Input,
+  Title,
+
+  UserData,
+  UserInfo,
+  Rating,
 };

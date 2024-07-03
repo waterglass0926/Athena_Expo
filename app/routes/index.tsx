@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { AthenaStack } from './stacks/athena';
 import { WorldStack } from './stacks/world';
+import { FitnessV1Stack } from './stacks/fitness/v1';
 
 import { ChatGptStack } from './stacks/chatgpt/v1';
 import { UberEatsStack } from './stacks/ubereats';
@@ -30,6 +31,11 @@ export const AppContainer = () => {
         <StackApp.Screen
           name='World'
           component={WorldStack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='FitnessV1'
+          component={FitnessV1Stack}
           options={navOptionHandler}
         />
         <StackApp.Screen

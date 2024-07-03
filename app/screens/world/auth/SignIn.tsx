@@ -12,10 +12,11 @@ import {
 } from 'react-native';
 
 import '@/utils/i18n';
+import Athena from '@/components/athena';
 import Components from '@/components/world';
 import Constants from '@/constants';
 import Functions from '@/utils';
-import { signIn } from '@/stores/world/auth';
+import { signIn } from '@/stores/athena/auth';
 
 export const SignIn = (props) => {
   const dispatch = useDispatch();
@@ -78,14 +79,14 @@ export const SignIn = (props) => {
   return (
     <View style={[styles.container, { backgroundColor: theme.BACKCOLOR }]}>
       <StatusBar hidden />
-      <Components.Header
+      <Athena.Header
         left
         right
         title='SIGN IN'
         onTitle={() => props.navigation.popToTop()}
       />
       <ScrollView contentContainerStyle={styles.content}>
-        <Components.Input
+        <Athena.Input
           label='Email *'
           error={errorEmail}
           marginTop={25}
@@ -96,7 +97,7 @@ export const SignIn = (props) => {
           value={email}
           onChangeText={(value) => onEmail(value)}
         />
-        <Components.Input
+        <Athena.Input
           label='Password *'
           error={errorPassword}
           leftIconType='material'
@@ -109,7 +110,7 @@ export const SignIn = (props) => {
           onRight={() => setPasswordEye(!passwordEye)}
         />
 
-        <Components.Button
+        <Athena.Button
           title={t('SIGN IN')}
           marginTop={15}
           height={35}

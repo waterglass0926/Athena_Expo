@@ -9,14 +9,13 @@ import {
   Image
 } from 'react-native';
 
-import Components from '@/components/world';
 import Constants from '@/constants';
 import Functions from '@/utils';
 
 export const Friends = (props) => {
   const dispatch = useDispatch();
   const { theme } = useSelector(state => state.athena);
-  const { user } = useSelector(state => state.worldAuth);
+  const { user } = useSelector(state => state.athenaAuth);
 
   return (
     <ScrollView

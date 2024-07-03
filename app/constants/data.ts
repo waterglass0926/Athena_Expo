@@ -4,7 +4,7 @@ export default DATA = {
   SLIDES: [
     { key: 1, title: 'StarWorld', description: 'The Best & Various Types, Worldwide Platform', image: Images.ATHENA.SPLASH101, navigation: 'World' },
     { key: 2, title: 'UpJob', description: 'Hire The Best Global Freelancers Platform', image: Images.ATHENA.SPLASH102, navigation: 'UpJobStack' },
-    { key: 3, title: 'Fitness', description: 'Workout Tracker, Yoga & Planner Gym Fitness', image: Images.ATHENA.SPLASH103, navigation: 'FitnessStack' },
+    { key: 3, title: 'Fitness', description: 'Workout Tracker, Yoga & Planner Gym Fitness', image: Images.ATHENA.SPLASH103, navigation: 'FitnessV1' },
     { key: 4, title: 'Foodnet', description: 'Restaurant, Food Recipe & Delivery Platform', image: Images.ATHENA.SPLASH104, navigation: 'FoodnetStack' },
     { key: 5, title: 'TikTok', description: 'Short Video Sharing & Social Media Platform', image: Images.ATHENA.SPLASH105, navigation: 'TikTok' },
     { key: 6, title: 'Shopee', description: 'The Best Selling, Fashion & eCommerce Platform', image: Images.ATHENA.SPLASH106, navigation: 'ShopeeStack' },
@@ -15,8 +15,8 @@ export default DATA = {
     { key: 11, title: 'Schedule', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH111, navigation: 'ScheduleStack' },
     { key: 12, title: 'ChatGpt', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH101, navigation: 'ChatGpt' },
     { key: 13, title: 'UberEats', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH102, navigation: 'UberEats' },
-    { key: 14, title: 'Translator', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH111, navigation: 'Translator' },
-    { key: 15, title: 'Tinder', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH111, navigation: 'TinderV1' },
+    { key: 14, title: 'Translator', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH103, navigation: 'Translator' },
+    { key: 15, title: 'Tinder', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH104, navigation: 'TinderV1' },
   ],
   LANGUAGES: [
     { key: 1, country: 'United States', language: 'English', code: 'en', flag: Images.ATHENA.FLAG001 },

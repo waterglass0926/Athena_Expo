@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 
+import Athena from '@/components/athena';
 import Components from '@/components/world';
 import Constants from '@/constants';
 import Functions from '@/utils';
@@ -28,7 +29,7 @@ export const Feed = (props) => {
     <View style={[styles.container, { backgroundColor: theme.BACKCOLOR }]}>
       <StatusBar hidden />
 
-      <Components.Header
+      <Athena.Header
         menu
         mode
         title='FEED'
