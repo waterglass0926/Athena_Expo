@@ -25,42 +25,42 @@ export const Continent = (props) => {
     >
       <Image source={{
         uri:
-          Functions.isEmpty(props.item.image)
+          Functions.isEmpty(props.item?.image)
             ? Constants.IAMGES.ATHENA.DEFAULT
-            : props.item.image
+            : props.item?.image
       }} style={styles.imageMap} />
       <View style={styles.viewInfo}>
-        <Text style={[styles.textName, { color: theme.PRIMARY }]}>{`${props.item.name}  (${props.item.countries})`}</Text>
-        <Text style={[styles.textPopulation, { color: Constants.COLORS.DEFAULT.GRAY }]}>{`Population: ${props.item.population}`}</Text>
-        <Text style={[styles.textCities, { color: theme.FORECOLOR }]}>{`Cities: ${props.item.cities}`}</Text>
+        <Text style={[styles.textName, { color: theme.PRIMARY }]}>{`${props.item?.name}  (${props.item?.countries})`}</Text>
+        <Text style={[styles.textPopulation, { color: Constants.COLORS.DEFAULT.GRAY }]}>{`Population: ${props.item?.population}`}</Text>
+        <Text style={[styles.textCities, { color: theme.FORECOLOR }]}>{`Cities: ${props.item?.cities}`}</Text>
       </View>
       <View style={styles.viewRight}>
         <View style={{ flexDirection: 'row' }}>
           <Image source={{
             uri:
-              Functions.isEmpty(props.item.photos[0])
+              Functions.isEmpty(props.item?.photos[0])
                 ? Constants.IAMGES.ATHENA.DEFAULT
-                : props.item.photos[0]
+                : props.item?.photos[0]
           }} style={styles.imageFlag} />
           <Image source={{
             uri:
-              Functions.isEmpty(props.item.photos[1])
+              Functions.isEmpty(props.item?.photos[1])
                 ? Constants.IAMGES.ATHENA.DEFAULT
-                : props.item.photos[1]
+                : props.item?.photos[1]
           }} style={styles.imageFlag} />
         </View>
         <View style={{ flexDirection: 'row' }}>
           <Image source={{
             uri:
-              Functions.isEmpty(props.item.photos[2])
+              Functions.isEmpty(props.item?.photos[2])
                 ? Constants.IAMGES.ATHENA.DEFAULT
-                : props.item.photos[2]
+                : props.item?.photos[2]
           }} style={styles.imageFlag} />
           <Image source={{
             uri:
-              Functions.isEmpty(props.item.photos[3])
+              Functions.isEmpty(props.item?.photos[3])
                 ? Constants.IAMGES.ATHENA.DEFAULT
-                : props.item.photos[3]
+                : props.item?.photos[3]
           }} style={styles.imageFlag} />
         </View>
       </View>

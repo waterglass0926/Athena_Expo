@@ -18,7 +18,7 @@ export const WorldHomeStack = () => {
       />
       {/* <StackWorldHome.Screen
         name='WorldContinents'
-        component={WorldContinents}
+        component={Screen.Continents}
         options={navOptionHandler}
       /> */}
     </StackWorldHome.Navigator>

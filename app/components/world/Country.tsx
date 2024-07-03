@@ -25,14 +25,14 @@ export const Country = (props) => {
     >
       <Image source={{
         uri:
-          Functions.isEmpty(props.item.image)
+          Functions.isEmpty(props.item?.image)
             ? Constants.IAMGES.ATHENA.DEFAULT
-            : props.item.image
+            : props.item?.image
       }} style={styles.imageFlag} />
       <View style={styles.viewInfo}>
-        <Text style={[styles.textName, { color: theme.PRIMARY }]}>{props.item.name}</Text>
-        <Text style={[styles.textCapital, { color: Constants.COLORS.DEFAULT.GRAY }]}>{props.item.capital}</Text>
-        <Text style={[styles.textPopulation, { color: theme.FORECOLOR }]}>{props.item.population}</Text>
+        <Text style={[styles.textName, { color: theme.PRIMARY }]}>{props.item?.name}</Text>
+        <Text style={[styles.textCapital, { color: Constants.COLORS.DEFAULT.GRAY }]}>{props.item?.capital}</Text>
+        <Text style={[styles.textPopulation, { color: theme.FORECOLOR }]}>{props.item?.population}</Text>
       </View>
     </TouchableOpacity>
   );

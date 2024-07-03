@@ -39,7 +39,7 @@ export const Home = (props) => {
 
   // const renderItem = ({ item, index }, parallaxProps) => (
   //   <ParallaxImage
-  //     source={item.image}
+  //     source={item?.image}
   //     containerStyle={styles.imageSlides}
   //     style={{ resizeMode: 'cover' }}
   //     parallaxFactor={0.2}
@@ -52,9 +52,9 @@ export const Home = (props) => {
       key={`image${index}`}
       source={{
         uri:
-          Functions.isEmpty(item.image)
+          Functions.isEmpty(item?.image)
             ? Constants.IAMGES.ATHENA.DEFAULT
-            : item.image
+            : item?.image
       }}
       style={styles.imageSlides}
       resizeMode='cover'

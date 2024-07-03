@@ -7,8 +7,8 @@ import { Icon } from 'react-native-elements';
 import { Text } from 'react-native';
 
 import { WorldHomeStack } from '@/routes/stacks/world/home';
-// import WorldFeedStack from '@/routes/stacks/world/feed';
-// import WorldProfileStack from '@/routes/stacks/world/profile';
+import { WorldFeedStack } from '@/routes/stacks/world/feed';
+import { WorldProfileStack } from '@/routes/stacks/world/profile';
 
 import Screens from '@/screens/world';
 import Components from '@/components/world';
@@ -37,15 +37,15 @@ export const WorldBottomTab = () => {
           if (route.name === 'WorldHomeStack') {
             iconType = 'material-community';
             iconName = focused ? 'home-lightbulb' : 'home-lightbulb-outline';
-            iconColor = focused ? theme.QUATERNARY : theme.SECONDARY;
+            iconColor = focused ? Constants.COLORS.DEFAULT.WHITE : theme.QUATERNARY;
           } else if (route.name === 'WorldFeedStack') {
             iconType = 'material';
             iconName = focused ? 'dynamic-feed' : 'dynamic-feed';
-            iconColor = focused ? theme.QUATERNARY : theme.SECONDARY;
+            iconColor = focused ? Constants.COLORS.DEFAULT.WHITE : theme.QUATERNARY;
           } else if (route.name === 'WorldProfileStack') {
             iconType = 'material-community';
             iconName = focused ? 'account' : 'account-outline';
-            iconColor = focused ? theme.QUATERNARY : theme.SECONDARY;
+            iconColor = focused ? Constants.COLORS.DEFAULT.WHITE : theme.QUATERNARY;
           }
           return <Icon type={iconType} name={iconName} size={25} color={iconColor} />;
         },
@@ -53,21 +53,21 @@ export const WorldBottomTab = () => {
           let labelName, labelColor, fontWeight;
           if (route.name === 'WorldHomeStack') {
             labelName = 'Home';
-            labelColor = focused ? theme.QUATERNARY : theme.SECONDARY;
+            labelColor = focused ? Constants.COLORS.DEFAULT.WHITE : theme.QUATERNARY;
             fontWeight = focused ? '700' : '500';
           } else if (route.name === 'WorldFeedStack') {
             labelName = 'Feed';
-            labelColor = focused ? theme.QUATERNARY : theme.SECONDARY;
+            labelColor = focused ? Constants.COLORS.DEFAULT.WHITE : theme.QUATERNARY;
             fontWeight = focused ? '700' : '500';
           } else if (route.name === 'WorldProfileStack') {
             labelName = 'Profile';
-            labelColor = focused ? theme.QUATERNARY : theme.SECONDARY;
+            labelColor = focused ? Constants.COLORS.DEFAULT.WHITE : theme.QUATERNARY;
             fontWeight = focused ? '700' : '500';
           }
           return <Text style={{ fontSize: 12, fontWeight: fontWeight, color: labelColor }}>{labelName}</Text>;
         },
-        activeTintColor: theme.QUATERNARY,
-        inactiveTintColor: theme.SECONDARY,
+        activeTintColor: Constants.COLORS.DEFAULT.WHITE,
+        inactiveTintColor: theme.QUATERNARY,
       })}
     >
       <TabWorldBottom.Screen
@@ -76,7 +76,7 @@ export const WorldBottomTab = () => {
         options={navOptionHandler}
         tabBarLabel='Home'
       />
-      {/* <TabWorldBottom.Screen
+      <TabWorldBottom.Screen
         name='WorldFeedStack'
         component={WorldFeedStack}
         options={navOptionHandler}
@@ -87,7 +87,7 @@ export const WorldBottomTab = () => {
         component={WorldProfileStack}
         options={navOptionHandler}
         tabBarLabel='Profile'
-      /> */}
+      />
     </TabWorldBottom.Navigator>
   );
 };

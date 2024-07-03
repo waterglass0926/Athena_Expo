@@ -20,7 +20,7 @@ export const getUser = (params: any) => {
 };
 
 export const getUserData = (params) => {
-  let url = toURL({
+  let url = Functions.toURL({
     url: Constants.URLS.WORLD.DATA,
     id: params.id,
   });

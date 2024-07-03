@@ -21,7 +21,6 @@ export const Header = (props) => {
   const { theme } = useSelector(state => state.athena);
 
   const onMode = () => {
-    console.log(theme.MODE)
     dispatch(setTheme({
       MODE: theme.MODE == 'LIGHT' ? 'NIGHT' : 'LIGHT',
       NAME: theme.NAME,
@@ -29,8 +28,8 @@ export const Header = (props) => {
       SECONDARY: theme.SECONDARY,
       TERTIARY: theme.TERTIARY,
       QUATERNARY: theme.QUATERNARY,
-      BACKCOLOR: theme.MODE === 'LIGHT' ? theme.NIGHT : theme.LIGHT,
-      FORECOLOR: theme.MODE === 'LIGHT' ? theme.LIGHT : theme.NIGHT,
+      BACKCOLOR: theme.FORECOLOR,
+      FORECOLOR: theme.BACKCOLOR,
     }));
   };
 

@@ -10,7 +10,6 @@ export const getPlaces = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       thunkAPI.dispatch(setLoad(true));
-
       let response: AxiosResponse<ResponseType> = await mainApi.getPlaces({});
       if (response.status === 200) {
         const resp: any = response.data;
@@ -20,7 +19,6 @@ export const getPlaces = createAsyncThunk(
       } else {
         return thunkAPI.rejectWithValue();
       };
-
     } catch (error) {
       Functions.isLog(2, error.message);
       return thunkAPI.rejectWithValue();
@@ -35,7 +33,6 @@ export const getContinents = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       thunkAPI.dispatch(setLoad(true));
-
       let response: AxiosResponse<ResponseType> = await mainApi.getContinents({});
       if (response.status === 200) {
         const resp: any = response.data;
@@ -45,7 +42,6 @@ export const getContinents = createAsyncThunk(
       } else {
         return thunkAPI.rejectWithValue();
       };
-
     } catch (error) {
       Functions.isLog(2, error.message);
       return thunkAPI.rejectWithValue();
@@ -60,7 +56,6 @@ export const getCountries = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       thunkAPI.dispatch(setLoad(true));
-
       let response: AxiosResponse<ResponseType> = await mainApi.getCountries({});
       if (response.status === 200) {
         const resp: any = response.data;
@@ -70,7 +65,6 @@ export const getCountries = createAsyncThunk(
       } else {
         return thunkAPI.rejectWithValue();
       };
-
     } catch (error) {
       Functions.isLog(2, error.message);
       return thunkAPI.rejectWithValue();
@@ -85,7 +79,6 @@ export const getCapitals = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       thunkAPI.dispatch(setLoad(true));
-
       let response: AxiosResponse<ResponseType> = await mainApi.getCapitals({});
       if (response.status === 200) {
         const resp: any = response.data;
@@ -95,7 +88,6 @@ export const getCapitals = createAsyncThunk(
       } else {
         return thunkAPI.rejectWithValue();
       };
-
     } catch (error) {
       Functions.isLog(2, error.message);
       return thunkAPI.rejectWithValue();
@@ -110,7 +102,6 @@ export const getFriends = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       thunkAPI.dispatch(setLoad(true));
-
       let response: AxiosResponse<ResponseType> = await mainApi.getFriends({});
       if (response.status === 200) {
         const resp: any = response.data;
@@ -120,7 +111,6 @@ export const getFriends = createAsyncThunk(
       } else {
         return thunkAPI.rejectWithValue();
       };
-
     } catch (error) {
       Functions.isLog(2, error.message);
       return thunkAPI.rejectWithValue();
@@ -135,7 +125,6 @@ export const getPosts = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       thunkAPI.dispatch(setLoad(true));
-
       let response: AxiosResponse<ResponseType> = await mainApi.getPosts({});
       if (response.status === 200) {
         const resp: any = response.data;
@@ -145,7 +134,6 @@ export const getPosts = createAsyncThunk(
       } else {
         return thunkAPI.rejectWithValue();
       };
-
     } catch (error) {
       Functions.isLog(2, error.message);
       return thunkAPI.rejectWithValue();

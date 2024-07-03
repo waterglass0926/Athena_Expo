@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { LinearGradient } from 'expo-linear-gradient';
+import { auth } from '@/utils/firebase';
 
 import {
   StyleSheet,
@@ -16,16 +17,25 @@ import {
 import '@/utils/i18n';
 import Components from '@/components/world';
 import Constants from '@/constants';
-import Functions from '@/utils';
+import Functions, { Tokens } from '@/utils';
 
 export const Start = (props) => {
   const dispatch = useDispatch();
   const { i18n, t } = useTranslation();
   const { theme } = useSelector(state => state.athena);
-  const { token, user } = useSelector(state => state.worldAuth);
+  const { user } = useSelector(state => state.worldAuth);
 
   useEffect(() => {
-    if (token) props.navigation.navigate('WorldMainDrawer');
+    const onRoute = async () => {
+      let token = await auth.currentUser.getIdToken();
+      console.log(token);
+      if (token) {
+        Tokens.userToken = token;
+        props.navigation.navigate('WorldMainDrawer');
+      };
+    };
+
+    // onRoute();
   }, []);
 
   return (

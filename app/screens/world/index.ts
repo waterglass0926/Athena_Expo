@@ -3,6 +3,8 @@ import { SignUp } from './auth/SignUp';
 import { SignIn } from './auth/SignIn';
 
 import { Home } from './home';
+import { Feed } from './feed';
+import { Profile } from './profile';
 
 export default {
   Start,
@@ -10,4 +12,6 @@ export default {
   SignIn,
 
   Home,
+  Feed,
+  Profile,
 };

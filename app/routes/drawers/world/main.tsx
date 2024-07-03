@@ -15,11 +15,9 @@ import {
   Text,
 } from 'react-native';
 
-import '@/utils/i18n';
 import Components from '@/components/athena';
 import Constants from '@/constants';
 import Functions, { navOptionHandler } from '@/utils';
-import { ThemeType } from '@/types/athena';
 import { signOut } from '@/stores/world/auth';
 
 import { WorldBottomTab } from '@/routes/tabs/world/bottom';
@@ -44,7 +42,7 @@ const DrawerItem = (props) => {
           name={props.leftIconName}
           size={props.leftIconSize}
           color={props.active === props.title
-            ? theme.QUATERNARY
+            ? Constants.COLORS.DEFAULT.WHITE
             : theme.FORECOLOR
           }
         />
@@ -52,7 +50,7 @@ const DrawerItem = (props) => {
           style={{
             ...styles.textItems,
             color: props.active === props.title
-              ? theme.QUATERNARY
+              ? Constants.COLORS.DEFAULT.WHITE
               : theme.FORECOLOR,
           }}>
           {props.title}
@@ -85,16 +83,16 @@ const DrawerContent = (props) => {
       >
         <ImageModal
           source={{
-            uri: Functions.isEmpty(user.image.avatar)
+            uri: Functions.isEmpty(user?.image?.avatar)
               ? Constants.IAMGES.ATHENA.DEFAULT
-              : user.image.avatar
+              : user?.image?.avatar
           }}
           style={[styles.imageAvatar, { borderColor: theme.PRIMARY }]}
           resizeMode='cover'
           modalImageResizeMode='contain'
         />
         <Text
-          style={[styles.textName, { color: theme.QUATERNARY }]}>
+          style={[styles.textName, { color: theme.FORECOLOR }]}>
           {`${user?.name?.firstname} ${user?.name?.lastname}`}
         </Text>
       </ImageBackground>
@@ -158,6 +156,7 @@ const DrawerContent = (props) => {
           onPress={() => {
             setActive('Logout');
             dispatch(signOut({}));
+            props.navigation.popToTop();
           }}
         />
       </ScrollView>

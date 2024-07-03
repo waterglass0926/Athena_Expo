@@ -14,7 +14,6 @@ export const signUp = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       thunkAPI.dispatch(setLoad(true));
-
       let result = await createUserWithEmailAndPassword(auth, payload.info.email, payload.info.password);
       if (result?.user.uid) {
         let token = await auth.currentUser.getIdToken();
@@ -33,14 +32,12 @@ export const signUp = createAsyncThunk(
           return thunkAPI.rejectWithValue();
         };
       };
-
     } catch (error) {
       if (error.code === 'auth/internal-error') {
         Toast.show({ type: 'error', text1: 'Error', text2: 'That email or password is invalid!' });
       } else {
         Toast.show({ type: 'error', text1: 'Error', text2: error.message });
       };
-
       Functions.isLog(2, error.message);
       return thunkAPI.rejectWithValue();
     } finally {
@@ -54,7 +51,6 @@ export const signIn = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       thunkAPI.dispatch(setLoad(true));
-
       let result = await signInWithEmailAndPassword(auth, payload.email, payload.password);
       if (result?.user.uid) {
         let token = await auth.currentUser.getIdToken();
@@ -73,14 +69,12 @@ export const signIn = createAsyncThunk(
           return thunkAPI.rejectWithValue();
         };
       };
-
     } catch (error) {
       if (error.code === 'auth/internal-error') {
         Toast.show({ type: 'error', text1: 'Error', text2: 'That email or password is invalid!' });
       } else {
         Toast.show({ type: 'error', text1: 'Error', text2: error.message });
       };
-
       Functions.isLog(2, error.message);
       return thunkAPI.rejectWithValue();
     } finally {
@@ -98,6 +92,29 @@ export const signOut = createAsyncThunk(
       return {
         token: null,
         user: null,
+      };
+    } catch (error) {
+      Functions.isLog(2, error.message);
+      return thunkAPI.rejectWithValue();
+    } finally {
+      thunkAPI.dispatch(setLoad(false));
+    };
+  },
+);
+
+export const getUserData = createAsyncThunk(
+  'worldMain/getUserData',
+  async (payload, thunkAPI) => {
+    try {
+      thunkAPI.dispatch(setLoad(true));
+      let response: AxiosResponse<ResponseType> = await authApi.getUserData(payload);
+      if (response.status === 200) {
+        const resp: any = response.data;
+        return {
+          data: resp,
+        };
+      } else {
+        return thunkAPI.rejectWithValue();
       };
     } catch (error) {
       Functions.isLog(2, error.message);
@@ -136,6 +153,9 @@ export default worldAuthSlice = createSlice({
     setUser: (state, action: PayloadAction<any>) => {
       state.user = action.payload;
     },
+    setUserData: (state, action: PayloadAction<any>) => {
+      state.data = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -151,8 +171,11 @@ export default worldAuthSlice = createSlice({
         state.token = null;
         state.user = null;
       })
+      .addCase(getUserData.fulfilled, (state, action) => {
+        state.data = action.payload.data;
+      })
       .addDefaultCase((state, action) => { });
   },
 });
 
-export const { setToken, setUser } = worldAuthSlice.actions;
+export const { setToken, setUser, setUserData } = worldAuthSlice.actions;

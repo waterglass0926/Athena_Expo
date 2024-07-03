@@ -28,9 +28,9 @@ export const Capital = (props) => {
         horizontal={true}
         showsHorizontalScrollIndicator={false}
       >
-        {props.item.images.map((image, index) => (
+        {props.item?.images?.map((image, index) => (
           <ImageModal
-            key={`image${props.item.name}${index}`}
+            key={`image${props.item?.name}${index}`}
             source={{
               uri:
                 Functions.isEmpty(image)
@@ -47,16 +47,16 @@ export const Capital = (props) => {
       <View style={styles.viewBottom}>
         <Image source={{
           uri:
-            Functions.isEmpty(props.item.image)
+            Functions.isEmpty(props.item?.image)
               ? Constants.IAMGES.ATHENA.DEFAULT
-              : props.item.image
+              : props.item?.image
         }} style={[styles.imageFlag, { borderColor: theme.SECONDARY }]} />
         <View style={styles.viewRight}>
           <TouchableOpacity onPress={props.onPress}>
-            <Text style={[styles.textTitle, { color: theme.PRIMARY }]}>{props.item.name}</Text>
+            <Text style={[styles.textTitle, { color: theme.PRIMARY }]}>{props.item?.name}</Text>
           </TouchableOpacity>
-          <Text style={[styles.textCountry, { color: Constants.COLORS.DEFAULT.GRAY }]}>{props.item.country}</Text>
-          <Text style={[styles.textPopulation, { color: theme.FORECOLOR }]}>{props.item.population}</Text>
+          <Text style={[styles.textCountry, { color: Constants.COLORS.DEFAULT.GRAY }]}>{props.item?.country}</Text>
+          <Text style={[styles.textPopulation, { color: theme.FORECOLOR }]}>{props.item?.population}</Text>
         </View>
       </View>
     </View>

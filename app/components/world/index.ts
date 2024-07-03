@@ -7,6 +7,11 @@ import { Continent } from './Continent';
 import { Country } from './Country';
 import { Title } from './Title';
 
+import { Friends } from './Friends';
+import { Post } from './Post';
+import { UserData } from './UserData';
+import { UserInfo } from './UserInfo';
+
 export default {
   Button,
   Header,
@@ -16,4 +21,9 @@ export default {
   Continent,
   Country,
   Title,
+
+  Friends,
+  Post,
+  UserData,
+  UserInfo,
 };
