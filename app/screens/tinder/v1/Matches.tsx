@@ -20,32 +20,31 @@ export const Matches = () => {
       style={Styles.bg}
     >
       <View style={Styles.containerMatches}>
-        <ScrollView>
-          <View style={Styles.top}>
-            <Text style={Styles.title}>Matches</Text>
-            <TouchableOpacity>
-              <Text style={Styles.icon}>
-                <Components.Icon name='optionsV' />
-              </Text>
-            </TouchableOpacity>
-          </View>
+        <View style={Styles.top}>
+          <Text style={Styles.title}>Matches</Text>
+          <TouchableOpacity>
+            <Text style={Styles.icon}>
+              <Components.Icon name='optionsV' />
+            </Text>
+          </TouchableOpacity>
+        </View>
 
-          <FlatList
-            numColumns={2}
-            data={Demo}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={({ item, index }) => (
-              <TouchableOpacity key={index}>
-                <Components.CardItem
-                  image={item.image}
-                  name={item.name}
-                  status={item.status}
-                  variant
-                />
-              </TouchableOpacity>
-            )}
-          />
-        </ScrollView>
+        <FlatList
+          numColumns={2}
+          data={Demo}
+          keyExtractor={(item, index) => index.toString()}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item, index }) => (
+            <TouchableOpacity key={index}>
+              <Components.CardItem
+                image={item.image}
+                name={item.name}
+                status={item.status}
+                variant
+              />
+            </TouchableOpacity>
+          )}
+        />
       </View>
     </ImageBackground>
   );

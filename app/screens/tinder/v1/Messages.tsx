@@ -20,30 +20,29 @@ export const Messages = () => {
       style={Styles.bg}
     >
       <View style={Styles.containerMessages}>
-        <ScrollView>
-          <View style={Styles.top}>
-            <Text style={Styles.title}>Messages</Text>
-            <TouchableOpacity>
-              <Text style={Styles.icon}>
-                <Components.Icon name='optionsV' />
-              </Text>
-            </TouchableOpacity>
-          </View>
+        <View style={Styles.top}>
+          <Text style={Styles.title}>Messages</Text>
+          <TouchableOpacity>
+            <Text style={Styles.icon}>
+              <Components.Icon name='optionsV' />
+            </Text>
+          </TouchableOpacity>
+        </View>
 
-          <FlatList
-            data={Demo}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={({ item }) => (
-              <TouchableOpacity>
-                <Components.Message
-                  image={item.image}
-                  name={item.name}
-                  lastMessage={item.message}
-                />
-              </TouchableOpacity>
-            )}
-          />
-        </ScrollView>
+        <FlatList
+          data={Demo}
+          keyExtractor={(item, index) => index.toString()}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => (
+            <TouchableOpacity>
+              <Components.Message
+                image={item.image}
+                name={item.name}
+                lastMessage={item.message}
+              />
+            </TouchableOpacity>
+          )}
+        />
       </View>
     </ImageBackground>
   );
