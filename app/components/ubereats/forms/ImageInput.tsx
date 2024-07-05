@@ -38,7 +38,7 @@ export const ImageInput = ({ imageUri, onChangeImage }) => {
       });
       if (!result.cancelled) onChangeImage(result.uri);
     } catch (error) {
-      console.log('Error Reading an image', error);
+      Functions.isLog(2, error);
     };
   };
 

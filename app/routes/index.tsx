@@ -12,6 +12,7 @@ import { TikTokStack } from './stacks/tiktok';
 import { TranslatorStack } from './stacks/translator';
 import { TinderV1Stack } from './stacks/tinder/v1';
 import { YouTubeV1Stack } from './stacks/youtube/v1';
+import { PaperStack } from './stacks/paper';
 
 import { navOptionHandler } from '@/utils';
 
@@ -66,6 +67,11 @@ export const AppContainer = () => {
         <StackApp.Screen
           name='YouTubeV1'
           component={YouTubeV1Stack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='Paper'
+          component={PaperStack}
           options={navOptionHandler}
         />
       </StackApp.Navigator>

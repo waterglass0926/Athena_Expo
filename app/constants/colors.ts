@@ -31,6 +31,12 @@ export default COLORS = {
     KAKAO: '#FABC05',
     GOOGLE: '#1A73E8',
   },
+  PAPER: {
+    PRIMARY: '#DCD289',
+    SECONDARY: '#312F34',
+    TERTIARY: '#B00303',
+    QUATERNARY: '#000E8C',
+  },
   THEME: [
     {
       INDEX: 1,

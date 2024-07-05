@@ -80,7 +80,7 @@ export const Home = (props) => {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        {/* <Carousel
+        <Carousel
           data={places}
           renderItem={renderItem}
           sliderWidth={wp('100%') - 32}
@@ -88,7 +88,7 @@ export const Home = (props) => {
           hasParallaxImages={true}
           autoplay={true}
           loop={true}
-        /> */}
+        />
 
         <Athena.Title
           key='title01'

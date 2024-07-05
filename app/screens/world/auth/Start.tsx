@@ -29,7 +29,6 @@ export const Start = (props) => {
   useEffect(() => {
     const onRoute = async () => {
       let token = await auth.currentUser.getIdToken();
-      console.log(token);
       if (token) {
         Tokens.userToken = token;
         props.navigation.navigate('WorldMainDrawer');

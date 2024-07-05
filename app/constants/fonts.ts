@@ -35,4 +35,12 @@ export default FONTS = {
       REGULAR: 'TinderV1',
     },
   },
+  PAPER: {
+    UBUNTU: {
+      REGULAR: 'Ubuntu',
+    },
+    SHADOWSINTO: {
+      LIGHT: 'ShadowsIntoLight',
+    },
+  },
 };

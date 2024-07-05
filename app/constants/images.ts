@@ -107,4 +107,7 @@ export default IMAGES = {
       AVATAR: require('@/assets/images/chatgpt/v1/avatar.jpg'),
     },
   },
+  PAPER: {
+    OLDPAPER: require('@/assets/images/paper/old-paper.jpg'),
+  },
 };

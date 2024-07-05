@@ -86,7 +86,7 @@ export const Checkout = () => {
       };
 
     } catch (error) {
-      console.log('error', error);
+      Functions.isLog(2, error);
     } finally {
       setLoading(false);
     };
@@ -98,7 +98,7 @@ export const Checkout = () => {
     });
 
     if (error) {
-      console.log('error', error);
+      Functions.isLog(2, error);
     } else if (paymentOption) {
       setPaymentMethod({
         label: paymentOption?.label,
