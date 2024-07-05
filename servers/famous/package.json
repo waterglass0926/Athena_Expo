@@ -1,0 +1,12 @@
+{
+  "name": "Athena",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.ts"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
