@@ -18,6 +18,7 @@ export default DATA = {
     { key: 14, title: 'Translator', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH103, navigation: 'Translator' },
     { key: 15, title: 'Tinder', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH104, navigation: 'TinderV1' },
     { key: 16, title: 'Paper', description: 'Phasmophobia Companion, Old Paper', image: Images.ATHENA.SPLASH105, navigation: 'Paper' },
+    { key: 17, title: 'Famous', description: 'Guess Famous People Game', image: Images.ATHENA.SPLASH106, navigation: 'Famous' },
   ],
   LANGUAGES: [
     { key: 1, country: 'United States', language: 'English', code: 'en', flag: Images.ATHENA.FLAG001 },

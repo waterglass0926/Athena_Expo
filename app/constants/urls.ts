@@ -7,6 +7,7 @@ const BASEURL = {
   },
   STRIPE_API_URL: 'https://expo-stripe-server-example.glitch.me',
   TIKTOK: 'https://api.tiktok.com/v1',
+  FAMOUS: 'http://192.168.101.70:3000',
 };
 
 export default URLS = {
@@ -36,5 +37,10 @@ export default URLS = {
   TIKTOK: {
     BASEURL: BASEURL.TIKTOK,
     USERS: `${BASEURL.TIKTOK}/user`,
+  },
+  FAMOUS: {
+    BASEURL: BASEURL.FAMOUS,
+    QUESTIONS: `${BASEURL.FAMOUS}/api/questions`,
+    IMAGES: `${BASEURL.FAMOUS}/images`,
   },
 };
