@@ -11,6 +11,7 @@ import Toast from 'react-native-toast-message';
 
 import { AppContainer } from '@/routes';
 import Components from '@/components';
+import Serenity from '@/components/serenity';
 import store, { persistor } from '@/stores';
 import { HistoryProvider } from '@/contexts/translator/HistoryContext';
 import { CardSequenceProvider } from '@/contexts/translator/CardSequenceContext';
@@ -58,6 +59,7 @@ export default App = () => {
           </CardSequenceProvider>
         </HistoryProvider>
         <Components.Loading />
+        <Serenity.NotificationBar />
         <Toast />
       </PersistGate>
     </Provider>

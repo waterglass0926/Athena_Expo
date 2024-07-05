@@ -13,6 +13,7 @@ import { TranslatorStack } from './stacks/translator';
 import { TinderV1Stack } from './stacks/tinder/v1';
 import { YouTubeV1Stack } from './stacks/youtube/v1';
 import { PaperStack } from './stacks/paper';
+import { SenerityStack } from './stacks/senerity';
 
 import { navOptionHandler } from '@/utils';
 
@@ -72,6 +73,11 @@ export const AppContainer = () => {
         <StackApp.Screen
           name='Paper'
           component={PaperStack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='Senerity'
+          component={SenerityStack}
           options={navOptionHandler}
         />
       </StackApp.Navigator>

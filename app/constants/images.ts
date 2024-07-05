@@ -1,3 +1,5 @@
+
+
 export default IMAGES = {
   ATHENA: {
     SPLASH100: require('@/assets/images/athena/splash/splash001.jpg'),
@@ -109,5 +111,17 @@ export default IMAGES = {
   },
   PAPER: {
     OLDPAPER: require('@/assets/images/paper/old-paper.jpg'),
+  },
+  SERENITY: {
+    FILES: require('@/assets/images/serenity/files.png'),
+    READY: require('@/assets/images/serenity/ready.png'),
+    WELCOME: require('@/assets/images/serenity/welcome.png'),
+    YOUTUBE: require('@/assets/images/serenity/youtube.png'),
+    PLAYERANIMATION: require('@/assets/data/serenity/Player.json'),
+    ACTIVETRACT: require('@/assets/data/serenity/ActiveTrack.json'),
+    FAVORITEANIMATION: require('@/assets/data/serenity/Favorite.json'),
+    EMPTYPLAYLISTANIMATION: require('@/assets/data/serenity/EmptyPlaylist.json'),
+    TREEANIMATION: require('@/assets/data/serenity/Tree.json'),
+    VOICEANIMATION: require('@/assets/data/serenity/Voice.json')
   },
 };
