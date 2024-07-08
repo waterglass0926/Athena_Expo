@@ -1,4 +1,5 @@
 node_modules
+clean
 .env
 functions/src/configs/athena-1127.json
 
