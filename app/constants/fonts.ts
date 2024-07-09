@@ -1,3 +1,5 @@
+import Device from '@/utils/device';
+
 export default FONTS = {
   ATHENA: {
     PRIMARY: 'SpaceMono',
@@ -42,5 +44,15 @@ export default FONTS = {
     SHADOWSINTO: {
       LIGHT: 'ShadowsIntoLight',
     },
+  },
+  SPOTIFY: {
+    spotifyLight: 'spotifyLight',
+    spotifyRegular: 'spotifyRegular',
+    spotifyBold: 'spotifyBold',
+
+    bold: Device.iOS ? 'HelveticaNeue-Bold' : 'sans-serif-condensed',
+    light: Device.iOS ? 'HelveticaNeue-Light' : 'sans-serif-light',
+    medium: Device.iOS ? 'HelveticaNeue-Medium' : 'sans-serif-medium',
+    regular: Device.iOS ? 'HelveticaNeue' : 'sans-serif'
   },
 };

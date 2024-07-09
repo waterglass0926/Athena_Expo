@@ -2264,6 +2264,11 @@
     prompts "^2.4.2"
     semver "^7.5.2"
 
+"@react-native-community/slider@^4.5.2":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-4.5.2.tgz#c3835788dbc1bd83d3778b83ca15533c805db149"
+  integrity sha512-DbFyCyI7rwl0FkBkp0lzEVp+5mNfS5qU/nM2sK2aSguWhj0Odkt1aKHP2iW/ljruOhgS/O4dEixXlne4OdZJDQ==
+
 "@react-native-community/viewpager@^5.0.11":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@react-native-community/viewpager/-/viewpager-5.0.11.tgz#dbeb2d1b2452607926407c99e4de59c7db9e3019"
@@ -5054,6 +5059,11 @@ expo-av@^14.0.6:
   version "14.0.6"
   resolved "https://registry.yarnpkg.com/expo-av/-/expo-av-14.0.6.tgz#ca0eaa74f64f93f3dad79ead2c0a8e6aaebb53c0"
   integrity sha512-8FHKgMYo49C5hhgG0ssRRd454VQ82TuujhMdlz7ScJBihEXa89kWKpfk9bXrvetFtrJoAmYuGxsXCJCygZhxfA==
+
+expo-blur@~13.0.2:
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/expo-blur/-/expo-blur-13.0.2.tgz#c2d179b19b13830db1d8b90c51373235f462e958"
+  integrity sha512-t2p7BChO3Reykued++QJRMZ/og6J3aXtSQ+bU31YcBeXhZLkHwjWEhiPKPnJka7J2/yTs4+jOCNDY0kCZmcE3w==
 
 expo-constants@~16.0.0, expo-constants@~16.0.2:
   version "16.0.2"

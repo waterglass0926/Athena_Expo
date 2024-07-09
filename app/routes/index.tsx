@@ -15,6 +15,7 @@ import { YouTubeV1Stack } from './stacks/youtube/v1';
 import { PaperStack } from './stacks/paper';
 import { FamousStack } from './stacks/famous';
 import { BasketBallStack } from './stacks/basketball';
+import { SpotifyStack } from './stacks/spotify';
 
 import { navOptionHandler } from '@/utils';
 
@@ -84,6 +85,11 @@ export const AppContainer = () => {
         <StackApp.Screen
           name='BasketBall'
           component={BasketBallStack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='Spotify'
+          component={SpotifyStack}
           options={navOptionHandler}
         />
       </StackApp.Navigator>

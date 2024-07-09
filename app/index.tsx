@@ -11,10 +11,12 @@ import Toast from 'react-native-toast-message';
 
 import { AppContainer } from '@/routes';
 import Components from '@/components';
+import Functions from '@/utils';
 import store, { persistor } from '@/stores';
 import { HistoryProvider } from '@/contexts/translator/HistoryContext';
 import { CardSequenceProvider } from '@/contexts/translator/CardSequenceContext';
 import { TranslateProvider } from '@/contexts/translator/TranslateContext';
+import { SpotifyProvider } from '@/contexts/spotify/SpotifyContext';
 
 LogBox.ignoreLogs([
   'Warning: ...',
@@ -34,17 +36,20 @@ export default App = () => {
     TinderV1: require('@/assets/fonts/tinder/v1/Tinder-Regular.ttf'),
     Ubuntu: require('@/assets/fonts/paper/Ubuntu.ttf'),
     ShadowsIntoLight: require('@/assets/fonts/paper/ShadowsIntoLight.ttf'),
+    spotifyLight: require('@/assets/fonts/spotify/spotify-light.ttf'),
+    spotifyRegular: require('@/assets/fonts/spotify/spotify-regular.ttf'),
+    spotifyBold: require('@/assets/fonts/spotify/spotify-bold.ttf'),
   });
 
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
-    }
+    };
   }, [loaded]);
 
   if (!loaded) {
     return null;
-  }
+  };
 
   return (
     <Provider store={store}>
@@ -53,7 +58,9 @@ export default App = () => {
         <HistoryProvider>
           <CardSequenceProvider>
             <TranslateProvider>
-              <AppContainer />
+              <SpotifyProvider>
+                <AppContainer />
+              </SpotifyProvider>
             </TranslateProvider>
           </CardSequenceProvider>
         </HistoryProvider>
