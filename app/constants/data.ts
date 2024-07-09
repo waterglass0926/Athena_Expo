@@ -21,6 +21,7 @@ export default DATA = {
     { key: 17, title: 'Famous', description: 'The Quiz App To Guess Famous People & Celebrities', image: Images.ATHENA.SPLASH106, navigation: 'Famous' },
     { key: 18, title: 'BasketBall', description: 'Basketball Game Mobile Application', image: Images.ATHENA.SPLASH107, navigation: 'BasketBall' },
     { key: 19, title: 'Spotify', description: 'A Digital Music Service that Gives You Access To Millions Of Songs', image: Images.ATHENA.SPLASH108, navigation: 'Spotify' },
+    { key: 20, title: 'ToDoList', description: 'ToDoList', image: Images.ATHENA.SPLASH109, navigation: 'ToDoList' },
   ],
   LANGUAGES: [
     { key: 1, country: 'United States', language: 'English', code: 'en', flag: Images.ATHENA.FLAG001 },
