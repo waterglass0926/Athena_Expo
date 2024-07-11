@@ -11,6 +11,7 @@ import { UberEatsStack } from './stacks/ubereats';
 import { TikTokStack } from './stacks/tiktok';
 import { TranslatorStack } from './stacks/translator';
 import { TinderV1Stack } from './stacks/tinder/v1';
+import { TinderV2Stack } from './stacks/tinder/v2';
 import { YouTubeV1Stack } from './stacks/youtube/v1';
 import { PaperStack } from './stacks/paper';
 import { FamousStack } from './stacks/famous';
@@ -65,6 +66,11 @@ export const AppContainer = () => {
         <StackApp.Screen
           name='TinderV1'
           component={TinderV1Stack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='TinderV2'
+          component={TinderV2Stack}
           options={navOptionHandler}
         />
         <StackApp.Screen

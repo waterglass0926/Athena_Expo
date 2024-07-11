@@ -16,11 +16,12 @@ export default DATA = {
     { key: 12, title: 'ChatGpt', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH101, navigation: 'ChatGpt' },
     { key: 13, title: 'UberEats', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH102, navigation: 'UberEats' },
     { key: 14, title: 'Translator', description: 'Schedule & Booking System, Management Meetings', image: Images.ATHENA.SPLASH103, navigation: 'Translator' },
-    { key: 15, title: 'Tinder', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH104, navigation: 'TinderV1' },
+    { key: 15, title: 'Tinder Version 1.0', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH104, navigation: 'TinderV1' },
     { key: 16, title: 'Paper', description: 'Phasmophobia Companion, Old Paper', image: Images.ATHENA.SPLASH105, navigation: 'Paper' },
     { key: 17, title: 'Famous', description: 'Guess Famous People Game', image: Images.ATHENA.SPLASH106, navigation: 'Famous' },
     { key: 18, title: 'BasketBall', description: 'Basketball Game', image: Images.ATHENA.SPLASH107, navigation: 'BasketBall' },
     { key: 19, title: 'Disney', description: 'Basketball Game', image: Images.ATHENA.SPLASH107, navigation: 'DisneyV1' },
+    { key: 20, title: 'Tinder Version 2.0', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH1048, navigation: 'TinderV2' },
   ],
   LANGUAGES: [
     { key: 1, country: 'United States', language: 'English', code: 'en', flag: Images.ATHENA.FLAG001 },
