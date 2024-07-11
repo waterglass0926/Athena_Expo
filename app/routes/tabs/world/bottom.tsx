@@ -13,7 +13,7 @@ import { WorldProfileStack } from '@/routes/stacks/world/profile';
 import Screens from '@/screens/world';
 import Components from '@/components/world';
 import Constants from '@/constants';
-import Functtions, { navOptionHandler } from '@/utils';
+import Functions, { navOptionHandler } from '@/utils';
 
 const TabWorldBottom = createBottomTabNavigator();
 export const WorldBottomTab = () => {

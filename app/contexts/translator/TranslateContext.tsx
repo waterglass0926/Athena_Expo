@@ -17,7 +17,7 @@ import { ScrollView } from 'react-native';
 import '@/utils/i18n';
 import { HistoryContext } from './HistoryContext';
 import Constants from '@/constants';
-import Functtions from '@/utils';
+import Functions from '@/utils';
 import { History } from '@/types/translator';
 
 export interface TranslatedData {

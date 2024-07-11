@@ -9,7 +9,7 @@ import {
 import Screens from '@/screens/tinder/v1';
 import Components from '@/components/tinder/v1';
 import Constants from '@/constants';
-import Functtions from '@/utils';
+import Functions from '@/utils';
 import Styles from '@/styles/tinder/v1';
 
 const TabTinderV1Bottom = createBottomTabNavigator();

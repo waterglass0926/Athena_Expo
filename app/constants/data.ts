@@ -20,6 +20,7 @@ export default DATA = {
     { key: 16, title: 'Paper', description: 'Phasmophobia Companion, Old Paper', image: Images.ATHENA.SPLASH105, navigation: 'Paper' },
     { key: 17, title: 'Famous', description: 'Guess Famous People Game', image: Images.ATHENA.SPLASH106, navigation: 'Famous' },
     { key: 18, title: 'BasketBall', description: 'Basketball Game', image: Images.ATHENA.SPLASH107, navigation: 'BasketBall' },
+    { key: 19, title: 'Disney', description: 'Basketball Game', image: Images.ATHENA.SPLASH107, navigation: 'DisneyV1' },
   ],
   LANGUAGES: [
     { key: 1, country: 'United States', language: 'English', code: 'en', flag: Images.ATHENA.FLAG001 },

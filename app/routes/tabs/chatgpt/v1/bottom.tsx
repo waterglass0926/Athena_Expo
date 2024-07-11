@@ -7,7 +7,7 @@ import { Icon } from 'react-native-elements';
 import { ChatGptHomeStack } from '@/routes/stacks/chatgpt/v1/home';
 import Screens from '@/screens/chatgpt/v1';
 import Constants from '@/constants';
-import Functtions from '@/utils';
+import Functions from '@/utils';
 import { ThemeType } from '@/types/athena';
 
 interface StateType {

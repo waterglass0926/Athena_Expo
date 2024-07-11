@@ -110,4 +110,55 @@ export default IMAGES = {
   PAPER: {
     OLDPAPER: require('@/assets/images/paper/old-paper.jpg'),
   },
+  DISNEY: {
+    V1: {
+      // logos
+      logoDisney: require('@/assets/images/disney/v1/logo/disney.png'),
+      logoMarvel: require('@/assets/images/disney/v1/logo/marvel.png'),
+      logoNatGeo: require('@/assets/images/disney/v1/logo/national-geographic.png'),
+      logoPixar: require('@/assets/images/disney/v1/logo/pixar.png'),
+      logoStarWars: require('@/assets/images/disney/v1/logo/star-wars.png'),
+
+      // slides
+      slideAvatar: require('@/assets/images/disney/v1/slides/avatar.png'),
+      slideAvengersEndgame: require('@/assets/images/disney/v1/slides/avengers-endgame.png'),
+      slideCaptainMarvel: require('@/assets/images/disney/v1/slides/captain-marvel.png'),
+      slideStarWarsMandalorian: require('@/assets/images/disney/v1/slides/star-wars-mandalorian.png'),
+
+      // movies
+      a: require('@/assets/images/disney/v1/movies/a.jpg'),
+      ae: require('@/assets/images/disney/v1/movies/ae.jpg'),
+      aiw: require('@/assets/images/disney/v1/movies/aiw.jpg'),
+      anhe4: require('@/assets/images/disney/v1/movies/anhe4.jpg'),
+      aotce2: require('@/assets/images/disney/v1/movies/aotce2.jpg'),
+      b: require('@/assets/images/disney/v1/movies/b.jpg'),
+      batb: require('@/assets/images/disney/v1/movies/batb.jpg'),
+      cacw: require('@/assets/images/disney/v1/movies/cacw.jpg'),
+      cm: require('@/assets/images/disney/v1/movies/cm.jpg'),
+      f: require('@/assets/images/disney/v1/movies/f.jpg'),
+      fz: require('@/assets/images/disney/v1/movies/fz.jpg'),
+      h: require('@/assets/images/disney/v1/movies/h.jpg'),
+      i: require('@/assets/images/disney/v1/movies/i.jpg'),
+      p: require('@/assets/images/disney/v1/movies/p.jpg'),
+      roasws: require('@/assets/images/disney/v1/movies/roasws.jpg'),
+      sb: require('@/assets/images/disney/v1/movies/sb.jpg'),
+      swatsd: require('@/assets/images/disney/v1/movies/swatsd.jpg'),
+      tesbe5: require('@/assets/images/disney/v1/movies/tesbe5.jpg'),
+      tfae7: require('@/assets/images/disney/v1/movies/tfae7.jpg'),
+      thond: require('@/assets/images/disney/v1/movies/thond.jpg'),
+      tlk: require('@/assets/images/disney/v1/movies/tlk.jpg'),
+      tlm: require('@/assets/images/disney/v1/movies/tlm.jpg'),
+      tm: require('@/assets/images/disney/v1/movies/tm.jpg'),
+      tpme1: require('@/assets/images/disney/v1/movies/tpme1.jpg'),
+      ts: require('@/assets/images/disney/v1/movies/ts.jpg'),
+      tsits: require('@/assets/images/disney/v1/movies/tsits.jpg'),
+      z: require('@/assets/images/disney/v1/movies/z.jpg'),
+
+      // profiles
+      elsa: require('@/assets/images/disney/v1/profiles/elsa.jpg'),
+      ironMan: require('@/assets/images/disney/v1/profiles/iron-man.jpg'),
+      stormtrooper: require('@/assets/images/disney/v1/profiles/stormtrooper.jpg'),
+      yoda: require('@/assets/images/disney/v1/profiles/yoda.jpg'),
+    }
+  }
 };

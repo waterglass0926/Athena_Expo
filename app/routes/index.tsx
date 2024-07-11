@@ -15,6 +15,7 @@ import { YouTubeV1Stack } from './stacks/youtube/v1';
 import { PaperStack } from './stacks/paper';
 import { FamousStack } from './stacks/famous';
 import { BasketBallStack } from './stacks/basketball';
+import { DisneyV1Stack } from './stacks/disney/v1';
 
 import { navOptionHandler } from '@/utils';
 
@@ -86,6 +87,12 @@ export const AppContainer = () => {
           component={BasketBallStack}
           options={navOptionHandler}
         />
+        <StackApp.Screen
+          name='DisneyV1'
+          component={DisneyV1Stack}
+          options={navOptionHandler}
+        />
+
       </StackApp.Navigator>
     </NavigationContainer>
   );

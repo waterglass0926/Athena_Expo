@@ -15,7 +15,7 @@ import { TikTokInboxStack } from '@/routes/stacks/tiktok/inbox';
 import { TikTokProfileStack } from '@/routes/stacks/tiktok/profile';
 import Screens from '@/screens/tiktok';
 import Constants from '@/constants';
-import Functtions from '@/utils';
+import Functions from '@/utils';
 import { ThemeType } from '@/types/athena';
 
 interface StateType {

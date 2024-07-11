@@ -10,7 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import '@/utils/i18n';
 import Constants, { STOREAGE_HISTORYS_ID } from '@/constants';
-import Functtions from '@/utils';
+import Functions from '@/utils';
 import { History } from '@/types/translator';
 
 export type HistoryContextType = {

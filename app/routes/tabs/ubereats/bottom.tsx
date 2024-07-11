@@ -8,7 +8,7 @@ import { UberEatsHomeStack } from '@/routes/stacks/ubereats/home';
 import Screens from '@/screens/ubereats';
 import Components from '@/components/ubereats/others';
 import Constants from '@/constants';
-import Functtions from '@/utils';
+import Functions from '@/utils';
 
 const TabUberEatsBottom = createBottomTabNavigator();
 export const UberEatsBottomTab = ({ navigation }) => {

@@ -11,7 +11,7 @@ import { FitnessV1HomeStack } from '@/routes/stacks/fitness/v1/home';
 import Screens from '@/screens/fitness/v1';
 import Components from '@/components/fitness/v1';
 import Constants from '@/constants';
-import Functtions, { navOptionHandler } from '@/utils';
+import Functions, { navOptionHandler } from '@/utils';
 
 const TabFitnessV1Bottom = createBottomTabNavigator();
 export const FitnessV1BottomTab = () => {
