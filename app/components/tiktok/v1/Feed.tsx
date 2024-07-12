@@ -1,5 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { Icon } from 'react-native-elements';
 import { Video } from 'expo-av';
@@ -13,11 +15,10 @@ import {
 } from 'react-native';
 
 import '@/utils/i18n';
-import lotties from '@/assets/data/tiktok/lotties.json';
-import Components from '@/components/tiktok';
+import lotties from '@/assets/data/tiktok/v1/lotties.json';
 import Constants from '@/constants';
 import Functions from '@/utils';
-import Styles from '@/styles/tiktok';
+import Styles from '@/styles/tiktok/v1';
 import { ThemeType } from '@/types/athena';
 
 type PropsType = {
@@ -75,17 +76,18 @@ export const Feed: FC<PropsType> = ({ navigation, play, item }) => {
           right: 0,
           top: 0,
           height: '70%',
-        }}
+        }
+        }
       />
       <Styles.FeedContainer>
         <Video
           source={{ uri: item.uri }}
           rate={1.0}
           volume={1.0}
-          muted={false}
+          isLooping={true}
+          isMuted={false}
           resizeMode='cover'
-          paused={!play}
-          repeat={true}
+          shouldPlay={play}
           style={{
             width: '100%',
             height: '100%',
@@ -94,7 +96,7 @@ export const Feed: FC<PropsType> = ({ navigation, play, item }) => {
       </Styles.FeedContainer>
       <Styles.FeedDetails>
         <Styles.FeedUser>{item.username}</Styles.FeedUser>
-        <Styles.FeedTags>{item.tags}</Styles.FeedTags>
+        <Styles.FeedTags> {item.tags}</Styles.FeedTags>
         <Styles.FeedMusicBox>
           <Icon
             type='font-awesome'
@@ -134,27 +136,31 @@ export const Feed: FC<PropsType> = ({ navigation, play, item }) => {
             color={Constants.COLORS.DEFAULT.GREEN}
             style={{ alignSelf: 'center' }}
           />
-          <Styles.FeedTextAction>Share</Styles.FeedTextAction>
+          <Styles.FeedTextAction> Share </Styles.FeedTextAction>
         </Styles.FeedBoxAction>
         <Styles.FeedBoxAction>
           <Animated.View
-            style={{
-              borderRadius: 50,
-              borderWidth: 5,
-              borderColor: Constants.COLORS.DEFAULT.GRAY,
-              transform: [
-                {
-                  rotate: play ? rotateProp : '0deg',
-                },
-              ],
-            }}
+            style={
+              {
+                borderRadius: 50,
+                borderWidth: 5,
+                borderColor: Constants.COLORS.DEFAULT.GRAY,
+                transform: [
+                  {
+                    rotate: play ? rotateProp : '0deg',
+                  },
+                ],
+              }
+            }
           >
             <Image
-              style={{
-                width: 35,
-                height: 35,
-                borderRadius: 25,
-              }}
+              style={
+                {
+                  width: 35,
+                  height: 35,
+                  borderRadius: 25,
+                }
+              }
               source={{
                 uri: 'https://avatars3.githubusercontent.com/u/45601574',
               }}

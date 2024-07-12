@@ -7,7 +7,7 @@ import { SvgXml } from 'react-native-svg';
 import { View } from 'react-native';
 
 import '@/utils/i18n';
-import Components from '@/components/tiktok';
+import Components from '@/components/tiktok/v1';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { ThemeType } from '@/types/athena';
@@ -30,7 +30,7 @@ export const Splash: FC<PropsType> = ({ navigation }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('TikTokBottomTab');
+      navigation.navigate('TikTokV1BottomTab');
     }, 2000);
   }, []);
 

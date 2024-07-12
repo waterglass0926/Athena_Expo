@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import '@/utils/i18n';
-import Components from '@/components/tiktok';
+import Components from '@/components/tiktok/v1';
 import Constants from '@/constants';
 import Functions from '@/utils';
-import Styles from '@/styles/tiktok';
+import Styles from '@/styles/tiktok/v1';
 import { ThemeType } from '@/types/athena';
 
 type PropsType = {

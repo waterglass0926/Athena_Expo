@@ -6,7 +6,7 @@ export default DATA = {
     { key: 2, title: 'UpJob', description: 'Hire The Best Global Freelancers Platform', image: Images.ATHENA.SPLASH102, navigation: 'UpJobStack' },
     { key: 3, title: 'Fitness', description: 'Workout Tracker, Yoga & Planner Gym Fitness', image: Images.ATHENA.SPLASH103, navigation: 'FitnessV1' },
     { key: 4, title: 'Foodnet', description: 'Restaurant, Food Recipe & Delivery Platform', image: Images.ATHENA.SPLASH104, navigation: 'FoodnetStack' },
-    { key: 5, title: 'TikTok', description: 'Short Video Sharing & Social Media Platform', image: Images.ATHENA.SPLASH105, navigation: 'TikTok' },
+    { key: 5, title: 'TikTok Version 1.0', description: 'Short Video Sharing & Social Media Platform', image: Images.ATHENA.SPLASH105, navigation: 'TikTokV1' },
     // { key: 6, title: 'Shopee', description: 'The Best Selling, Fashion & eCommerce Platform', image: Images.ATHENA.SPLASH106, navigation: 'ShopeeStack' },
     // { key: 7, title: 'Pinterest', description: 'Images & Photos Sharing, Social Media Platform', image: Images.ATHENA.SPLASH107, navigation: 'PinterestStack' },
     { key: 8, title: 'YouTube', description: 'The Online Videos Sharing, Social Media Platform', image: Images.ATHENA.SPLASH108, navigation: 'YouTubeV1' },

@@ -6,11 +6,11 @@ import ViewPager from '@react-native-community/viewpager';
 import { View } from 'react-native';
 
 import '@/utils/i18n';
-import videos from '@/assets/data/tiktok/videos.json';
-import Components from '@/components/tiktok';
+import videos from '@/assets/data/tiktok/v1/videos.json';
+import Components from '@/components/tiktok/v1';
 import Constants from '@/constants';
 import Functions from '@/utils';
-import Styles from '@/styles/tiktok';
+import Styles from '@/styles/tiktok/v1';
 import { ThemeType } from '@/types/athena';
 
 type PropsType = {

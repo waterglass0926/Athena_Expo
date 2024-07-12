@@ -6,10 +6,10 @@ import { Icon } from 'react-native-elements';
 import { ScrollView } from 'react-native';
 
 import '@/utils/i18n';
-import Components from '@/components/tiktok';
+import Components from '@/components/tiktok/v1';
 import Constants from '@/constants';
 import Functions from '@/utils';
-import Styles from '@/styles/tiktok';
+import Styles from '@/styles/tiktok/v1';
 import { ThemeType } from '@/types/athena';
 
 type PropsType = {

@@ -9,11 +9,11 @@ import {
   Text,
 } from 'react-native';
 
-import { TikTokHomeStack } from '@/routes/stacks/tiktok/home';
-import { TikTokDiscoverStack } from '@/routes/stacks/tiktok/discover';
-import { TikTokInboxStack } from '@/routes/stacks/tiktok/inbox';
-import { TikTokProfileStack } from '@/routes/stacks/tiktok/profile';
-import Screens from '@/screens/tiktok';
+import { TikTokV1HomeStack } from '@/routes/stacks/tiktok/v1/home';
+import { TikTokV1DiscoverStack } from '@/routes/stacks/tiktok/v1/discover';
+import { TikTokV1InboxStack } from '@/routes/stacks/tiktok/v1/inbox';
+import { TikTokV1ProfileStack } from '@/routes/stacks/tiktok/v1/profile';
+import Screens from '@/screens/tiktok/v1';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { ThemeType } from '@/types/athena';
@@ -25,15 +25,15 @@ interface StateType {
   };
 };
 
-const TabTikTokBottom = createBottomTabNavigator();
-export const TikTokBottomTab = () => {
+const TabTikTokV1Bottom = createBottomTabNavigator();
+export const TikTokV1BottomTab = () => {
   const { theme } = useSelector((state: StateType) => state.athena);
 
   StatusBar.setBarStyle('dark-content');
 
   return (
-    <TabTikTokBottom.Navigator
-      initialRouteName='TikTokHomeStack'
+    <TabTikTokV1Bottom.Navigator
+      initialRouteName='TikTokV1HomeStack'
       screenOptions={({ route }) => ({
         tabBarStyle: {
           backgroundColor: Constants.COLORS.DEFAULT.BLACK,
@@ -41,9 +41,9 @@ export const TikTokBottomTab = () => {
         tabBarActiveTintColor: Constants.COLORS.DEFAULT.WHITE,
       })}
     >
-      <TabTikTokBottom.Screen
-        name='TikTokHomeStack'
-        component={TikTokHomeStack}
+      <TabTikTokV1Bottom.Screen
+        name='TikTokV1HomeStack'
+        component={TikTokV1HomeStack}
         options={{
           headerShown: false,
           tabBarLabel: 'Home',
@@ -56,9 +56,9 @@ export const TikTokBottomTab = () => {
           ),
         }}
       />
-      <TabTikTokBottom.Screen
-        name='TikTokDiscoverStack'
-        component={TikTokDiscoverStack}
+      <TabTikTokV1Bottom.Screen
+        name='TikTokV1DiscoverStack'
+        component={TikTokV1DiscoverStack}
         options={{
           headerShown: false,
           tabBarLabel: 'Discover',
@@ -71,9 +71,9 @@ export const TikTokBottomTab = () => {
           ),
         }}
       />
-      <TabTikTokBottom.Screen
-        name='TikTokInboxStack'
-        component={TikTokInboxStack}
+      <TabTikTokV1Bottom.Screen
+        name='TikTokV1InboxStack'
+        component={TikTokV1InboxStack}
         options={{
           headerShown: false,
           tabBarLabel: 'Inbox',
@@ -86,9 +86,9 @@ export const TikTokBottomTab = () => {
           ),
         }}
       />
-      <TabTikTokBottom.Screen
-        name='TikTokProfileStack'
-        component={TikTokProfileStack}
+      <TabTikTokV1Bottom.Screen
+        name='TikTokV1ProfileStack'
+        component={TikTokV1ProfileStack}
         options={{
           headerShown: false,
           tabBarLabel: 'Profile',
@@ -101,6 +101,6 @@ export const TikTokBottomTab = () => {
           ),
         }}
       />
-    </TabTikTokBottom.Navigator>
+    </TabTikTokV1Bottom.Navigator>
   );
 };
