@@ -23,6 +23,7 @@ export default DATA = {
     { key: 19, title: 'Disney', description: 'Basketball Game', image: Images.ATHENA.SPLASH107, navigation: 'DisneyV1' },
     { key: 20, title: 'Tinder Version 2.0', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH108, navigation: 'TinderV2' },
     { key: 21, title: 'Instagram Version 1.0', description: 'Instagram Clone App Version 1.0', image: Images.ATHENA.SPLASH109, navigation: 'InstagramV1' },
+    { key: 22, title: 'Instagram Version 2.0', description: 'Instagram Clone App Version 2.0', image: Images.ATHENA.SPLASH110, navigation: 'InstagramV2' },
   ],
   LANGUAGES: [
     { key: 1, country: 'United States', language: 'English', code: 'en', flag: Images.ATHENA.FLAG001 },

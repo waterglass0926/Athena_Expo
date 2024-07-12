@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { InstagramV1BottomTab } from '@/routes/tabs/instagram/v1/bottom';
-import Screens from '@/screens/disney/v1';
+import Screens from '@/screens/instagram/v1';
 import Components from '@/components/instagram/v1';
 import { navOptionHandler } from '@/utils';
 

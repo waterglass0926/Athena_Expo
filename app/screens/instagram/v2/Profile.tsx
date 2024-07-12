@@ -1,0 +1,116 @@
+import React, { useState, useEffect } from 'react';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  Dimensions,
+  ActivityIndicator,
+} from 'react-native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { FlatList, ScrollView } from 'react-native-gesture-handler';
+
+import { UserInfo } from './UserInfo';
+import { UserPhotos } from './UserPhotos';
+import { TaggedPhotos } from './TaggedPhotos';
+
+const { height, width } = Dimensions.get('window');
+
+// const Tabs = createMaterialTopTabNavigator();
+
+const GRID_PADDING = 8;
+const IMAGE_SIZE = (width - GRID_PADDING * 2) / 3;
+
+export const Profile = () => {
+  const [userInfo, setUserInfo] = useState({
+    profileImage: 'https://picsum.photos/id/11/200',
+    images: [],
+  });
+  const [isBusy, setisBusy] = useState(false);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    fetchUserInfo();
+  }, []);
+
+  const fetchUserInfo = async () => {
+    let url = `https://picsum.photos/v2/list?page=${page}&limit=100`;
+    try {
+      setisBusy(true);
+      let data = await fetch(url);
+      let images = await data.json();
+
+      images = images.map(image => {
+        image.thumbnail = getThumb(image.download_url);
+        return image;
+      });
+      setUserInfo({ ...userInfo, images: [...userInfo.images, ...images] });
+      setPage(page + 1);
+      setisBusy(false);
+    } catch (e) {
+      setisBusy(false);
+    }
+  };
+
+  const getThumb = url => {
+    let result = '';
+    let indexOfId = url.indexOf('id/');
+
+    let indexOfSize = url.indexOf('/', indexOfId + 3);
+    result = url.slice(0, indexOfSize + 1) + '200';
+
+    return result;
+  };
+
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff', paddingTop: 50 }}>
+      <View style={{ flex: 1, paddingHorizontal: GRID_PADDING }}>
+        <FlatList
+          data={userInfo.images}
+          keyExtractor={item => item.id}
+          numColumns={3}
+          showsVerticalScrollIndicator={false}
+          ListHeaderComponent={<UserInfo {...{ userInfo }} />}
+          ListFooterComponent={
+            isBusy ? (
+              <ActivityIndicator
+                style={{ alignSelf: 'center', paddingVertical: 50 }}
+              />
+            ) : null
+          }
+          onEndReached={fetchUserInfo}
+          renderItem={({ item, index }) => {
+            return (
+              <View
+                style={{
+                  height: IMAGE_SIZE,
+                  width: IMAGE_SIZE,
+                  borderRadius: 10,
+                  padding: GRID_PADDING,
+                }}>
+                <Image
+                  source={{ uri: item.thumbnail }}
+                  style={{
+                    height: undefined,
+                    width: undefined,
+                    flex: 1,
+                    borderRadius: 10,
+                  }}
+                />
+              </View>
+            );
+          }}
+        />
+
+        {/* <Tabs.Navigator>
+          <Tabs.Screen
+            name='userPhotos'
+            component={() => <UserPhotos images={userInfo.images} />}
+          />
+          <Tabs.Screen name='taggedPhotos' component={() => <TaggedPhotos />} />
+        </Tabs.Navigator> */}
+      </View>
+    </SafeAreaView>
+  );
+};

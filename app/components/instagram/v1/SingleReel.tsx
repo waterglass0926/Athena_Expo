@@ -11,12 +11,12 @@ export const SingleReel = ({ item, index, currentIndex }) => {
 
   const videoRef = useRef(null);
 
-  const onBuffer = buffer => {
-    console.log('buffring', buffer);
-  };
-  const onError = error => {
-    console.log('error', error);
-  };
+  // const onBuffer = buffer => {
+  //   console.log('buffring', buffer);
+  // };
+  // const onError = error => {
+  //   console.log('error', error);
+  // };
 
   const [mute, setMute] = useState(false);
 
@@ -48,8 +48,8 @@ export const SingleReel = ({ item, index, currentIndex }) => {
           shouldPlay={currentIndex == index ? true : false}
 
           videoRef={videoRef}
-          onBuffer={onBuffer}
-          onError={onError}
+          // onBuffer={onBuffer}
+          // onError={onError}
           source={item.video}
           style={{
             width: '100%',
