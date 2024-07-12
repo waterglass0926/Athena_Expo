@@ -17,6 +17,7 @@ import { PaperStack } from './stacks/paper';
 import { FamousStack } from './stacks/famous';
 import { BasketBallStack } from './stacks/basketball';
 import { DisneyV1Stack } from './stacks/disney/v1';
+import { InstagramV1Stack } from './stacks/instagram/v1';
 
 import { navOptionHandler } from '@/utils';
 
@@ -96,6 +97,11 @@ export const AppContainer = () => {
         <StackApp.Screen
           name='DisneyV1'
           component={DisneyV1Stack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='InstagramV1'
+          component={InstagramV1Stack}
           options={navOptionHandler}
         />
 
