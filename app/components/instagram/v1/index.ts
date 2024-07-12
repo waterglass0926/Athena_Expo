@@ -1,4 +1,4 @@
-// import { BottomTabView } from './BottomTabView';
+import { BottomTabView } from './BottomTabView';
 import { EditProfile } from './EditProfile';
 import { FriendProfile } from './FriendProfile';
 import { Post } from './Post';
@@ -12,7 +12,7 @@ import { Status } from './Status';
 import { Stories } from './Stories';
 
 export default {
-  // BottomTabView,
+  BottomTabView,
   EditProfile,
   FriendProfile,
   Post,

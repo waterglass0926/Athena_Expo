@@ -8,6 +8,8 @@ import { UserData } from './athena/UserData';
 import { UserInfo } from './athena/UserInfo';
 import { Rating } from './athena/Rating';
 
+import { Modal } from './tiktok/v2/Modal';
+
 export default {
   Loading,
   Button,
@@ -18,4 +20,5 @@ export default {
   UserData,
   UserInfo,
   Rating,
+  Modal,
 };

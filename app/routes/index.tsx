@@ -9,6 +9,7 @@ import { FitnessV1Stack } from './stacks/fitness/v1';
 import { ChatGptStack } from './stacks/chatgpt/v1';
 import { UberEatsStack } from './stacks/ubereats';
 import { TikTokV1Stack } from './stacks/tiktok/v1';
+import { TikTokV2Stack } from './stacks/tiktok/v2';
 import { TranslatorStack } from './stacks/translator';
 import { TinderV1Stack } from './stacks/tinder/v1';
 import { TinderV2Stack } from './stacks/tinder/v2';
@@ -58,6 +59,11 @@ export const AppContainer = () => {
         <StackApp.Screen
           name='TikTokV1'
           component={TikTokV1Stack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='TikTokV2'
+          component={TikTokV2Stack}
           options={navOptionHandler}
         />
         <StackApp.Screen

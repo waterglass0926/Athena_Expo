@@ -5,6 +5,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { LogBox, StatusBar } from 'react-native';
 import Toast from 'react-native-toast-message';
@@ -24,6 +26,15 @@ LogBox.ignoreAllLogs(true);
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchInterval: false,
+      staleTime: Infinity,
+    },
+  },
+});
 
 export default App = () => {
   const [loaded] = useFonts({
@@ -47,19 +58,24 @@ export default App = () => {
   }
 
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <StatusBar barStyle='light-content' hidden />
-        <HistoryProvider>
-          <CardSequenceProvider>
-            <TranslateProvider>
-              <AppContainer />
-            </TranslateProvider>
-          </CardSequenceProvider>
-        </HistoryProvider>
-        <Components.Loading />
-        <Toast />
-      </PersistGate>
-    </Provider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <StatusBar barStyle='light-content' hidden />
+          <HistoryProvider>
+            <CardSequenceProvider>
+              <TranslateProvider>
+                <QueryClientProvider client={queryClient}>
+                  <AppContainer />
+                </QueryClientProvider>
+              </TranslateProvider>
+            </CardSequenceProvider>
+          </HistoryProvider>
+          <Components.Loading />
+          <Components.Modal />
+          <Toast />
+        </PersistGate>
+      </Provider>
+    </GestureHandlerRootView>
   );
 };

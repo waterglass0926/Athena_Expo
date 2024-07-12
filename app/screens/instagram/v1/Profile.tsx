@@ -77,7 +77,7 @@ export const Profile = () => {
           {circuls}
         </ScrollView>
       </View>
-      {/* <Components.BottomTabView /> */}
+      <Components.BottomTabView />
     </View>
   );
 };
