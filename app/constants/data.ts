@@ -10,8 +10,9 @@ export default DATA = {
     { key: 6, title: 'Tinder 1.0', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH104, navigation: 'TinderV1' },
     { key: 7, title: 'Tinder 2.0', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH108, navigation: 'TinderV2' },
     { key: 8, title: 'Movies 2.0', description: 'The Moviedb Clone App Version 2.0', image: Images.ATHENA.SPLASH111, navigation: 'MoviesV2' },
-    { key: 9, title: 'Instagram 1.0', description: 'Instagram Clone App Version 1.0', image: Images.ATHENA.SPLASH109, navigation: 'InstagramV1' },
-    { key: 10, title: 'Instagram 2.0', description: 'Instagram Clone App Version 2.0', image: Images.ATHENA.SPLASH110, navigation: 'InstagramV2' },
+    { key: 9, title: 'Movies 3.0', description: 'The Moviedb Clone App Version 3.0', image: Images.ATHENA.SPLASH111, navigation: 'MoviesV3' },
+    { key: 10, title: 'Instagram 1.0', description: 'Instagram Clone App Version 1.0', image: Images.ATHENA.SPLASH109, navigation: 'InstagramV1' },
+    { key: 11, title: 'Instagram 2.0', description: 'Instagram Clone App Version 2.0', image: Images.ATHENA.SPLASH110, navigation: 'InstagramV2' },
     // { key: 6, title: 'TikTok 2.0', description: 'Short Video Sharing & Social Media Platform', image: Images.ATHENA.SPLASH105, navigation: 'TikTokV2' },
     // { key: 6, title: 'Shopee', description: 'The Best Selling, Fashion & eCommerce Platform', image: Images.ATHENA.SPLASH106, navigation: 'Shopee' },
     // { key: 7, title: 'Pinterest', description: 'Images & Photos Sharing, Social Media Platform', image: Images.ATHENA.SPLASH107, navigation: 'Pinterest' },
@@ -288,5 +289,85 @@ export default DATA = {
         image: require('@/assets/images/instagram/v1/profile5.jpg'),
       },
     ]
+  },
+  MOVIES: {
+    V3: {
+      genres: [{
+        'id': 28,
+        'name': 'Action'
+      },
+      {
+        'id': 12,
+        'name': 'Adventure'
+      },
+      {
+        'id': 16,
+        'name': 'Animation'
+      },
+      {
+        'id': 35,
+        'name': 'Comedy'
+      },
+      {
+        'id': 80,
+        'name': 'Crime'
+      },
+      {
+        'id': 99,
+        'name': 'Documentary'
+      },
+      {
+        'id': 18,
+        'name': 'Drama'
+      },
+      {
+        'id': 10751,
+        'name': 'Family'
+      },
+      {
+        'id': 14,
+        'name': 'Fantasy'
+      },
+      {
+        'id': 36,
+        'name': 'History'
+      },
+      {
+        'id': 27,
+        'name': 'Horror'
+      },
+      {
+        'id': 10402,
+        'name': 'Music'
+      },
+      {
+        'id': 9648,
+        'name': 'Mystery'
+      },
+      {
+        'id': 10749,
+        'name': 'Romance'
+      },
+      {
+        'id': 878,
+        'name': 'Science Fiction'
+      },
+      {
+        'id': 10770,
+        'name': 'TV Movie'
+      },
+      {
+        'id': 53,
+        'name': 'Thriller'
+      },
+      {
+        'id': 10752,
+        'name': 'War'
+      },
+      {
+        'id': 37,
+        'name': 'Western'
+      }]
+    }
   }
 };
