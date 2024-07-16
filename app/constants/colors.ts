@@ -73,6 +73,12 @@ export default COLORS = {
       moreSaveText: '#595959'
     }
   },
+  MOVIES: {
+    V2: {
+      background: '#eab308',
+      text: '#eab308'
+    }
+  },
   THEME: [
     {
       INDEX: 1,

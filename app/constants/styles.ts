@@ -198,5 +198,11 @@ export default STYLES = StyleSheet.create({
         paddingHorizontal: 16
       },
     }
+  },
+  MOVIES: {
+    V2: {
+      text: { color: COLORS.MOVIES.V2.text },
+      background: { backgroundColor: COLORS.MOVIES.V2.background }
+    }
   }
 });

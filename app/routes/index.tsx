@@ -20,6 +20,7 @@ import { BasketBallStack } from './stacks/basketball';
 import { DisneyV1Stack } from './stacks/disney/v1';
 import { InstagramV1Stack } from './stacks/instagram/v1';
 import { InstagramV2Stack } from './stacks/instagram/v2';
+import { MoviesV2Stack } from './stacks/movies/v2';
 
 import { navOptionHandler } from '@/utils';
 
@@ -114,6 +115,11 @@ export const AppContainer = () => {
         <StackApp.Screen
           name='InstagramV2'
           component={InstagramV2Stack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='MoviesV2'
+          component={MoviesV2Stack}
           options={navOptionHandler}
         />
 
