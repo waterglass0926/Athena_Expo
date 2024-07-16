@@ -107,13 +107,13 @@ export const BottomTabView = () => {
         tabBarIcon: ({ focused, colour }) => {
           let iconName;
           if (route.name === 'Posts') {
-            iconName = focused ? 'ios-apps-sharp' : 'ios-apps-sharp';
+            iconName = focused ? 'apps-sharp' : 'apps-sharp';
             colour = focused ? 'black' : 'gray';
           } else if (route.name === 'Video') {
-            iconName = focused ? 'ios-play-circle' : 'ios-play-circle-outline';
+            iconName = focused ? 'play-circle' : 'play-circle-outline';
             colour = focused ? 'black' : 'gray';
           } else if (route.name === 'Tags') {
-            iconName = focused ? 'ios-person' : 'ios-person-outline';
+            iconName = focused ? 'person' : 'person-outline';
             colour = focused ? 'black' : 'gray';
           }
 
