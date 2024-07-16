@@ -22,6 +22,7 @@ import { InstagramV1Stack } from './stacks/instagram/v1';
 import { InstagramV2Stack } from './stacks/instagram/v2';
 import { MoviesV2Stack } from './stacks/movies/v2';
 import { MoviesV3Stack } from './stacks/movies/v3';
+import { MoviesV4Stack } from './stacks/movies/v4';
 
 import { navOptionHandler } from '@/utils';
 
@@ -126,6 +127,11 @@ export const AppContainer = () => {
         <StackApp.Screen
           name='MoviesV3'
           component={MoviesV3Stack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='MoviesV4'
+          component={MoviesV4Stack}
           options={navOptionHandler}
         />
 

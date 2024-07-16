@@ -77,6 +77,10 @@ export default COLORS = {
     V2: {
       background: '#eab308',
       text: '#eab308'
+    },
+    V4: {
+      DARK_COLOR: '#000000',
+      LIGHT_DARK_COLOR: '#323232',
     }
   },
   THEME: [

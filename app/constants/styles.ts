@@ -203,6 +203,34 @@ export default STYLES = StyleSheet.create({
     V2: {
       text: { color: COLORS.MOVIES.V2.text },
       background: { backgroundColor: COLORS.MOVIES.V2.background }
+    },
+    V4: {
+      mainBackgroundColor: COLORS.MOVIES.V4.DARK_COLOR,
+      secondaryBackgroundColor: COLORS.MOVIES.V4.LIGHT_DARK_COLOR,
+      primaryColor: '#e50914',
+      tabBarIconSize: 18,
+      borderRadius: 3,
+      headerHeight: 60,
+      contrastColor: '#ffffff',
+      contrastFontColor: COLORS.MOVIES.V4.DARK_COLOR,
+      gradientDarkColor: COLORS.MOVIES.V4.DARK_COLOR,
+      gradientLightColor: 'rgba(0, 0, 0, 0)',
+      posterAspectRatio: 2 / 3,
+      cardWidth: 120,
+      videoAspectRatio: 16 / 9,
+
+      hintFontColor: '#7e7e7e',
+      defaultFontColor: '#ffffff',
+      darkFontColor: COLORS.MOVIES.V4.DARK_COLOR,
+
+      smallFontSize: 12,
+      defaultFontSize: 16,
+      largeFontSize: 20,
+      xLargeFontSize: 24,
+
+      normalFontWeight: '400',
+      boldFontWeight: '600',
+      bolderFontWeight: '800',
     }
   }
 });
