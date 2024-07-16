@@ -18,6 +18,7 @@ import { PaperStack } from './stacks/paper';
 import { FamousStack } from './stacks/famous';
 import { BasketBallStack } from './stacks/basketball';
 import { DisneyV1Stack } from './stacks/disney/v1';
+import { DisneyV2Stack } from './stacks/disney/v2';
 import { InstagramV1Stack } from './stacks/instagram/v1';
 import { InstagramV2Stack } from './stacks/instagram/v2';
 import { MoviesV2Stack } from './stacks/movies/v2';
@@ -107,6 +108,11 @@ export const AppContainer = () => {
         <StackApp.Screen
           name='DisneyV1'
           component={DisneyV1Stack}
+          options={navOptionHandler}
+        />
+        <StackApp.Screen
+          name='DisneyV2'
+          component={DisneyV2Stack}
           options={navOptionHandler}
         />
         <StackApp.Screen
