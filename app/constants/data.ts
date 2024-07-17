@@ -28,6 +28,7 @@ export default DATA = {
     { key: 17, title: 'Famous', description: 'Guess Famous People Game', image: Images.ATHENA.SPLASH106, navigation: 'Famous' },
     { key: 18, title: 'BasketBall', description: 'Basketball Game', image: Images.ATHENA.SPLASH107, navigation: 'BasketBall' },
     { key: 19, title: 'Disney 2.0', description: 'Disney Clone App', image: Images.ATHENA.SPLASH107, navigation: 'DisneyV2' },
+    { key: 19, title: 'Shopee 2.0', description: 'eCommerce Version 2.0', image: Images.ATHENA.SPLASH107, navigation: 'ShopeeV2' },
   ],
   LANGUAGES: [
     { key: 1, country: 'United States', language: 'English', code: 'en', flag: Images.ATHENA.FLAG001 },
