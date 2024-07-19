@@ -11,7 +11,7 @@ export default DATA = {
     { key: 7, title: 'Tinder 2.0', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH108, navigation: 'TinderV2' },
     { key: 8, title: 'Movies 2.0', description: 'The Moviedb Clone App Version 2.0', image: Images.ATHENA.SPLASH111, navigation: 'MoviesV2' },
     { key: 9, title: 'Movies 3.0', description: 'The Moviedb Clone App Version 3.0', image: Images.ATHENA.SPLASH111, navigation: 'MoviesV3' },
-    { key: 20, title: 'Movies 4.0', description: 'The Moviedb Clone App Version 4.0', image: Images.ATHENA.SPLASH111, navigation: 'MoviesV4' },
+    { key: 50, title: 'Movies 4.0', description: 'The Moviedb Clone App Version 4.0', image: Images.ATHENA.SPLASH111, navigation: 'MoviesV4' },
     { key: 10, title: 'Instagram 1.0', description: 'Instagram Clone App Version 1.0', image: Images.ATHENA.SPLASH109, navigation: 'InstagramV1' },
     { key: 11, title: 'Instagram 2.0', description: 'Instagram Clone App Version 2.0', image: Images.ATHENA.SPLASH110, navigation: 'InstagramV2' },
     // { key: 6, title: 'TikTok 2.0', description: 'Short Video Sharing & Social Media Platform', image: Images.ATHENA.SPLASH105, navigation: 'TikTokV2' },
@@ -28,6 +28,7 @@ export default DATA = {
     { key: 17, title: 'Famous', description: 'Guess Famous People Game', image: Images.ATHENA.SPLASH106, navigation: 'Famous' },
     { key: 18, title: 'BasketBall', description: 'Basketball Game', image: Images.ATHENA.SPLASH107, navigation: 'BasketBall' },
     { key: 19, title: 'Disney 2.0', description: 'Disney Clone App', image: Images.ATHENA.SPLASH107, navigation: 'DisneyV2' },
+    { key: 21, title: 'Dating 1.0', description: 'Dating Version 1.0', image: Images.ATHENA.SPLASH107, navigation: 'DatingV1' },
   ],
   LANGUAGES: [
     { key: 1, country: 'United States', language: 'English', code: 'en', flag: Images.ATHENA.FLAG001 },

@@ -1,8 +1,15 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import Constants from 'expo-constants';
 
 import FONTS from './fonts';
 import COLORS from './colors';
+
+var { height, width } = Dimensions.get('window');
+
+export const ITEM_SIZE = width * 0.68;
+export const EMPTY_ITEM_SIZE = width - ITEM_SIZE;
+export const BAR_HEIGHT = Constants.statusBarHeight * 5;
 
 export const SIZE = {
   S01: 1,
@@ -231,6 +238,71 @@ export default STYLES = StyleSheet.create({
       normalFontWeight: '400',
       boldFontWeight: '600',
       bolderFontWeight: '800',
+    }
+  },
+  DATING: {
+    V1: {
+      container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: BAR_HEIGHT,
+        backgroundColor: '#fff'
+      },
+      paragraph: {
+        margin: 24,
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#34495e'
+      },
+      shadow: {
+        shadowOpacity: 0.4,
+        shadowOffset: {
+          width: 1,
+          height: 3
+        },
+        shadowRadius: 6
+      },
+      headerShadow: {
+        shadowOpacity: 0.6,
+        shadowColor: '#FF0088',
+        shadowOffset: {
+          width: 0,
+          height: 1
+        },
+        shadowRadius: 12
+      },
+      largeHeading: {
+        color: '#fff',
+        fontWeight: '700',
+        fontSize: 22,
+        fontFamily: FONTS.ATHENA.PRIMARY
+      },
+      smallHeading: {
+        color: '#fff',
+        fontWeight: '400',
+        fontSize: 16,
+        fontFamily: FONTS.ATHENA.PRIMARY
+      },
+      descriptionText: {
+        fontFamily: FONTS.ATHENA.PRIMARY,
+        fontSize: 22,
+        fontWeight: '500',
+        color: '#565E65'
+      },
+      ageText: {
+        fontFamily: FONTS.ATHENA.PRIMARY,
+        fontSize: 48,
+        fontWeight: '700',
+        color: '#FEB9DE'
+      },
+      nameText: {
+        fontFamily: FONTS.ATHENA.PRIMARY,
+        fontSize: 28,
+        fontWeight: '700',
+        color: '#565E65'
+      }
     }
   }
 });
