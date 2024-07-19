@@ -9,6 +9,7 @@ export default DATA = {
     { key: 5, title: 'TikTok 1.0', description: 'Short Video Sharing & Social Media Platform', image: Images.ATHENA.SPLASH105, navigation: 'TikTokV1' },
     { key: 6, title: 'Tinder 1.0', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH104, navigation: 'TinderV1' },
     { key: 7, title: 'Tinder 2.0', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH108, navigation: 'TinderV2' },
+    { key: 51, title: 'Tinder 3.0', description: 'Dating & Social Platform, Image Swipe Functionality', image: Images.ATHENA.SPLASH108, navigation: 'TinderV3' },
     { key: 8, title: 'Movies 2.0', description: 'The Moviedb Clone App Version 2.0', image: Images.ATHENA.SPLASH111, navigation: 'MoviesV2' },
     { key: 9, title: 'Movies 3.0', description: 'The Moviedb Clone App Version 3.0', image: Images.ATHENA.SPLASH111, navigation: 'MoviesV3' },
     { key: 50, title: 'Movies 4.0', description: 'The Moviedb Clone App Version 4.0', image: Images.ATHENA.SPLASH111, navigation: 'MoviesV4' },
@@ -370,6 +371,42 @@ export default DATA = {
         'id': 37,
         'name': 'Western'
       }]
+    }
+  },
+  TINDER: {
+    V3: {
+      PROFILE_MOCKS: [
+        {
+          id: 1,
+          name: 'Saana',
+          age: 20,
+          description: 'Influencer',
+        },
+        {
+          id: 2,
+          name: 'Saana',
+          age: 20,
+          description: 'Influencer',
+        },
+        {
+          id: 3,
+          name: 'Saana',
+          age: 20,
+          description: 'Influencer',
+        },
+        {
+          id: 4,
+          name: 'Saana',
+          age: 20,
+          description: 'Influencer',
+        },
+        {
+          id: 5,
+          name: 'Saana',
+          age: 20,
+          description: 'Influencer',
+        },
+      ]
     }
   }
 };

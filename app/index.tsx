@@ -45,6 +45,8 @@ export default App = () => {
     TinderV1: require('@/assets/fonts/tinder/v1/Tinder-Regular.ttf'),
     Ubuntu: require('@/assets/fonts/paper/Ubuntu.ttf'),
     ShadowsIntoLight: require('@/assets/fonts/paper/ShadowsIntoLight.ttf'),
+    'Sk-Modernist-Regular': require('@/assets/fonts/tinder/v3/Sk-Modernist-Regular.otf'),
+    'Sk-Modernist-Bold': require('@/assets/fonts/tinder/v3/Sk-Modernist-Bold.otf'),
   });
 
   useEffect(() => {

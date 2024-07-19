@@ -2530,6 +2530,45 @@
     color "^4.2.3"
     warn-once "^0.1.0"
 
+"@react-spring/animated@~9.7.3":
+  version "9.7.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/animated/-/animated-9.7.3.tgz#4211b1a6d48da0ff474a125e93c0f460ff816e0f"
+  integrity sha512-5CWeNJt9pNgyvuSzQH+uy2pvTg8Y4/OisoscZIR8/ZNLIOI+CatFBhGZpDGTF/OzdNFsAoGk3wiUYTwoJ0YIvw==
+  dependencies:
+    "@react-spring/shared" "~9.7.3"
+    "@react-spring/types" "~9.7.3"
+
+"@react-spring/core@~9.7.3":
+  version "9.7.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/core/-/core-9.7.3.tgz#60056bcb397f2c4f371c6c9a5f882db77ae90095"
+  integrity sha512-IqFdPVf3ZOC1Cx7+M0cXf4odNLxDC+n7IN3MDcVCTIOSBfqEcBebSv+vlY5AhM0zw05PDbjKrNmBpzv/AqpjnQ==
+  dependencies:
+    "@react-spring/animated" "~9.7.3"
+    "@react-spring/shared" "~9.7.3"
+    "@react-spring/types" "~9.7.3"
+
+"@react-spring/native@^9.7.3":
+  version "9.7.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/native/-/native-9.7.3.tgz#ee38d7c23482cfb4916c9b3c021de2995a4f553a"
+  integrity sha512-4mpxX3FuEBCUT6ae2fjhxcJW6bhr2FBwFf274eXB7n+U30Gdg8Wo2qYwcUnmiAA0S3dvP8vLTazx3+CYWFShnA==
+  dependencies:
+    "@react-spring/animated" "~9.7.3"
+    "@react-spring/core" "~9.7.3"
+    "@react-spring/shared" "~9.7.3"
+    "@react-spring/types" "~9.7.3"
+
+"@react-spring/shared@~9.7.3":
+  version "9.7.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/shared/-/shared-9.7.3.tgz#4cf29797847c689912aec4e62e34c99a4d5d9e53"
+  integrity sha512-NEopD+9S5xYyQ0pGtioacLhL2luflh6HACSSDUZOwLHoxA5eku1UPuqcJqjwSD6luKjjLfiLOspxo43FUHKKSA==
+  dependencies:
+    "@react-spring/types" "~9.7.3"
+
+"@react-spring/types@~9.7.3":
+  version "9.7.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.7.3.tgz#ea78fd447cbc2612c1f5d55852e3c331e8172a0b"
+  integrity sha512-Kpx/fQ/ZFX31OtlqVEFfgaD1ACzul4NksrvIgYfIFq9JpDHFwQkMVZ10tbo0FU/grje4rcL4EIrjekl3kYwgWw==
+
 "@reduxjs/toolkit@^2.2.5":
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/@reduxjs/toolkit/-/toolkit-2.2.5.tgz#c0d2d8482ef80722bebe015ff05b06c34bfb6e0d"
@@ -5153,6 +5192,11 @@ expo-image-picker@~15.0.6:
   integrity sha512-WckDXKlvOwywOr5twCOyqTDwEhYHD2ty6k8V2qCWbHHKEVe6C0iGFQgHHIPFKY4E1yhlEADg1UMTt0mnhV2A9Q==
   dependencies:
     expo-image-loader "~4.7.0"
+
+expo-image@^1.12.13:
+  version "1.12.13"
+  resolved "https://registry.yarnpkg.com/expo-image/-/expo-image-1.12.13.tgz#82a8263c4c2bae3be70241e304c28e5b74956d23"
+  integrity sha512-Dmuc5qmkIsl1nFj8C3Ux3wL2bN4QYW4dM9fkGA8kYiP5Fxf1lT36ldkHk2O2lPFRSFJDvLxT8Tz+7GTko5fzwQ==
 
 expo-keep-awake@~13.0.2:
   version "13.0.2"
@@ -8277,6 +8321,11 @@ p-map@^4.0.0:
   dependencies:
     aggregate-error "^3.0.0"
 
+p-sleep@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/p-sleep/-/p-sleep-1.1.0.tgz#a6c9333059b5103c3c0e46bcbba95a1f7969095b"
+  integrity sha512-bwP3GKZirBUYMtiUuBrheLUQdRXVeE/pmHOaLpNJzNfAD4b5AjDn6l823brXcQFade4G/g7GMNQ3KV86E8EaEw==
+
 p-try@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
@@ -9243,6 +9292,13 @@ react-test-renderer@18.2.0:
     react-is "^18.2.0"
     react-shallow-renderer "^16.15.0"
     scheduler "^0.23.0"
+
+react-tinder-card@^1.6.4:
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/react-tinder-card/-/react-tinder-card-1.6.4.tgz#af24e8325f5e5e1e45dc85ac70f01aa8bafe248e"
+  integrity sha512-IC6YXoBZ+51jm7XsT8i+8G/ov8rvAob+kBRdp9unQyjsLc7jmuYb1cNfu95Q3mdFDgwE0AzTIyl1o2Klm61+aQ==
+  dependencies:
+    p-sleep "^1.1.0"
 
 react@18.2.0:
   version "18.2.0"
