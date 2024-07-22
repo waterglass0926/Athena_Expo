@@ -34,6 +34,7 @@ import { MoviesV3Stack } from './stacks/movies/v3';
 import { MoviesV4Stack } from './stacks/movies/v4';
 
 import { DatingV1Stack } from './stacks/dating/v1';
+import { DatingV2Stack } from './stacks/dating/v2';
 
 import { navOptionHandler } from '@/utils';
 
@@ -77,6 +78,7 @@ export const AppContainer = () => {
         <StackApp.Screen name='MoviesV4' component={MoviesV4Stack} options={navOptionHandler} />
 
         <StackApp.Screen name='DatingV1' component={DatingV1Stack} options={navOptionHandler} />
+        <StackApp.Screen name='DatingV2' component={DatingV2Stack} options={navOptionHandler} />
 
       </StackApp.Navigator>
     </NavigationContainer>

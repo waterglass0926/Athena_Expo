@@ -31,7 +31,6 @@ export default Slider = (props) => {
   }
 
   const renderItem = (item, i) => {
-    console.log(item)
     _rowAnimations[i] = new Animated.Value(0);
 
     let inputRange = [

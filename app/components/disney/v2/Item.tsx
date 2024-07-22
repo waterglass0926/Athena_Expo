@@ -19,7 +19,7 @@ export function Item({ discovery, type, setId }) {
           setCards(data.results);
         })
         .catch((err) => {
-          console.log(console.log(err.message));
+          console.log(err.message);
         });
     };
     fetchCard();

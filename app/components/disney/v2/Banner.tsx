@@ -28,7 +28,6 @@ export function Banner({ type, discovery, setId }) {
       )
         .then((res) => res.json())
         .then((data) => {
-          // console.log(Math.floor(Math.random()*data.results.length));
           //Math.floor(Math.random()*data.results.length)
           setCards(data?.results);
           setCard(cards[Math.floor(Math.random() * cards?.length)]);
@@ -42,7 +41,7 @@ export function Banner({ type, discovery, setId }) {
           });
         })
         .catch((err) => {
-          console.log(console.log(err.message));
+          console.log(err.message);
         });
     };
     fetchCard();
