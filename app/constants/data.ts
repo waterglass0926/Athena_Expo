@@ -31,6 +31,7 @@ export default DATA = {
     { key: 19, title: 'Disney 2.0', description: 'Disney Clone App', image: Images.ATHENA.SPLASH107, navigation: 'DisneyV2' },
     { key: 21, title: 'Dating 1.0', description: 'Dating Version 1.0', image: Images.ATHENA.SPLASH107, navigation: 'DatingV1' },
     { key: 22, title: 'Dating 2.0', description: 'Dating Version 2.0', image: Images.ATHENA.SPLASH107, navigation: 'DatingV2' },
+    { key: 23, title: 'Dating 3.0', description: 'Dating Version 3.0', image: Images.ATHENA.SPLASH107, navigation: 'DatingV3' },
   ],
   LANGUAGES: [
     { key: 1, country: 'United States', language: 'English', code: 'en', flag: Images.ATHENA.FLAG001 },

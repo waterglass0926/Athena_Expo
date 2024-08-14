@@ -7,7 +7,7 @@ import { SvgXml } from 'react-native-svg';
 import { View } from 'react-native';
 
 import '@/utils/i18n';
-import Components from '@/components/basketball';
+// import Components from '@/components/basketball';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { ThemeType } from '@/types/athena';

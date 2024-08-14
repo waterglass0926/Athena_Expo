@@ -11,6 +11,25 @@ export default COLORS = {
     ORANGE: 'orange',
     MAGENTA: 'magenta',
   },
+  DATING: {
+    V3: {
+      BLUE90: '#1A1D28',
+      BLUE70: '#1F2734',
+      BLUE50: '#1F2A37',
+      BLUE30: '#424750',
+      ROZE01: '#DE0BC9',
+      ROZE02: '#1286F0',
+      DARK00: '#0E1018',
+      RED001: '#DD0CBB',
+      RED002: '#CF1313',
+      WHITE0: '#FFFFFF',
+      GREEN0: '#1AAF3B',
+      RED000: '#CD1356',
+      BLACK0: '#000000',
+      INACTIVE: '#5B6277',
+      ACTIVE: '#FFFFFF'
+    }
+  },
   UBEREATS: {
     primary: '#00C444',
     secondary: '#462200',

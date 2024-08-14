@@ -35,6 +35,7 @@ import { MoviesV4Stack } from './stacks/movies/v4';
 
 import { DatingV1Stack } from './stacks/dating/v1';
 import { DatingV2Stack } from './stacks/dating/v2';
+import { DatingV3Stack } from './stacks/dating/v3';
 
 import { navOptionHandler } from '@/utils';
 
@@ -43,7 +44,7 @@ export const AppContainer = () => {
   return (
     <NavigationContainer independent={true}>
       <StackApp.Navigator
-        initialRouteName='Athena'
+        initialRouteName='DatingV3'
         screenOptions={{ gestureEnabled: false }
         }>
         <StackApp.Screen name='Athena' component={AthenaStack} options={navOptionHandler} />
@@ -79,6 +80,7 @@ export const AppContainer = () => {
 
         <StackApp.Screen name='DatingV1' component={DatingV1Stack} options={navOptionHandler} />
         <StackApp.Screen name='DatingV2' component={DatingV2Stack} options={navOptionHandler} />
+        <StackApp.Screen name='DatingV3' component={DatingV3Stack} options={navOptionHandler} />
 
       </StackApp.Navigator>
     </NavigationContainer>

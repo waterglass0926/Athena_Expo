@@ -7,7 +7,7 @@ import { SvgXml } from 'react-native-svg';
 import { View } from 'react-native';
 
 import '@/utils/i18n';
-// import Components from '@/components/tinder/v3';
+// import Components from '@/components/dating/v3';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { ThemeType } from '@/types/athena';
@@ -30,7 +30,7 @@ export const Splash: FC<PropsType> = ({ navigation }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('TinderV3BottomTab');
+      navigation.navigate('DatingV3BottomTab');
     }, 1000);
   }, []);
 

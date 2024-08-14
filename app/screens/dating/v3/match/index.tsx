@@ -1,13 +1,14 @@
 import React, { FC, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { SvgXml } from 'react-native-svg';
 
-import { View } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 
 import '@/utils/i18n';
-// import Components from '@/components/tinder/v3';
+import Components from '@/components/dating/v3';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { ThemeType } from '@/types/athena';
@@ -23,27 +24,34 @@ interface StateType {
   };
 };
 
-export const Splash: FC<PropsType> = ({ navigation }) => {
+export const MatchHome: FC<PropsType> = ({ navigation }) => {
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
   const { theme } = useSelector((state: StateType) => state.athena);
 
-  useEffect(() => {
-    setTimeout(() => {
-      navigation.navigate('TinderV3BottomTab');
-    }, 1000);
-  }, []);
-
   return (
     <View style={{
       ...Constants.STYLES.CONTAINER,
-      ...Constants.STYLES.ALIGN_COL_CENTER,
-      backgroundColor: theme.BACKCOLOR,
+      backgroundColor: Constants.COLORS.DATING.V3.DARK00,
     }}>
-      <SvgXml
-        xml={Constants.SVGS.ATHENE.LOGO.replace(/fill="[^"]+"/g, `fill="${theme.PRIMARY}"`)}
-        color={theme.PRIMARY}
-      />
+      <Components.Header title={'Events & Conventions'} />
+
+      <ScrollView
+        key='scroll00'
+        contentContainerStyle={styles.content}
+        showsVerticalScrollIndicator={false}
+      >
+      </ScrollView>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  content: {
+    width: wp('100%'),
+    paddingVertical: 16
+  },
+});

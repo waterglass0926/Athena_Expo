@@ -7,7 +7,7 @@ import { SvgXml } from 'react-native-svg';
 import { View } from 'react-native';
 
 import '@/utils/i18n';
-import Components from '@/components/paper';
+// import Components from '@/components/paper';
 import Constants from '@/constants';
 import Functions from '@/utils';
 import { ThemeType } from '@/types/athena';
